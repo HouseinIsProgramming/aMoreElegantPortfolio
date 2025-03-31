@@ -120,3 +120,35 @@
     @apply bg-background text-foreground;
   }
 }
+
+.container {
+  @apply w-full mx-auto px-4;
+
+  @media (min-width: 640px) {
+    max-width: 640px;
+  }
+  @media (min-width: 768px) {
+    max-width: 768px;
+  }
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+  }
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+  }
+  @media (min-width: 1536px) {
+    max-width: 1536px;
+  }
+}
+
+h1 {
+  @apply text-4xl font-bold leading-normal;
+}
+
+h3 {
+  @apply text-xl font-medium leading-relaxed;
+}
+
+p {
+  @apply text-lg leading-normal mt-2;
+}
