@@ -4,12 +4,12 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { motion } from "framer-motion";
-import { 
-  containerVariants, 
-  itemVariants, 
-  badgeContainerVariants, 
+import {
+  containerVariants,
+  itemVariants,
+  badgeContainerVariants,
   badgeVariants,
-  sectionHeaderVariants 
+  sectionHeaderVariants,
 } from "@/utils/motion-variants";
 
 // Create motion components from regular components
@@ -133,53 +133,6 @@ export default function PortfolioSection() {
             variants={sectionHeaderVariants}
             initial="hidden"
             animate="visible"
-            className="mb-10"
-          >
-      "Photoshop",
-      "Responsive Design",
-      "UI/UX",
-      "Wireframing",
-      "Prototyping",
-      "Design Systems",
-    ],
-    tooling: [
-      "Git",
-      "GitHub",
-      "VS Code",
-      "Webpack",
-      "Vite",
-      "Jest",
-      "Testing Library",
-      "Cypress",
-      "Storybook",
-      "npm",
-      "yarn",
-      "pnpm",
-      "ESLint",
-      "Prettier",
-    ],
-    knowledge: [
-      "Agile Methodology",
-      "Scrum",
-      "CI/CD",
-      "Performance Optimization",
-      "Accessibility (WCAG)",
-      "SEO",
-      "Technical Writing",
-      "Mentoring",
-      "Project Management",
-      "Problem Solving",
-    ],
-  };
-
-  return (
-    <>
-      <section className="py-12 md:py-16">
-        <div className="container px-4 md:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 0.5 }}
             className="mb-10"
           >
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
@@ -330,9 +283,10 @@ export default function PortfolioSection() {
       <section className="py-12 md:py-16">
         <div className="container px-4 md:px-6">
           <motion.div
-            initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            variants={sectionHeaderVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.3 }}
             className="mb-10"
           >
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">

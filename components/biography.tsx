@@ -6,24 +6,9 @@ import { Magnetic } from "./motion-primitives/magnetic";
 import { MdEmail } from "react-icons/md";
 import { TextEffect } from "./motion-primitives/text-effect";
 import { motion } from "framer-motion";
+import { listVariants, listItemVariants } from "@/utils/motion-variants";
 
 const MotionUL = motion.ul;
-
-const list = {
-  visible: {
-    opacity: 1,
-    transition: {
-      when: "beforeChildren",
-      staggerChildren: 0.1,
-    },
-  },
-  hidden: { opacity: 0, transition: { when: "afterChildren" } },
-};
-
-const item = {
-  visible: { opacity: 1, x: 0 },
-  hidden: { opacity: 0, x: -20 },
-};
 
 function Biography() {
   return (
@@ -51,9 +36,9 @@ function Biography() {
         className="flex w-full justify-center gap-12 mt-6"
         initial="hidden"
         animate="visible"
-        variants={list}
+        variants={listVariants}
       >
-        <motion.li variants={item}>
+        <motion.li variants={listItemVariants}>
           <Magnetic>
             <a
               href="https://www.linkedin.com/in/housein-abo-shaar-920292265/"
@@ -63,14 +48,14 @@ function Biography() {
             </a>
           </Magnetic>
         </motion.li>
-        <motion.li variants={item}>
+        <motion.li variants={listItemVariants}>
           <Magnetic>
             <a href="mailto:housein.aboshaar@gmail.com" className="p-3">
               <MdEmail size={36} />
             </a>
           </Magnetic>
         </motion.li>
-        <motion.li variants={item}>
+        <motion.li variants={listItemVariants}>
           <Magnetic>
             <a
               href="https://docs.houseinaboshaar.com/HousienAboShaar-Resume.pdf"
