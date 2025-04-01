@@ -9,8 +9,8 @@ export const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.3,
-      delayChildren: 0.2,
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
     },
   },
 };
@@ -27,7 +27,7 @@ export const itemVariants = {
     y: 0,
     filter: "blur(0px)",
     transition: {
-      duration: 0.5,
+      duration: 0.25,
     },
   },
 };
@@ -84,7 +84,7 @@ export const sectionHeaderVariants = {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { duration: 0.5 },
+    transition: { duration: 0.3 },
   },
 };
 
@@ -92,7 +92,7 @@ export const sectionHeaderVariants = {
 export const fadeInBlur = {
   initial: { opacity: 0, filter: "blur(10px)" },
   animate: { opacity: 1, filter: "blur(0px)" },
-  transition: { duration: 0.5 },
+  transition: { duration: 0.3 },
 };
 
 // For horizontal sliding elements
@@ -101,6 +101,6 @@ export const slideInVariants = {
   visible: {
     x: 0,
     opacity: 1,
-    transition: { duration: 0.6 },
+    transition: { duration: 0.3 },
   },
 };

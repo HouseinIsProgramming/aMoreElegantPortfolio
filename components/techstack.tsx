@@ -83,8 +83,9 @@ export default function TechStack() {
         <motion.div
           variants={sectionHeaderVariants}
           initial="hidden"
-          animate="visible"
-          transition={{ delay: 0.3 }}
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ delay: 0.1 }}
           className="mb-10"
         >
           <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
@@ -99,7 +100,8 @@ export default function TechStack() {
           className="grid gap-8 md:grid-cols-2"
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
         >
           <MotionCard variants={itemVariants}>
             <CardContent className="p-6">
