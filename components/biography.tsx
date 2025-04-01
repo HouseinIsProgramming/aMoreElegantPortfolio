@@ -7,7 +7,6 @@ import { MdEmail } from "react-icons/md";
 import { TextEffect } from "./motion-primitives/text-effect";
 import { motion } from "framer-motion";
 import { listVariants, listItemVariants } from "@/utils/motion-variants";
-import { Spotlight } from "./motion-primitives/spotlight";
 
 const MotionUL = motion.ul;
 
@@ -67,10 +66,6 @@ function Biography() {
           </Magnetic>
         </motion.li>
       </MotionUL>
-      <div className="relative aspect-video h-[200px] overflow-hidden rounded-xl bg-zinc-300/30 p-[1px] dark:bg-zinc-700/30">
-        <Spotlight className="bg-black" size={124} />
-        <div className="relative h-full w-full rounded-xl bg-white dark:bg-black"></div>
-      </div>
     </div>
   );
 }

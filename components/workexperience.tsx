@@ -10,7 +10,7 @@ import {
   badgeVariants,
   sectionHeaderVariants,
 } from "@/utils/motion-variants";
-import { Spotlight } from "./motion-primitives/spotlight";
+import BorderSpotlight from "./motion-primitives/border-spotlight";
 
 // Create motion components from regular components
 const MotionCard = motion.create(Card);
@@ -95,12 +95,7 @@ export default function WorkExperience() {
               className="overflow-hidden relative"
               variants={itemVariants}
             >
-              <Spotlight
-                className="bg-conic-180 from-red-600 via-purple-600 to-blue-600 -z-50"
-                size={200}
-              />
-              <div className="absolute inset-[0.3%] h-[99.4%] -z-10 w-[99.4%] rounded-lg bg-white dark:bg-black"></div>
-
+              <BorderSpotlight />
               <CardContent className="p-6">
                 <div className="grid gap-6 md:grid-cols-[2fr_3fr]">
                   <div>
