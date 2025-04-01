@@ -142,17 +142,21 @@
 }
 
 h1 {
-  @apply text-4xl font-bold leading-normal;
+  @apply text-4xl font-bold leading-normal drop-shadow-lg;
 }
 
 h2 {
-  @apply text-2xl font-semibold leading-normal;
+  @apply text-2xl font-semibold leading-normal drop-shadow-lg;
 }
 
 h3 {
-  @apply text-xl font-medium leading-relaxed;
+  @apply text-xl font-medium leading-relaxed drop-shadow-md;
 }
 
 p {
   @apply text-lg leading-normal mt-2;
+}
+
+.bg-card {
+  @apply shadow-lg;
 }
