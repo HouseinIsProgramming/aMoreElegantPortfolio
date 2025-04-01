@@ -25,7 +25,7 @@ function About() {
   }
 
   return (
-    <div>
+    <div className="mt-[53px]">
       <TextEffect delay={0.3} preset="fade-in-blur" as="h2">
         About
       </TextEffect>

@@ -13,7 +13,7 @@ const MotionUL = motion.ul;
 
 function Biography() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col relative z-0 pointer-events-none">
       <TextEffect
         preset="fade-in-blur"
         as="h1"
@@ -34,7 +34,7 @@ function Biography() {
       </TextEffect>
 
       <MotionUL
-        className="flex w-full justify-center gap-12 mt-6"
+        className="pointer-events-auto flex w-full justify-center gap-12 mt-6"
         initial="hidden"
         animate="visible"
         variants={listVariants}
