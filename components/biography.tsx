@@ -7,6 +7,7 @@ import { MdEmail } from "react-icons/md";
 import { TextEffect } from "./motion-primitives/text-effect";
 import { motion } from "framer-motion";
 import { listVariants, listItemVariants } from "@/utils/motion-variants";
+import { ModeToggle } from "./light-dark-toggle";
 
 const MotionUL = motion.ul;
 
@@ -63,6 +64,11 @@ function Biography() {
             >
               <TbFileCv size={36} />
             </a>
+          </Magnetic>
+        </motion.li>
+        <motion.li className="content-center" variants={listItemVariants}>
+          <Magnetic>
+            <ModeToggle />
           </Magnetic>
         </motion.li>
       </MotionUL>

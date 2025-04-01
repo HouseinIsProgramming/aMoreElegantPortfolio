@@ -179,7 +179,7 @@ const techIcons: TechIconMap = {
   },
   GitHub: {
     icon: FaGithub,
-    color: "#181717",
+    color: "#3C6AAD",
     darkColor: "#181717",
     textColor: "white",
   },
