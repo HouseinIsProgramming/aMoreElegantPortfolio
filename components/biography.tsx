@@ -8,6 +8,7 @@ import { TextEffect } from "./motion-primitives/text-effect";
 import { motion } from "framer-motion";
 import { listVariants, listItemVariants } from "@/utils/motion-variants";
 import { ModeToggle } from "./light-dark-toggle";
+import NavMenu from "./navmenu";
 
 const MotionUL = motion.ul;
 
@@ -72,6 +73,7 @@ function Biography() {
           </Magnetic>
         </motion.li>
       </MotionUL>
+      <NavMenu />
     </div>
   );
 }
