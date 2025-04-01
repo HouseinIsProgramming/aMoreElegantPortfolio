@@ -16,66 +16,78 @@ const MotionCard = motion.create(Card);
 const MotionBadge = motion.create(Badge);
 
 export default function TechStack() {
-  const techStack = {
-    webDevelopment: [
-      "JavaScript",
-      "TypeScript",
-      "React",
-      "Next.js",
-      "Svelte",
-      "Vue.js",
-      "Node.js",
-      "Express",
-      "GraphQL",
-      "REST API",
-      "HTML5",
-      "CSS3",
-      "SASS",
-      "Tailwind CSS",
-      "MongoDB",
-      "PostgreSQL",
-      "MySQL",
-      "Redis",
-    ],
-    design: [
-      "Figma",
-      "Adobe XD",
-      "Photoshop",
-      "Responsive Design",
-      "UI/UX",
-      "Wireframing",
-      "Prototyping",
-      "Design Systems",
-    ],
-    tooling: [
-      "Git",
-      "GitHub",
-      "VS Code",
-      "Webpack",
-      "Vite",
-      "Jest",
-      "Testing Library",
-      "Cypress",
-      "Storybook",
-      "npm",
-      "yarn",
-      "pnpm",
-      "ESLint",
-      "Prettier",
-    ],
-    knowledge: [
-      "Agile Methodology",
-      "Scrum",
-      "CI/CD",
-      "Performance Optimization",
-      "Accessibility (WCAG)",
-      "SEO",
-      "Technical Writing",
-      "Mentoring",
-      "Project Management",
-      "Problem Solving",
-    ],
-  };
+  const techStack = [
+    {
+      title: "Web Development",
+      items: [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Next.js",
+        "Svelte",
+        "Vue.js",
+        "Node.js",
+        "Express",
+        "GraphQL",
+        "REST API",
+        "HTML5",
+        "CSS3",
+        "SASS",
+        "Tailwind CSS",
+        "MongoDB",
+        "PostgreSQL",
+        "MySQL",
+        "Redis",
+      ],
+    },
+    {
+      title: "Design",
+      items: [
+        "Figma",
+        "Adobe XD",
+        "Photoshop",
+        "Responsive Design",
+        "UI/UX",
+        "Wireframing",
+        "Prototyping",
+        "Design Systems",
+      ],
+    },
+    {
+      title: "Tooling",
+      items: [
+        "Git",
+        "GitHub",
+        "VS Code",
+        "Webpack",
+        "Vite",
+        "Jest",
+        "Testing Library",
+        "Cypress",
+        "Storybook",
+        "npm",
+        "yarn",
+        "pnpm",
+        "ESLint",
+        "Prettier",
+      ],
+    },
+    {
+      title: "Knowledge",
+      items: [
+        "Agile Methodology",
+        "Scrum",
+        "CI/CD",
+        "Performance Optimization",
+        "Accessibility (WCAG)",
+        "SEO",
+        "Technical Writing",
+        "Mentoring",
+        "Project Management",
+        "Problem Solving",
+      ],
+    },
+  ];
 
   return (
     <section className="py-12 md:py-16">
@@ -103,89 +115,28 @@ export default function TechStack() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
-          <MotionCard variants={itemVariants}>
-            <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4">Web Development</h3>
-              <motion.div
-                className="flex flex-wrap gap-2"
-                variants={badgeContainerVariants}
-              >
-                {techStack.webDevelopment.map((tech, i) => (
-                  <MotionBadge
-                    key={tech}
-                    variant="outline"
-                    variants={badgeVariants}
-                    custom={i}
-                  >
-                    {tech}
-                  </MotionBadge>
-                ))}
-              </motion.div>
-            </CardContent>
-          </MotionCard>
-
-          <MotionCard variants={itemVariants}>
-            <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4">Design</h3>
-              <motion.div
-                className="flex flex-wrap gap-2"
-                variants={badgeContainerVariants}
-              >
-                {techStack.design.map((tech, i) => (
-                  <MotionBadge
-                    key={tech}
-                    variant="outline"
-                    variants={badgeVariants}
-                    custom={i}
-                  >
-                    {tech}
-                  </MotionBadge>
-                ))}
-              </motion.div>
-            </CardContent>
-          </MotionCard>
-
-          <MotionCard variants={itemVariants}>
-            <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4">Tooling</h3>
-              <motion.div
-                className="flex flex-wrap gap-2"
-                variants={badgeContainerVariants}
-              >
-                {techStack.tooling.map((tech, i) => (
-                  <MotionBadge
-                    key={tech}
-                    variant="outline"
-                    variants={badgeVariants}
-                    custom={i}
-                  >
-                    {tech}
-                  </MotionBadge>
-                ))}
-              </motion.div>
-            </CardContent>
-          </MotionCard>
-
-          <MotionCard variants={itemVariants}>
-            <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-4">Knowledge</h3>
-              <motion.div
-                className="flex flex-wrap gap-2"
-                variants={badgeContainerVariants}
-              >
-                {techStack.knowledge.map((tech, i) => (
-                  <MotionBadge
-                    key={tech}
-                    variant="outline"
-                    variants={badgeVariants}
-                    custom={i}
-                  >
-                    {tech}
-                  </MotionBadge>
-                ))}
-              </motion.div>
-            </CardContent>
-          </MotionCard>
+          {techStack.map((category, i) => (
+            <MotionCard key={i} variants={itemVariants}>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold mb-4">{category.title}</h3>
+                <motion.div
+                  className="flex flex-wrap gap-2"
+                  variants={badgeContainerVariants}
+                >
+                  {category.items.map((tech, j) => (
+                    <MotionBadge
+                      key={tech}
+                      variant="outline"
+                      variants={badgeVariants}
+                      custom={j}
+                    >
+                      {tech}
+                    </MotionBadge>
+                  ))}
+                </motion.div>
+              </CardContent>
+            </MotionCard>
+          ))}
         </motion.div>
       </div>
     </section>
