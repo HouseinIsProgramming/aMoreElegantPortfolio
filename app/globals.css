@@ -157,6 +157,10 @@ p {
   @apply text-lg leading-normal mt-2;
 }
 
+sub {
+  @apply text-lg text-muted-foreground;
+}
+
 .bg-card {
   @apply shadow-lg;
 }

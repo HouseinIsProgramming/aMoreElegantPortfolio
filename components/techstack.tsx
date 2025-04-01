@@ -21,24 +21,19 @@ export default function TechStack() {
     {
       title: "Web Development",
       items: [
-        "JavaScript",
-        "TypeScript",
-        "React",
-        "Next.js",
-        "Svelte",
-        "Vue.js",
-        "Node.js",
-        "Express",
-        "GraphQL",
-        "REST API",
-        "HTML5",
-        "CSS3",
-        "SASS",
-        "Tailwind CSS",
-        "MongoDB",
-        "PostgreSQL",
-        "MySQL",
-        "Redis",
+        {
+          frontend: [
+            "JavaScript",
+            "HTML5",
+            "CSS3",
+            "React",
+            "Tailwind CSS",
+            "TypeScript",
+            "Svelte",
+            "Vue.js",
+          ],
+        },
+        { backend: ["Node.js", "Netxt.js", "mySQL", "PHP", "Python"] },
       ],
     },
     {
@@ -119,22 +114,56 @@ export default function TechStack() {
           {techStack.map((category, i) => (
             <MotionCard key={i} variants={itemVariants} className="relative">
               <BorderSpotlight />
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">{category.title}</h3>
+              <CardContent className="p-6 py-2">
+                <h3 className="text-xl font-bold mb-2">{category.title}</h3>
                 <motion.div
                   className="flex flex-wrap gap-2"
                   variants={badgeContainerVariants}
                 >
-                  {category.items.map((tech, j) => (
-                    <MotionBadge
-                      key={tech}
-                      variant="outline"
-                      variants={badgeVariants}
-                      custom={j}
-                    >
-                      {tech}
-                    </MotionBadge>
-                  ))}
+                  {Array.isArray(category.items) &&
+                  category.items.every((item) => typeof item === "string") ? (
+                    category.items.map((tech, j) => (
+                      <MotionBadge
+                        key={tech}
+                        variant="outline"
+                        variants={badgeVariants}
+                        custom={j}
+                      >
+                        {tech}
+                      </MotionBadge>
+                    ))
+                  ) : (
+                    <>
+                      {category.items.map((nestedItem, j) => {
+                        if (
+                          typeof nestedItem === "object" &&
+                          nestedItem !== null
+                        ) {
+                          return Object.entries(nestedItem).map(
+                            ([title, techs]) => (
+                              <div key={j} className="w-full">
+                                <sub className="capitalize">{title}</sub>
+                                <div className="flex flex-wrap mt-2 gap-2">
+                                  {Array.isArray(techs) &&
+                                    techs.map((tech, k) => (
+                                      <MotionBadge
+                                        key={`${title}-${k}`}
+                                        variant="outline"
+                                        variants={badgeVariants}
+                                        custom={k}
+                                      >
+                                        {tech}
+                                      </MotionBadge>
+                                    ))}
+                                </div>
+                              </div>
+                            )
+                          );
+                        }
+                        return null;
+                      })}
+                    </>
+                  )}
                 </motion.div>
               </CardContent>
             </MotionCard>
