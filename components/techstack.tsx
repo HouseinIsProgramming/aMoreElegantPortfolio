@@ -245,10 +245,10 @@ export default function TechStack() {
     {
       title: "Knowledge",
       items: [
-        "Object-Oriented Programming",
-        "Test-Driven Development",
         "Responsive Web Design",
+        "Test-Driven Development",
         "Version Control (Git)",
+        "OOP / FP",
         "Documentation",
         "CMS (NeosCMS, TYPO3)",
       ],

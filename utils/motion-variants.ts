@@ -3,8 +3,6 @@
  * These can be imported and used throughout the application to maintain consistent animations
  */
 
-import { filter } from "framer-motion/client";
-
 // Container variants with staggered children
 export const containerVariants = {
   hidden: { opacity: 0 },
