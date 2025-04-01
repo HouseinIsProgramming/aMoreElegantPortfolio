@@ -1,7 +1,6 @@
 import { AnimatedBackground } from "./motion-primitives/animated-background";
 import { motion } from "framer-motion";
 import { itemVariants } from "@/utils/motion-variants";
-import { del } from "framer-motion/client";
 
 const TABS = [
   { title: "About", link: "about" },
@@ -12,9 +11,9 @@ const TABS = [
 
 function NavMenu() {
   return (
-    <nav>
+    <nav className="max-sm:mx-auto py-4">
       <AnimatedBackground
-        className="rounded-lg bg-zinc-100 dark:bg-zinc-800"
+        className="rounded-lg w-full bg-zinc-900 dark:bg-zinc-100"
         transition={{
           type: "spring",
           bounce: 0.2,
@@ -31,7 +30,7 @@ function NavMenu() {
             transition={{ delay: index * 0.1 }}
             data-id={tab.link}
             type="button"
-            className="px-2 py-0.5 text-zinc-600 transition-colors duration-300 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50"
+            className="px-2 lg:block py-0.5 hover:cursor-pointer text-zinc-600 transition-colors duration-300 hover:text-white dark:text-zinc-400 dark:hover:text-zinc-900"
             onClick={() => {
               const element = document.getElementById(tab.link);
               if (element) {
