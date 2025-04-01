@@ -34,8 +34,10 @@ function Biography() {
         technologies and providing solutions.
       </TextEffect>
 
+      <NavMenu />
+
       <MotionUL
-        className="pointer-events-auto flex w-full justify-center gap-12 mt-6"
+        className="pointer-events-auto flex w-full justify-center gap-12 mt-12"
         initial="hidden"
         animate="visible"
         variants={listVariants}
@@ -73,7 +75,6 @@ function Biography() {
           </Magnetic>
         </motion.li>
       </MotionUL>
-      <NavMenu />
     </div>
   );
 }

@@ -16,7 +16,7 @@ function NavMenu() {
 
   return (
     <LayoutGroup>
-      <motion.nav className="max-sm:mx-auto py-4 flex flex-col gap-3">
+      <motion.nav className="max-sm:mx-auto py-4 lg:py-32 flex flex-col gap-3 ">
         {TABS.map((tab, index) => (
           <motion.button
             key={tab.link}
