@@ -20,47 +20,67 @@ export default function WorkExperience() {
   const workExperiences = [
     {
       id: 1,
-      title: "Senior Frontend Developer",
-      company: "Tech Innovations Inc.",
-      startDate: "Jan 2021",
+      title: "Frontend Web Developer",
+      company: "FONDS professionell",
+      startDate: "Feb, 2023",
       endDate: "Present",
       description:
-        "Led the development of the company's flagship SaaS product, improving performance by 40%. Mentored junior developers and implemented modern frontend practices across the team.",
-      technologies: {
-        frontend: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
-        backend: ["Node.js", "GraphQL"],
-        devops: ["GitHub Actions", "Vercel"],
-        other: ["Figma", "Jest"],
-      },
+        "Started my career as a Web Developer where I got the chance to work on various projects and tasks.",
+      technologies: [
+        {
+          title: "Developed and maintained web applications",
+          tech: ["HTML", "CSS", "Javascript", "TYPO3", "NeosCMS", "PHP"],
+        },
+        {
+          title:
+            "Created and managed online content including animated advertisement banners, newsletters, news posts, marketing emails and web pages.",
+          tech: ["Photoshop", "Illustrator", "HTML5", "CSS3", "JavaScript"],
+        },
+        {
+          title:
+            "Queried databases to generate readable statistics and programmatically created reports.",
+          tech: ["mySQL", "Python", "Excel"],
+        },
+        {
+          title: "Uptime monitoring of AdServing and Newsletter systems.",
+          tech: ["Google Ad Manager", "TYPO3", "Mautic"],
+        },
+      ],
     },
     {
       id: 2,
-      title: "Frontend Developer",
-      company: "Digital Solutions Ltd",
-      startDate: "Mar 2018",
-      endDate: "Dec 2020",
+      title: "Mechatronics Technician",
+      company: "ENPULSION GmbH",
+      startDate: "Sep, 2021",
+      endDate: "Jan, 2023",
       description:
-        "Developed responsive web applications for clients across various industries. Collaborated with designers to implement pixel-perfect UIs and improved accessibility standards.",
-      technologies: {
-        frontend: ["JavaScript", "React", "CSS3", "SASS"],
-        backend: ["Express", "MongoDB"],
-        devops: ["Docker", "AWS"],
-        other: ["Redux", "Storybook"],
-      },
+        "Accomplished the achievement of making something destined for outer space.",
+      technologies: [
+        {
+          title: "Maintenance of production machines.",
+          tech: ["JavaScript", "React", "CSS3", "SASS"],
+        },
+        {
+          title: "Documenting production procedures.",
+          tech: ["Express", "MongoDB"],
+        },
+        {
+          title: "Assembly of satellite parts.",
+          tech: ["Docker", "AWS"],
+        },
+        {
+          title: "Data entry and quality assurance.",
+          tech: ["Redux", "Storybook"],
+        },
+      ],
     },
     {
       id: 3,
-      title: "Web Developer Intern",
-      company: "StartUp Ventures",
-      startDate: "Jun 2017",
-      endDate: "Feb 2018",
-      description:
-        "Assisted in building and maintaining company websites and web applications. Participated in code reviews and implemented feedback from senior developers.",
-      technologies: {
-        frontend: ["HTML5", "CSS3", "JavaScript", "jQuery"],
-        backend: ["PHP", "MySQL"],
-        other: ["Bootstrap", "WordPress"],
-      },
+      title: "Mechatronics - apprentice",
+      company: "BIFI - Vienna",
+      startDate: "Jun, 2020",
+      endDate: "Sep, 2021",
+      description: "My first job and step in the job market",
     },
   ];
 
@@ -113,19 +133,20 @@ export default function WorkExperience() {
                     </p>
 
                     <div className="space-y-3">
-                      {experience.technologies.frontend && (
-                        <div>
-                          <h4 className="text-sm font-semibold mb-1">
-                            Frontend
+                      {experience.technologies.map((techCategory, index) => (
+                        <div key={index}>
+                          <h4 className="text-sm font-light mb-2">
+                            - {techCategory.title}
                           </h4>
                           <motion.div
                             className="flex flex-wrap gap-2"
                             variants={badgeContainerVariants}
                           >
-                            {experience.technologies.frontend.map((tech) => (
+                            {techCategory.tech.map((tech) => (
                               <MotionBadge
                                 key={tech}
-                                variant="secondary"
+                                variant="outline"
+                                className="max-sm:dark:!border-white/20"
                                 variants={badgeVariants}
                               >
                                 {tech}
@@ -133,69 +154,7 @@ export default function WorkExperience() {
                             ))}
                           </motion.div>
                         </div>
-                      )}
-
-                      {experience.technologies.backend && (
-                        <div>
-                          <h4 className="text-sm font-semibold mb-1">
-                            Backend
-                          </h4>
-                          <motion.div
-                            className="flex flex-wrap gap-2"
-                            variants={badgeContainerVariants}
-                          >
-                            {experience.technologies.backend.map((tech) => (
-                              <MotionBadge
-                                key={tech}
-                                variant="secondary"
-                                variants={badgeVariants}
-                              >
-                                {tech}
-                              </MotionBadge>
-                            ))}
-                          </motion.div>
-                        </div>
-                      )}
-
-                      {experience.technologies.devops && (
-                        <div>
-                          <h4 className="text-sm font-semibold mb-1">DevOps</h4>
-                          <motion.div
-                            className="flex flex-wrap gap-2"
-                            variants={badgeContainerVariants}
-                          >
-                            {experience.technologies.devops.map((tech) => (
-                              <MotionBadge
-                                key={tech}
-                                variant="secondary"
-                                variants={badgeVariants}
-                              >
-                                {tech}
-                              </MotionBadge>
-                            ))}
-                          </motion.div>
-                        </div>
-                      )}
-
-                      {experience.technologies.other && (
-                        <div>
-                          <h4 className="text-sm font-semibold mb-1">Other</h4>
-                          <motion.div
-                            className="flex flex-wrap gap-2"
-                            variants={badgeContainerVariants}
-                          >
-                            {experience.technologies.other.map((tech) => (
-                              <MotionBadge
-                                key={tech}
-                                variant="secondary"
-                                variants={badgeVariants}
-                              >
-                                {tech}
-                              </MotionBadge>
-                            ))}
-                          </motion.div>
-                        </div>
-                      )}
+                      ))}
                     </div>
                   </div>
                 </div>
