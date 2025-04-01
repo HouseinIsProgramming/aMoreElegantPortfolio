@@ -16,8 +16,23 @@ import BorderSpotlight from "./motion-primitives/border-spotlight";
 const MotionCard = motion.create(Card);
 const MotionBadge = motion.create(Badge);
 
+type TechnologyCategory = {
+  title: string;
+  tech?: string[];
+};
+
+type WorkExperience = {
+  id: number;
+  title: string;
+  company: string;
+  startDate: string;
+  endDate: string;
+  description: string;
+  technologies?: TechnologyCategory[];
+};
+
 export default function WorkExperience() {
-  const workExperiences = [
+  const workExperiences: WorkExperience[] = [
     {
       id: 1,
       title: "Frontend Web Developer",
