@@ -20,7 +20,10 @@ export default function Page() {
           <WorkExperience />
           <Separator className="my-4" />
         </div>
-        <footer className="flex justify-between px-4 lg:col-span-2 lg:px-80">
+        <footer
+          id="contact"
+          className="flex justify-between px-4 lg:col-span-2 lg:px-80 scroll-m-12"
+        >
           <a href="https://github.com/HouseinIsProgramming/aMoreElegantPortfolio">
             <TextLoop className="font-mono text-sm text-muted-foreground">
               <span>© 2025 houseinaboshaar.com</span>

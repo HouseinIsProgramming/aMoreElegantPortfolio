@@ -314,7 +314,7 @@ export default function TechStack() {
   };
 
   return (
-    <section className="py-8">
+    <section className="py-8 scroll-m-12" id="tech-stack">
       <div className="">
         {" "}
         {/* Consider adding container mx-auto px-4 if needed */}
