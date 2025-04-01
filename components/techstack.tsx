@@ -34,6 +34,7 @@ import {
   SiLua,
   SiMysql,
   SiAffinitydesigner,
+  SiGnubash,
 } from "react-icons/si";
 import { IconType } from "react-icons";
 
@@ -201,7 +202,7 @@ const techIcons: TechIconMap = {
     textColor: "white",
   },
   "Shell Scripts": {
-    icon: FaJs, // Using a generic icon for shell scripts
+    icon: SiGnubash,
     color: "#4EAA25",
     darkColor: darkenColor("#4EAA25", 15),
     textColor: "white",
@@ -249,7 +250,7 @@ export default function TechStack() {
         "Responsive Web Design",
         "Version Control (Git)",
         "Documentation",
-        "Content Management Systems (CMS)",
+        "CMS (NeosCMS, TYPO3)",
       ],
     },
   ];
@@ -321,14 +322,18 @@ export default function TechStack() {
         </motion.div>
 
         <motion.div
-          className="grid gap-8 md:grid-cols-2"
+          className="grid gap-8 md:grid-cols-3"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
         >
           {techStack.map((category, i) => (
-            <MotionCard key={i} variants={itemVariants} className="relative">
+            <MotionCard
+              key={i}
+              variants={itemVariants}
+              className={`relative ${i === 0 ? "md:col-span-3" : ""}`}
+            >
               <BorderSpotlight />
               <CardContent className="p-6 py-2">
                 <h3 className="text-xl font-bold mb-2">{category.title}</h3>
