@@ -346,6 +346,7 @@ export default function TechStack() {
                         variants={badgeVariants}
                         custom={j}
                       >
+                        {/* @ts-expect-error multiple types */}
                         {tech}
                       </MotionBadge>
                     ))
