@@ -69,7 +69,8 @@ export default function WorkExperience() {
         <motion.div
           variants={sectionHeaderVariants}
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
           className="mb-10"
         >
           <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
@@ -84,7 +85,8 @@ export default function WorkExperience() {
           className="space-y-8"
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
         >
           {workExperiences.map((experience) => (
             <MotionCard
@@ -117,8 +119,6 @@ export default function WorkExperience() {
                           <motion.div
                             className="flex flex-wrap gap-2"
                             variants={badgeContainerVariants}
-                            initial="hidden"
-                            animate="visible"
                           >
                             {experience.technologies.frontend.map((tech) => (
                               <MotionBadge
@@ -141,8 +141,6 @@ export default function WorkExperience() {
                           <motion.div
                             className="flex flex-wrap gap-2"
                             variants={badgeContainerVariants}
-                            initial="hidden"
-                            animate="visible"
                           >
                             {experience.technologies.backend.map((tech) => (
                               <MotionBadge
@@ -163,8 +161,6 @@ export default function WorkExperience() {
                           <motion.div
                             className="flex flex-wrap gap-2"
                             variants={badgeContainerVariants}
-                            initial="hidden"
-                            animate="visible"
                           >
                             {experience.technologies.devops.map((tech) => (
                               <MotionBadge
@@ -185,8 +181,6 @@ export default function WorkExperience() {
                           <motion.div
                             className="flex flex-wrap gap-2"
                             variants={badgeContainerVariants}
-                            initial="hidden"
-                            animate="visible"
                           >
                             {experience.technologies.other.map((tech) => (
                               <MotionBadge
