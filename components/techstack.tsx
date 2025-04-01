@@ -303,7 +303,7 @@ export default function TechStack() {
   };
 
   return (
-    <section className="py-12 md:py-16">
+    <section className="py-8">
       <div className="">
         <motion.div
           variants={sectionHeaderVariants}

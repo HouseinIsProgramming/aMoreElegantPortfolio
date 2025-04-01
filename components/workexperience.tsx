@@ -58,19 +58,15 @@ export default function WorkExperience() {
       technologies: [
         {
           title: "Maintenance of production machines.",
-          tech: ["JavaScript", "React", "CSS3", "SASS"],
         },
         {
           title: "Documenting production procedures.",
-          tech: ["Express", "MongoDB"],
         },
         {
           title: "Assembly of satellite parts.",
-          tech: ["Docker", "AWS"],
         },
         {
           title: "Data entry and quality assurance.",
-          tech: ["Redux", "Storybook"],
         },
       ],
     },
@@ -85,7 +81,7 @@ export default function WorkExperience() {
   ];
 
   return (
-    <section className="py-12 md:py-16">
+    <section className="py-8">
       <div className="">
         <motion.div
           variants={sectionHeaderVariants}
