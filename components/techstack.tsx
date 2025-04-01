@@ -43,17 +43,7 @@ export default function TechStack() {
     },
     {
       title: "Tooling",
-      items: [
-        "Git",
-        "GitHub",
-        "Jest",
-        "Playwright",
-        "Lua",
-        "Shell Scripts",
-        "npm",
-        "Linting",
-        "Prettier",
-      ],
+      items: ["Git", "GitHub", "Jest", "Playwright", "Lua", "Shell Scripts"],
     },
     {
       title: "Knowledge",
