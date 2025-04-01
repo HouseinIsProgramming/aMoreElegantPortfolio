@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <div>
       <Spotlight size={90} className="bg-gray-700/15 dark:bg-foreground/10" />
-      <div className="container lg:grid lg:divide-x py-8 lg:grid-cols-[1fr_2fr] lg:gap-8">
+      <div className="container lg:grid py-8 lg:grid-cols-[1fr_2fr] lg:gap-8">
         <Biography />
         <div>
           <About />
@@ -20,7 +20,7 @@ export default function Page() {
           <WorkExperience />
           <Separator className="my-4" />
         </div>
-        <footer className="flex justify-between px-4">
+        <footer className="flex justify-between px-4 lg:col-span-2 lg:px-80">
           <a href="https://github.com/HouseinIsProgramming/aMoreElegantPortfolio">
             <TextLoop className="font-mono text-sm text-muted-foreground">
               <span>© 2025 houseinaboshaar.com</span>
