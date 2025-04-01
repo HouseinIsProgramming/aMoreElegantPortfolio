@@ -11,9 +11,9 @@ const TABS = [
 
 function NavMenu() {
   return (
-    <nav className="max-sm:mx-auto py-4">
+    <nav className="max-sm:mx-auto py-4 flex flex-col gap-3">
       <AnimatedBackground
-        className="rounded-lg w-full bg-zinc-900 dark:bg-zinc-100"
+        className="rounded-lg dark:bg-zinc-100 max-w-1/2 bg-zinc-800"
         transition={{
           type: "spring",
           bounce: 0.2,
@@ -30,7 +30,7 @@ function NavMenu() {
             transition={{ delay: index * 0.1 }}
             data-id={tab.link}
             type="button"
-            className="px-2 lg:block py-0.5 hover:cursor-pointer text-zinc-600 transition-colors duration-300 hover:text-white dark:text-zinc-400 dark:hover:text-zinc-900"
+            className="px-2 py-0.5 text-zinc-600 transition-colors duration-300 hover:dark:text-zinc-950 dark:text-zinc-400 hover:text-zinc-50"
             onClick={() => {
               const element = document.getElementById(tab.link);
               if (element) {
