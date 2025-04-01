@@ -128,12 +128,12 @@ export default function WorkExperience() {
                     </p>
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground mb-4">
+                    <p className="text-sm !mt-[5px] text-muted-foreground mb-4">
                       {experience.description}
                     </p>
 
                     <div className="space-y-3">
-                      {experience.technologies.map((techCategory, index) => (
+                      {experience.technologies?.map((techCategory, index) => (
                         <div key={index}>
                           <h4 className="text-sm font-light mb-2">
                             - {techCategory.title}
@@ -142,7 +142,7 @@ export default function WorkExperience() {
                             className="flex flex-wrap gap-2"
                             variants={badgeContainerVariants}
                           >
-                            {techCategory.tech.map((tech) => (
+                            {techCategory.tech?.map((tech) => (
                               <MotionBadge
                                 key={tech}
                                 variant="outline"
