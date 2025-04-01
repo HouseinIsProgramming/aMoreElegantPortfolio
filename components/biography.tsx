@@ -67,7 +67,7 @@ function Biography() {
           </Magnetic>
         </motion.li>
         <motion.li className="content-center" variants={listItemVariants}>
-          <Magnetic>
+          <Magnetic range={30}>
             <ModeToggle />
           </Magnetic>
         </motion.li>

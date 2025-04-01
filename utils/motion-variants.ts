@@ -3,6 +3,8 @@
  * These can be imported and used throughout the application to maintain consistent animations
  */
 
+import { filter } from "framer-motion/client";
+
 // Container variants with staggered children
 export const containerVariants = {
   hidden: { opacity: 0 },
@@ -47,15 +49,13 @@ export const badgeContainerVariants = {
 // Badge item variants with scale and blur
 export const badgeVariants = {
   hidden: {
+    filter: "blur(10px)",
     opacity: 0,
-    scale: 0.8,
-    filter: "blur(4px)",
   },
   visible: {
-    opacity: 1,
-    scale: 1,
     filter: "blur(0px)",
-    transition: { duration: 0.3 },
+    opacity: 1,
+    transition: { duration: 0 },
   },
 };
 
