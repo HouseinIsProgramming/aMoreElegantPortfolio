@@ -274,7 +274,7 @@ export default function TechStack() {
             <span>{tech}</span>
           </div>
           <div
-            className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity rounded-md duration-500 overflow-hidden"
+            className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity rounded-sm duration-500 overflow-hidden"
             style={{
               backgroundColor: color,
               color: textColor,
@@ -316,7 +316,7 @@ export default function TechStack() {
             Tech Stack
           </h2>
           <p className="mt-4 text-muted-foreground">
-            A comprehensive overview of my technical expertise and skills
+            An overview of my technical expertise and skills
           </p>
         </motion.div>
 
