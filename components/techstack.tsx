@@ -107,14 +107,13 @@ export default function TechStack() {
               <motion.div
                 className="flex flex-wrap gap-2"
                 variants={badgeContainerVariants}
-                initial="hidden"
-                animate="visible"
               >
-                {techStack.webDevelopment.map((tech) => (
+                {techStack.webDevelopment.map((tech, i) => (
                   <MotionBadge
                     key={tech}
                     variant="outline"
                     variants={badgeVariants}
+                    custom={i}
                   >
                     {tech}
                   </MotionBadge>
@@ -129,14 +128,13 @@ export default function TechStack() {
               <motion.div
                 className="flex flex-wrap gap-2"
                 variants={badgeContainerVariants}
-                initial="hidden"
-                animate="visible"
               >
-                {techStack.design.map((tech) => (
+                {techStack.design.map((tech, i) => (
                   <MotionBadge
                     key={tech}
                     variant="outline"
                     variants={badgeVariants}
+                    custom={i}
                   >
                     {tech}
                   </MotionBadge>
@@ -151,14 +149,13 @@ export default function TechStack() {
               <motion.div
                 className="flex flex-wrap gap-2"
                 variants={badgeContainerVariants}
-                initial="hidden"
-                animate="visible"
               >
-                {techStack.tooling.map((tech) => (
+                {techStack.tooling.map((tech, i) => (
                   <MotionBadge
                     key={tech}
                     variant="outline"
                     variants={badgeVariants}
+                    custom={i}
                   >
                     {tech}
                   </MotionBadge>
@@ -173,14 +170,13 @@ export default function TechStack() {
               <motion.div
                 className="flex flex-wrap gap-2"
                 variants={badgeContainerVariants}
-                initial="hidden"
-                animate="visible"
               >
-                {techStack.knowledge.map((tech) => (
+                {techStack.knowledge.map((tech, i) => (
                   <MotionBadge
                     key={tech}
                     variant="outline"
                     variants={badgeVariants}
+                    custom={i}
                   >
                     {tech}
                   </MotionBadge>
