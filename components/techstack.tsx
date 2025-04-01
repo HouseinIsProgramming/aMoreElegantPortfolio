@@ -10,6 +10,7 @@ import {
   badgeVariants,
   sectionHeaderVariants,
 } from "@/utils/motion-variants";
+import BorderSpotlight from "./motion-primitives/border-spotlight";
 
 // Create motion components from regular components
 const MotionCard = motion.create(Card);
@@ -116,7 +117,8 @@ export default function TechStack() {
           viewport={{ once: true, margin: "-50px" }}
         >
           {techStack.map((category, i) => (
-            <MotionCard key={i} variants={itemVariants}>
+            <MotionCard key={i} variants={itemVariants} className="relative">
+              <BorderSpotlight />
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold mb-4">{category.title}</h3>
                 <motion.div
