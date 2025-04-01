@@ -13,9 +13,10 @@ export default function Page() {
       <div className="container">
         <Biography />
         <About />
-        <WorkExperience />
-        <Separator className="my-4" />
+        <Separator className="my-4 mt-12" />
         <TechStack />
+        <Separator className="my-4" />
+        <WorkExperience />
         <ModeToggle />
       </div>
     </div>
