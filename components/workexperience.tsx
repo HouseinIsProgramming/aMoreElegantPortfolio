@@ -13,8 +13,8 @@ import {
 } from "@/utils/motion-variants";
 
 // Create motion components from regular components
-const MotionCard = motion(Card);
-const MotionBadge = motion(Badge);
+const MotionCard = motion.create(Card);
+const MotionBadge = motion.create(Badge);
 
 export default function PortfolioSection() {
   const workExperiences = [
@@ -128,7 +128,7 @@ export default function PortfolioSection() {
   return (
     <>
       <section className="py-12 md:py-16">
-        <div className="container px-4 md:px-6">
+        <div className="">
           <motion.div
             variants={sectionHeaderVariants}
             initial="hidden"
@@ -281,7 +281,7 @@ export default function PortfolioSection() {
       <Separator className="my-4" />
 
       <section className="py-12 md:py-16">
-        <div className="container px-4 md:px-6">
+        <div className="">
           <motion.div
             variants={sectionHeaderVariants}
             initial="hidden"
