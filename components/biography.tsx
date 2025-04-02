@@ -14,25 +14,27 @@ const MotionUL = motion.ul;
 
 function Biography() {
   return (
-    <div className="flex flex-col">
-      <TextEffect
-        preset="fade-in-blur"
-        as="h1"
-        className="text-4xl font-bold mt-10"
-      >
-        Housein Abo Shaar
-      </TextEffect>
+    <div className="flex flex-col justify-between h-full py-4 mt-2">
+      <div>
+        <TextEffect
+          preset="fade-in-blur"
+          as="h1"
+          className="text-4xl font-bold "
+        >
+          Housein Abo Shaar
+        </TextEffect>
 
-      <TextEffect as="h3">Front End Developer</TextEffect>
-      <TextEffect
-        preset="fade-in-blur"
-        as="p"
-        className="text-muted-foreground"
-        speedReveal={3}
-      >
-        with a burning passion for programming, learning new skills and
-        technologies and providing solutions.
-      </TextEffect>
+        <TextEffect as="h3">Front End Developer</TextEffect>
+        <TextEffect
+          preset="fade-in-blur"
+          as="p"
+          className="text-muted-foreground"
+          speedReveal={3}
+        >
+          with a burning passion for programming, learning new skills and
+          technologies and providing solutions.
+        </TextEffect>
+      </div>
 
       <NavMenu />
 
@@ -46,6 +48,7 @@ function Biography() {
           <Magnetic>
             <a
               href="https://www.linkedin.com/in/housein-abo-shaar-920292265/"
+              target="_blank"
               className="p-3"
             >
               <FaLinkedin size={36} />
@@ -54,7 +57,11 @@ function Biography() {
         </motion.li>
         <motion.li variants={listItemVariants}>
           <Magnetic>
-            <a href="mailto:housein.aboshaar@gmail.com" className="p-3">
+            <a
+              href="mailto:housein.aboshaar@gmail.com"
+              target="_blank"
+              className="p-3"
+            >
               <MdEmail size={36} />
             </a>
           </Magnetic>
@@ -63,6 +70,7 @@ function Biography() {
           <Magnetic>
             <a
               href="https://docs.houseinaboshaar.com/HousienAboShaar-Resume.pdf"
+              target="_blank"
               className="p-3"
             >
               <TbFileCv size={36} />
