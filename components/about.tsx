@@ -51,8 +51,8 @@ function About() {
         {`
           I am a ${age} year old and have been coding for as long as I can remember.
           Everything I know about coding is self taught, and I am always looking to learn more.
-          My passion for creating solutions and delivering them in an intuitive way led me to
-          pursue my career as a programmer. Which is why I am happy to say that I am currently on my ${yearsOfExperience}${yearSuffix} as professional developer.
+          My passion for tinkering with code, creating solutions and delivering them in an intuitive way led me to pursue my career as a programmer.
+           Which is why I am happy to say that I am currently on my ${yearsOfExperience}${yearSuffix} year as professional developer.
 
           `}
       </TextEffect>
