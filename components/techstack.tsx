@@ -287,7 +287,7 @@ export default function TechStack() {
   };
 
   return (
-    <section className="py-8 scroll-m-12" id="tech-stack">
+    <section className="py-8 pb-12 scroll-m-12" id="tech-stack">
       <div className="">
         <motion.div
           variants={sectionHeaderVariants}
