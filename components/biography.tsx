@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import { listVariants, listItemVariants } from "@/utils/motion-variants";
 import { ModeToggle } from "./light-dark-toggle";
 import NavMenu from "./navmenu";
+import { Button } from "@/components/ui/button";
 
 const MotionUL = motion.ul;
 
@@ -39,7 +40,7 @@ function Biography() {
       <NavMenu />
 
       <MotionUL
-        className="pointer-events-auto flex md:flex-col lg:flex-row justify-center gap-12 md:gap-0 md:w-1/2 lg:w-auto md:mx-auto md:grid md:grid-cols-2 lg:flex lg:gap-12 mt-12"
+        className="flex items-center justify-center gap-8 mt-12 md:grid md:grid-cols-2 md:place-items-center md:gap-x-14 md:gap-y-0 lg:flex lg:flex-row lg:gap-8"
         initial="hidden"
         animate="visible"
         variants={listVariants}
@@ -49,7 +50,7 @@ function Biography() {
             <a
               href="https://www.linkedin.com/in/housein-abo-shaar-920292265/"
               target="_blank"
-              className="p-3"
+              className="p-1"
             >
               <FaLinkedin size={36} />
             </a>
@@ -57,27 +58,31 @@ function Biography() {
         </motion.li>
         <motion.li variants={listItemVariants}>
           <Magnetic>
-            <a
-              href="mailto:housein.aboshaar@gmail.com"
-              target="_blank"
-              className="p-3"
-            >
-              <MdEmail size={36} />
-            </a>
+            <Button variant="outline" size="icon" style={{ padding: 1 }}>
+              <a
+                href="mailto:housein.aboshaar@gmail.com"
+                target="_blank"
+                className="p-1"
+              >
+                <MdEmail size={36} />
+              </a>
+            </Button>
           </Magnetic>
         </motion.li>
         <motion.li variants={listItemVariants}>
           <Magnetic>
-            <a
-              href="https://docs.houseinaboshaar.com/HousienAboShaar-Resume.pdf"
-              target="_blank"
-              className="p-3"
-            >
-              <TbFileCv size={36} />
-            </a>
+            <Button variant="outline" size="icon" style={{ padding: 1 }}>
+              <a
+                href="https://docs.houseinaboshaar.com/HousienAboShaar-Resume.pdf"
+                target="_blank"
+                className="p-1"
+              >
+                <TbFileCv size={36} />
+              </a>
+            </Button>
           </Magnetic>
         </motion.li>
-        <motion.li className="content-center" variants={listItemVariants}>
+        <motion.li variants={listItemVariants}>
           <Magnetic range={30}>
             <ModeToggle />
           </Magnetic>
