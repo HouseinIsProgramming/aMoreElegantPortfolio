@@ -336,7 +336,7 @@ export default function TechStack() {
         </motion.div>
         {/* Grid for Tech Categories */}
         <motion.div
-          className="grid gap-8 md:grid-cols-3"
+          className="md:grid xl:gap-8 lg:gap-4 lg:grid-cols-1 xl:grid-cols-3 md:gap-8 md:grid-cols-3"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -346,7 +346,9 @@ export default function TechStack() {
             <MotionCard
               key={category.title + i} // Use title for a more stable key if titles are unique
               variants={itemVariants}
-              className={`relative ${i === 0 ? "md:col-span-3" : ""}`} // Span first item across columns
+              className={`relative max-md:mt-4 ${
+                i === 0 ? "md:col-span-3 lg:col-span-1 xl:col-span-3" : ""
+              }`} // Span first item across columns
             >
               <BorderSpotlight />
               <CardContent className="p-6">
