@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import {
   containerVariants,
   itemVariants,
-  badgeContainerVariants,
   badgeVariants,
   sectionHeaderVariants,
 } from "@/utils/motion-variants";
@@ -35,17 +34,11 @@ import {
   SiMysql,
   SiAffinitydesigner,
   SiGnubash,
-  SiAdobeillustrator, // Added missing import if you intended to use a different icon for Illustrator
+  SiAdobeillustrator,
 } from "react-icons/si";
 import { IconType } from "react-icons";
-import React from "react"; // Import React
+import React from "react";
 
-// let isSafari = false;
-// if (typeof navigator !== 'undefined' && navigator.userAgent.includes("Safari") && !navigator.userAgent.includes('Chrome')) {
-//  isSafari = true;
-// }
-
-// Utility function to darken a color
 const darkenColor = (hex: string, percent: number): string => {
   let r = parseInt(hex.substring(1, 3), 16);
   let g = parseInt(hex.substring(3, 5), 16);
@@ -56,11 +49,10 @@ const darkenColor = (hex: string, percent: number): string => {
   return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
 };
 
-// Define interfaces for tech icons
 interface TechIcon {
   icon: IconType;
   color: string;
-  darkColor: string; // Kept for potential future use, though not used in current renderBadge
+  darkColor: string;
   textColor: string;
 }
 
@@ -68,9 +60,7 @@ interface TechIconMap {
   [key: string]: TechIcon;
 }
 
-// Create techIcons mapping (using SiAdobeillustrator for Illustrator for differentiation)
 const techIcons: TechIconMap = {
-  // Frontend
   HTML5: {
     icon: FaHtml5,
     color: "#E34F26",
@@ -125,7 +115,6 @@ const techIcons: TechIconMap = {
     darkColor: darkenColor("#FF3E00", 15),
     textColor: "white",
   },
-  // Backend
   "Node.js": {
     icon: FaNodeJs,
     color: "#339933",
@@ -150,26 +139,24 @@ const techIcons: TechIconMap = {
     darkColor: darkenColor("#3776AB", 15),
     textColor: "white",
   },
-  // Design
   "Adobe Photoshop": {
     icon: SiAdobephotoshop,
     color: "#31A8FF",
     darkColor: darkenColor("#31A8FF", 15),
     textColor: "white",
-  }, // Adjusted color slightly from original code example for clarity
+  },
   "Adobe Illustrator": {
     icon: SiAdobeillustrator,
     color: "#FF9A00",
     darkColor: darkenColor("#FF9A00", 15),
     textColor: "black",
-  }, // Used Illustrator icon
+  },
   "Affinity Designer": {
     icon: SiAffinitydesigner,
     color: "#1B72BE",
     darkColor: darkenColor("#1B72BE", 15),
     textColor: "white",
   },
-  // Tooling
   Git: {
     icon: FaGitAlt,
     color: "#F05032",
@@ -181,7 +168,7 @@ const techIcons: TechIconMap = {
     color: "#181717",
     darkColor: "#181717",
     textColor: "white",
-  }, // Adjusted color to match Next.js dark mode style
+  },
   Jest: {
     icon: SiJest,
     color: "#C21325",
@@ -193,7 +180,7 @@ const techIcons: TechIconMap = {
     color: "#2EAD33",
     darkColor: darkenColor("#2EAD33", 15),
     textColor: "white",
-  }, // Using FaCheckDouble as placeholder
+  },
   Lua: {
     icon: SiLua,
     color: "#2C2D72",
@@ -208,9 +195,8 @@ const techIcons: TechIconMap = {
   },
 };
 
-// Create motion components from regular components
-const MotionCard = motion(Card); // Simpler motion component creation
-const MotionBadge = motion(Badge); // Simpler motion component creation
+const MotionCard = motion(Card);
+const MotionBadge = motion(Badge);
 
 export default function TechStack() {
   const techStack = [
@@ -254,11 +240,9 @@ export default function TechStack() {
     },
   ];
 
-  // Render a badge with an icon if available
   const renderBadge = (tech: string, index: number) => {
     const techInfo = techIcons[tech];
 
-    // Render badge with icon and hover effect
     if (techInfo) {
       const { icon: Icon, color, textColor } = techInfo;
       return (
@@ -267,31 +251,21 @@ export default function TechStack() {
           variant="outline"
           variants={badgeVariants}
           custom={index}
-          className="flex items-center gap-1 transition-all duration-200 group relative p-0 overflow-hidden" // Adjusted for absolute positioning
-          style={
-            {
-              /* Base styles if needed */
-            }
-          }
+          className="flex items-center gap-1 transition-all duration-200 group relative p-0 overflow-hidden"
+          style={{}}
         >
-          {/* Visible part */}
           <div className="flex items-center gap-1 group-hover:opacity-0 transition-opacity duration-300 px-2.5 py-0.5">
-            {" "}
-            {/* Match ShadCN badge padding */}
             <Icon className="h-3.5 w-3.5" />
             <span>{tech}</span>
           </div>
-          {/* Hover part - absolute positioned */}
           <div
-            className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300" // Removed rounded-sm as parent badge handles rounding
+            className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             style={{
               backgroundColor: color,
               color: textColor,
             }}
           >
             <div className="flex items-center gap-1">
-              {" "}
-              {/* No extra padding needed here */}
               <Icon className="h-3.5 w-3.5" />
               <span>{tech}</span>
             </div>
@@ -300,7 +274,6 @@ export default function TechStack() {
       );
     }
 
-    // Render simple badge if no icon defined
     return (
       <MotionBadge
         key={`${tech}-${index}`}
@@ -316,9 +289,6 @@ export default function TechStack() {
   return (
     <section className="py-8 scroll-m-12" id="tech-stack">
       <div className="">
-        {" "}
-        {/* Consider adding container mx-auto px-4 if needed */}
-        {/* Section Header */}
         <motion.div
           variants={sectionHeaderVariants}
           initial="hidden"
@@ -334,7 +304,6 @@ export default function TechStack() {
             An overview of my technical expertise and skills
           </p>
         </motion.div>
-        {/* Grid for Tech Categories */}
         <motion.div
           className="md:grid xl:gap-8 lg:gap-4 lg:grid-cols-1 xl:grid-cols-3 md:gap-8 md:grid-cols-3"
           variants={containerVariants}
@@ -344,32 +313,21 @@ export default function TechStack() {
         >
           {techStack.map((category, i) => (
             <MotionCard
-              key={category.title + i} // Use title for a more stable key if titles are unique
+              key={category.title + i}
               variants={itemVariants}
               className={`relative max-md:mt-4 ${
                 i === 0 ? "md:col-span-3 lg:col-span-1 xl:col-span-3" : ""
-              }`} // Span first item across columns
+              }`}
             >
               <BorderSpotlight />
               <CardContent className="p-6">
-                {" "}
-                {/* Adjusted padding */}
-                <h3 className="text-xl font-semibold mb-4">
-                  {category.title}
-                </h3>{" "}
-                {/* Adjusted font weight and margin */}
-                <motion.div
-                  className="flex flex-wrap gap-2"
-                  variants={badgeContainerVariants} // Apply stagger children here
-                >
-                  {/* == SIMPLIFIED RENDERING LOGIC == */}
-
-                  {/* Case 1: Knowledge - Simple list of strings, no icons */}
+                <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
+                <motion.div className="flex flex-wrap gap-2">
                   {category.title === "Knowledge" &&
                     Array.isArray(category.items) &&
                     category.items.map(
                       (item, j) =>
-                        typeof item === "string" && ( // Ensure item is a string before rendering
+                        typeof item === "string" && (
                           <MotionBadge
                             key={`knowledge-${j}`}
                             variant="outline"
@@ -380,51 +338,38 @@ export default function TechStack() {
                           </MotionBadge>
                         )
                     )}
-
-                  {/* Case 2: Design / Tooling - Flat list of strings, use renderBadge */}
                   {(category.title === "Design" ||
                     category.title === "Tooling") &&
                     Array.isArray(category.items) &&
                     category.items.map(
                       (item, j) =>
-                        typeof item === "string" && renderBadge(item, j) // Ensure item is string
+                        typeof item === "string" && renderBadge(item, j)
                     )}
-
-                  {/* Case 3: Web Development - Nested structure {frontend: [...], backend: [...]} */}
                   {category.title === "Web Development" &&
                     Array.isArray(category.items) &&
                     category.items.map(
                       (subCategory, j) =>
                         typeof subCategory === "object" &&
-                        subCategory !== null && // Check it's an object
-                        Object.entries(subCategory).map(
-                          (
-                            [subTitle, techs] // Get subtitle (frontend/backend) and techs array
-                          ) => (
-                            // React Fragment or div needed to group subtitle and badges for each subcategory
-                            <div
-                              key={`${subTitle}-${j}`}
-                              className="w-full mb-3 last:mb-0"
-                            >
-                              {" "}
-                              {/* Group frontend/backend visually */}
-                              <sub className="capitalize text-sm text-muted-foreground font-medium block mb-2">
-                                {subTitle}
-                              </sub>
-                              <div className="flex flex-wrap gap-2">
-                                {Array.isArray(techs) && // Check techs is an array
-                                  techs.map(
-                                    (tech, k) =>
-                                      typeof tech === "string" &&
-                                      renderBadge(tech, k) // Ensure tech is a string
-                                  )}
-                              </div>
+                        subCategory !== null &&
+                        Object.entries(subCategory).map(([subTitle, techs]) => (
+                          <div
+                            key={`${subTitle}-${j}`}
+                            className="w-full mb-3 last:mb-0"
+                          >
+                            <sub className="capitalize text-sm text-muted-foreground font-medium block mb-2">
+                              {subTitle}
+                            </sub>
+                            <div className="flex flex-wrap gap-2">
+                              {Array.isArray(techs) &&
+                                techs.map(
+                                  (tech, k) =>
+                                    typeof tech === "string" &&
+                                    renderBadge(tech, k)
+                                )}
                             </div>
-                          )
-                        )
+                          </div>
+                        ))
                     )}
-
-                  {/* == END OF SIMPLIFIED LOGIC == */}
                 </motion.div>
               </CardContent>
             </MotionCard>
