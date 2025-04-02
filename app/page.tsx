@@ -4,10 +4,12 @@ import { Separator } from "@/components/ui/separator";
 import WorkExperience from "@/components/workexperience";
 import TechStack from "@/components/techstack";
 import { TextLoop } from "@/components/motion-primitives/text-loop";
+import MouseSpotLight from "@/components/ui/mouseSpotlight";
 
 export default function Page() {
   return (
     <div>
+      <MouseSpotLight />
       <div className="container lg:grid lg:grid-cols-[400px_minmax(0,780px)] lg:gap-8">
         <div className="lg:sticky max-lg:pt-4 lg:h-[85vh] top-[7.5vh] lg:top-24 pr-6 lg:border-r">
           <Biography />
