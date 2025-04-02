@@ -28,14 +28,14 @@ export default function Page() {
             className="flex sm:flex-row pt-4 flex-col-reverse gap-4 sm:gap-0 justify-between px-4 lg:col-span-2 lg:px-12 pb-4 scroll-m-12"
           >
             <a href="https://github.com/HouseinIsProgramming/aMoreElegantPortfolio">
-              <TextLoop className="font-mono text-sm text-muted-foreground ">
+              <TextLoop className="font-mono text-sm text-muted-foreground">
                 <span>© 2025 houseinaboshaar.com</span>
                 <span className="flex items-center gap-1">
                   get your own template <ExternalLink size={12} />
                 </span>
               </TextLoop>
             </a>
-            <div className="flex gap-3 pt-0.5 lg:pt-0 flex-col xl:flex-row xl:divide-x sm:divide-x-0 divide-white sm:items-end">
+            <div className="flex gap-3 flex-col xl:flex-row xl:divide-x mb-0.5 sm:divide-x-0 divide-white sm:items-end">
               <a
                 href="linke.com"
                 className="text-sm flex gap-1 items-center xl:pr-3 md:pr-0"
