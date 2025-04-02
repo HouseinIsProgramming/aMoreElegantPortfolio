@@ -24,6 +24,23 @@ function About() {
     yearsOfExperience--;
   }
 
+  const yearSuffix = (() => {
+    if (yearsOfExperience % 100 >= 11 && yearsOfExperience % 100 <= 13) {
+      return "th";
+    }
+
+    switch (yearsOfExperience % 10) {
+      case 1:
+        return "st";
+      case 2:
+        return "nd";
+      case 3:
+        return "rd";
+      default:
+        return "th";
+    }
+  })();
+
   return (
     <div id="about" className="mt-18 scroll-m-12">
       <TextEffect delay={0.3} preset="fade-in-blur" as="h2">
@@ -32,7 +49,11 @@ function About() {
 
       <TextEffect as="p" per="line" delay={0.6}>
         {`
-          I am a ${age} year old Frontend web developer based in Vienna with ${yearsOfExperience} years of experience 
+          I am a ${age} year old and have been coding for as long as I can remember.
+          Everything I know about coding is self taught, and I am always looking to learn more.
+          My passion for creating solutions and delivering them in an intuitive way led me to
+          pursue my career as a programmer. Which is why I am happy to say that I am currently on my ${yearsOfExperience}${yearSuffix} as professional developer.
+
           `}
       </TextEffect>
     </div>

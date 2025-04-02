@@ -6,7 +6,7 @@ const MouseSpotLight = () => {
   const [mousePosition, setMousePosition] = useState({ x: -100, y: -100 });
 
   useEffect(() => {
-    const handleMouseMove = (event) => {
+    const handleMouseMove = (event: MouseEvent) => {
       setMousePosition({ x: event.clientX, y: event.clientY });
     };
 
@@ -17,7 +17,7 @@ const MouseSpotLight = () => {
     };
   }, []);
 
-  const spotlightStyle = {
+  const spotlightStyle: React.CSSProperties = {
     position: "fixed",
     top: 0,
     left: 0,
