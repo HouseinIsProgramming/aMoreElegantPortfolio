@@ -1,3 +1,4 @@
+"use client";
 import { Spotlight } from "@/components/motion-primitives/spotlight";
 
 function BorderSpotlightSideBar() {

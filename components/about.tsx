@@ -24,35 +24,38 @@ function About() {
     yearsOfExperience--;
   }
 
-  const yearSuffix = (() => {
-    if (yearsOfExperience % 100 >= 11 && yearsOfExperience % 100 <= 13) {
-      return "th";
-    }
+  // const currentOrdinal = (number: number) => {
+  //   if (number % 100 >= 11 && number % 100 <= 13) {
+  //     return "th";
+  //   }
 
-    switch (yearsOfExperience % 10) {
-      case 1:
-        return "st";
-      case 2:
-        return "nd";
-      case 3:
-        return "rd";
-      default:
-        return "th";
-    }
-  })();
+  //   switch (number % 10) {
+  //     case 1:
+  //       return "st";
+  //     case 2:
+  //       return "nd";
+  //     case 3:
+  //       return "rd";
+  //     default:
+  //       return "th";
+  //   }
+  // };
+
+  // const yearSuffix = currentOrdinal(yearsOfExperience);
+  // const thisYearSuffix = currentOrdinal(yearsOfExperience + 1);
 
   return (
-    <div id="about" className="mt-18 scroll-m-12">
+    <div id="about" className="mt-13 scroll-m-12">
       <TextEffect delay={0.3} preset="fade-in-blur" as="h2">
         About
       </TextEffect>
 
       <TextEffect as="p" per="line" delay={0.6}>
         {`
-          I am a ${age} year old and have been coding for as long as I can remember.
+          I am ${age} years old and have been coding for as long as I can remember.
           Everything I know about coding is self taught, and I am always looking to learn more.
           My passion for tinkering with code, creating solutions and delivering them in an intuitive way led me to pursue my career as a programmer.
-           Which is why I am happy to say that I am currently on my ${yearsOfExperience}${yearSuffix} year as professional developer.
+           Which is why I am happy to say that I currently have ${yearsOfExperience} years as professional developer behind me and I am looking forward to what's ahead.
 
           `}
       </TextEffect>

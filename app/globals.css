@@ -164,3 +164,22 @@ sub {
 .bg-card {
   @apply shadow-lg;
 }
+
+.fancy-conic-spotlight {
+  /* Light Mode: Equivalent to from-red-600/70 via-purple-600/70 to-blue-600/70 */
+  background-image: conic-gradient(
+    from 270deg,
+    rgba(255, 16, 16, 0.8),
+    rgba(152, 42, 255, 0.8),
+    rgba(18, 93, 255, 0.8)
+  );
+}
+
+.dark .fancy-conic-spotlight {
+  background-image: conic-gradient(
+    from 270deg,
+    rgb(17, 176, 255),
+    rgba(152, 42, 255),
+    rgb(255, 52, 52)
+  );
+}
