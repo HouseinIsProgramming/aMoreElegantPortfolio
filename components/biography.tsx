@@ -14,7 +14,7 @@ const MotionUL = motion.ul;
 
 function Biography() {
   return (
-    <div className="flex flex-col justify-between h-full py-4 mt-2">
+    <div className="flex flex-col md:flex-row lg:flex-col justify-between h-full py-4 mt-2">
       <div>
         <TextEffect
           preset="fade-in-blur"
@@ -39,7 +39,7 @@ function Biography() {
       <NavMenu />
 
       <MotionUL
-        className="pointer-events-auto flex w-full justify-center gap-12 mt-12"
+        className="pointer-events-auto flex md:flex-col lg:flex-row justify-center gap-12 md:gap-0 md:w-1/2 lg:w-auto md:mx-auto md:grid md:grid-cols-2 lg:flex lg:gap-12 mt-12"
         initial="hidden"
         animate="visible"
         variants={listVariants}
