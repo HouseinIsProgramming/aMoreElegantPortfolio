@@ -31,7 +31,7 @@ export default function Page() {
               <TextLoop className="font-mono text-sm text-muted-foreground">
                 <span>© 2025 houseinaboshaar.com</span>
                 <span className="flex items-center gap-1">
-                  get your own template <ExternalLink size={12} />
+                  make it your own <ExternalLink size={12} />
                 </span>
               </TextLoop>
             </a>
