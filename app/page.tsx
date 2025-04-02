@@ -9,10 +9,10 @@ export default function Page() {
   return (
     <div>
       <div className="container lg:grid lg:grid-cols-[400px_minmax(0,780px)] lg:gap-8">
-        <div className="sticky lg:h-[85vh] top-[7.] lg:top-24 pr-6 lg:border-r">
+        <div className="sticky lg:h-[85vh] top-[7.5vh] lg:top-24 pr-6 lg:border-r">
           <Biography />
         </div>
-        <div className="">
+        <div className="my-[7.5vh]">
           <About />
           <Separator className="my-4 mt-12" />
           <TechStack />

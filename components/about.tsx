@@ -25,7 +25,7 @@ function About() {
   }
 
   return (
-    <div id="about" className="mt-[53px] scroll-m-12">
+    <div id="about" className="mt-18 scroll-m-12">
       <TextEffect delay={0.3} preset="fade-in-blur" as="h2">
         About
       </TextEffect>
