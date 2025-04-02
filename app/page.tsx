@@ -5,7 +5,8 @@ import WorkExperience from "@/components/workexperience";
 import TechStack from "@/components/techstack";
 import { TextLoop } from "@/components/motion-primitives/text-loop";
 import MouseSpotLight from "@/components/ui/mouseSpotlight";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Send } from "lucide-react";
+import { MdPersonAddAlt } from "react-icons/md";
 
 export default function Page() {
   return (
@@ -34,9 +35,20 @@ export default function Page() {
                 </span>
               </TextLoop>
             </a>
-            <a href="mailto:housein.aboshaar@gmail.com" className="text-sm">
-              Send me an email
-            </a>
+            <div className="flex gap-3 pt-0.5 lg:pt-0 flex-col xl:flex-row xl:divide-x sm:divide-x-0 divide-white sm:items-end">
+              <a
+                href="linke.com"
+                className="text-sm flex gap-1 items-center xl:pr-3 md:pr-0"
+              >
+                connect with me on LinkedIn <Send size={12} />
+              </a>
+              <a
+                href="mailto:housein.aboshaar@gmail.com"
+                className="text-sm flex gap-1 items-center"
+              >
+                Send me an email <MdPersonAddAlt size={12} />
+              </a>
+            </div>
           </footer>
         </div>
       </div>
