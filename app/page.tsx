@@ -40,13 +40,13 @@ export default function Page() {
                 href="linke.com"
                 className="text-sm flex gap-1 items-center xl:pr-3 md:pr-0"
               >
-                connect with me on LinkedIn <Send size={12} />
+                connect with me on LinkedIn <MdPersonAddAlt size={18} />
               </a>
               <a
                 href="mailto:housein.aboshaar@gmail.com"
                 className="text-sm flex gap-1 items-center"
               >
-                Send me an email <MdPersonAddAlt size={12} />
+                Send me an email <Send size={16} />
               </a>
             </div>
           </footer>
