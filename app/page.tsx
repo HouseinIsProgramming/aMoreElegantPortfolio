@@ -6,7 +6,6 @@ import TechStack from "@/components/techstack";
 import { TextLoop } from "@/components/motion-primitives/text-loop";
 import MouseSpotLight from "@/components/ui/mouseSpotlight";
 import { ExternalLink } from "lucide-react";
-import { small } from "framer-motion/client";
 
 export default function Page() {
   return (
