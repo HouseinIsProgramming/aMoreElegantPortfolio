@@ -14,7 +14,7 @@ const MotionUL = motion.ul;
 
 function Biography() {
   return (
-    <div className="flex flex-col lg:border-r">
+    <div className="flex flex-col">
       <TextEffect
         preset="fade-in-blur"
         as="h1"

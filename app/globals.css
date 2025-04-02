@@ -134,10 +134,10 @@
     max-width: 1024px;
   }
   @media (min-width: 1280px) {
-    max-width: 1160px;
+    max-width: 1180px;
   }
   @media (min-width: 1536px) {
-    max-width: 1160px;
+    max-width: 1180px;
   }
 }
 
