@@ -37,7 +37,7 @@ export default function Page() {
             </a>
             <div className="flex gap-3 flex-col xl:flex-row xl:divide-x mb-0.5 sm:divide-x-0 divide-white sm:items-end">
               <a
-                href="linke.com"
+                href="https://www.linkedin.com/in/housein-abo-shaar-920292265/"
                 className="text-sm flex gap-1 items-center xl:pr-3 md:pr-0"
               >
                 connect with me on LinkedIn <MdPersonAddAlt size={18} />
