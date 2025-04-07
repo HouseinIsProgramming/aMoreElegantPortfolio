@@ -1,4 +1,5 @@
 import Biography from "@/components/biography";
+import ProjectList from "@/components/project-list";
 import About from "@/components/about";
 import { Separator } from "@/components/ui/separator";
 import WorkExperience from "@/components/workexperience";
@@ -24,10 +25,8 @@ export default function Page() {
           <MiniFooter />
         </div>
       </section>
-
       <Separator className="container my-8" />
-
-      <section className="container"></section>
+      <ProjectList />
     </div>
   );
 }

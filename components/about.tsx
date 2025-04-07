@@ -45,7 +45,7 @@ function About() {
   // const thisYearSuffix = currentOrdinal(yearsOfExperience + 1);
 
   return (
-    <div id="about" className="lg:mt-13 scroll-m-12">
+    <div id="about" className="lg:mt-32 scroll-m-12">
       <TextEffect delay={0.3} preset="fade-in-blur" as="h2">
         About
       </TextEffect>
