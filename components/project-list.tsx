@@ -27,7 +27,6 @@ export default function ProjectList() {
       </motion.div>
       <div className="flex-col sm:px-12 lg:px-6 lg:flex-row flex lg:*:basis-1/2 *:basis-full *:w-full gap-8 mb-64">
         <MorphingDialogProject />
-        <MorphingDialogProject />
       </div>
     </section>
   );
