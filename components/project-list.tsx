@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { sectionHeaderVariants } from "@/utils/motion-variants";
 import { TextEffect } from "./motion-primitives/text-effect";
+import { MorphingDialogProject } from "./morphing-project";
 
 export default function ProjectList() {
   return (
@@ -24,6 +25,10 @@ export default function ProjectList() {
           own tools like these is by far the best perk of being a programmer.
         </TextEffect>
       </motion.div>
+      <div className="flex-col sm:px-12 lg:px-6 lg:flex-row flex lg:*:basis-1/2 *:basis-full *:w-full gap-8 mb-64">
+        <MorphingDialogProject />
+        <MorphingDialogProject />
+      </div>
     </section>
   );
 }
