@@ -96,7 +96,7 @@ export default function WorkExperience() {
   ];
 
   return (
-    <section id="work-experience" className="py-8 scroll-m-12">
+    <section id="work-experience" className="py-3 scroll-m-12">
       <div className="">
         <motion.div
           variants={sectionHeaderVariants}

@@ -287,7 +287,7 @@ export default function TechStack() {
   };
 
   return (
-    <section className="py-8 pb-12 scroll-m-12" id="tech-stack">
+    <section className="py-3 pb-12 scroll-m-12" id="tech-stack">
       <div className="">
         <motion.div
           variants={sectionHeaderVariants}
@@ -336,14 +336,14 @@ export default function TechStack() {
                           >
                             {item}
                           </MotionBadge>
-                        )
+                        ),
                     )}
                   {(category.title === "Design" ||
                     category.title === "Tooling") &&
                     Array.isArray(category.items) &&
                     category.items.map(
                       (item, j) =>
-                        typeof item === "string" && renderBadge(item, j)
+                        typeof item === "string" && renderBadge(item, j),
                     )}
                   {category.title === "Web Development" &&
                     Array.isArray(category.items) &&
@@ -364,11 +364,11 @@ export default function TechStack() {
                                 techs.map(
                                   (tech, k) =>
                                     typeof tech === "string" &&
-                                    renderBadge(tech, k)
+                                    renderBadge(tech, k),
                                 )}
                             </div>
                           </div>
-                        ))
+                        )),
                     )}
                 </motion.div>
               </CardContent>
