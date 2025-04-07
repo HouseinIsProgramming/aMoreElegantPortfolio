@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react"; // Import React
 import {
   MorphingDialog,
@@ -8,25 +10,43 @@ import {
   MorphingDialogSubtitle,
   MorphingDialogClose,
   MorphingDialogContainer,
-} from "@/components/motion-primitives/morphing-dialog"; // Assuming this path is correct
-import { ScrollArea } from "@radix-ui/react-scroll-area";
+} from "@/components/motion-primitives/morphing-dialog";
+import { ScrollArea } from "./ui/scroll-area";
 import { Button } from "./ui/button"; // Assuming this path is correct
 import Link from "next/link";
 import { ChevronRight, ExternalLink } from "lucide-react";
 
+// --- Define TypeScript Interfaces ---
+
+interface ProjectDetail {
+  heading: string;
+  paragraphs: string[];
+}
+
+interface ProjectType {
+  id: string;
+  imageSrc: string;
+  imageAlt: string;
+  title: string;
+  subtitle: string;
+  link1Href?: string; // Optional link (e.g., live demo, main link)
+  link2Href?: string; // Optional link (e.g., repo link)
+  details: ProjectDetail[];
+}
+
 // --- 1. Define the Data Structure and Sample Data ---
-// Structure matches only the dynamic content fields from your original component
-const projectsData = [
+// Apply the ProjectType interface to the array
+const projectsData: ProjectType[] = [
   {
     id: "pixeldoodle",
     imageSrc:
       "https://m.media-amazon.com/images/I/71skAxiMC2L._AC_UF1000,1000_QL80_.jpg",
-    imageAlt: "What I Talk About When I Talk About Running - book cover", // Consider making this specific per project
+    imageAlt: "PixelDoodle Project Mockup", // Made alt text more specific
     title: "PixelDoodle",
     subtitle:
       "Turn your hand written notes into images with transparent backgrounds in bulk.",
-    link1Href: "#", // Replace with actual primary link
-    link2Href: "#", // Replace with actual secondary link
+    // link1Href: "#", // Example: This project might only have one link
+    link2Href: "#", // Replace with actual secondary link (e.g., GitHub)
     details: [
       {
         heading: "Why I made this:",
@@ -50,38 +70,39 @@ const projectsData = [
   },
   {
     id: "TypeMotion",
-    imageSrc:
-      "https://m.media-amazon.com/images/I/71skAxiMC2L._AC_UF1000,1000_QL80_.jpg",
-    imageAlt: "What I Talk About When I Talk About Running - book cover",
+    imageSrc: "https://placehold.co/400x600/729B79/e1e4dc?text=TypeMotion", // Example image
+    imageAlt: "TypeMotion Project Mockup", // Made alt text more specific
     title: "TypeMotion",
     subtitle: "Easy text animation prototyping",
-    link1Href: "#", // Replace with actual primary link
-    link2Href: "#", // Replace with actual secondary link
+    link1Href: "#", // Replace with actual primary link (e.g., Live Site)
+    link2Href: "#", // Replace with actual secondary link (e.g., GitHub)
     details: [
       {
         heading: "Why I made this:",
         paragraphs: [
-          "There is something about having a pen in my hand that makes able to think clearer, when I write something down I am a lot more likely to be able to understand it better remember it longer.",
-          "Spaced repeatition has been proven time and time again to be one of the effective methods of learning something new.",
+          "Creating engaging text animations often requires complex tools or libraries. TypeMotion aims to simplify this for common use cases.",
         ],
       },
       {
-        heading: "The Problem:",
-        paragraphs: ["finding hand written notes is just innefficent..."],
-      },
-      {
-        heading: "The Solution:",
+        heading: "Key Features:",
         paragraphs: [
-          "And this is why PixelDoodle was made, I can just write something down, take a picture of it, then using PixelDoolde, remove the background and be left with was written down. and it can handle multiple images aswell.",
-          "now these pictures can be used within Notion/Obsidian (with dark and light modes support) and be able to use the sorting and searching functions within those programs, which are undoublty better that looking through hand written notes.",
+          "Real-time preview, various animation presets, easy export options.",
         ],
       },
     ],
   },
 ];
 
-function ProjectDialogItem({ project }) {
-  if (!project) return null;
+// Define props interface for the item component
+interface ProjectDialogItemProps {
+  project: ProjectType;
+}
+
+// --- 2. Create the Component for a Single Project Dialog ---
+// Added types for props and component
+const ProjectDialogItem: React.FC<ProjectDialogItemProps> = ({ project }) => {
+  // No null check needed due to TypeScript type guarantee if used correctly
+  // (unless project could truly be undefined/null passed from parent)
 
   return (
     <MorphingDialog
@@ -112,17 +133,29 @@ function ProjectDialogItem({ project }) {
             </MorphingDialogTitle>
             <MorphingDialogSubtitle className="!text-lg flex flex-col gap-4 text-left text-gray-600 sm:text-xs">
               {project.subtitle}
-              <div className="space-x-2">
+              <div className="space-x-2 space-y-2">
                 <Button asChild className="relative z-50">
                   <div>
-                    Read more <ChevronRight />
+                    Read more <ChevronRight className="inline h-4 w-4" />{" "}
                   </div>
                 </Button>
-                <Button asChild variant="outline" className="">
-                  <Link target="_blank" href={project.link1Href}>
-                    Visit site <ExternalLink />
-                  </Link>
-                </Button>
+                {project.link1Href && (
+                  <Button asChild variant="outline" className="">
+                    <Link target="_blank" href={project.link1Href}>
+                      Visit site{" "}
+                      <ExternalLink className="inline h-4 w-4 ml-1" />{" "}
+                      {/* Added size/margin */}
+                    </Link>
+                  </Button>
+                )}
+                {project.link2Href &&
+                  !project.link1Href && ( // Show only if link1 doesn't exist
+                    <Button asChild variant="outline" className="">
+                      <Link target="_blank" href={project.link2Href}>
+                        Source <ExternalLink className="inline h-4 w-4 ml-1" />
+                      </Link>
+                    </Button>
+                  )}
               </div>
             </MorphingDialogSubtitle>
           </div>
@@ -139,9 +172,9 @@ function ProjectDialogItem({ project }) {
             <div className="relative p-6">
               <div className="flex justify-center py-10">
                 <MorphingDialogImage
-                  src={project.imageSrc} // Dynamic prop
-                  alt={project.imageAlt} // Dynamic prop
-                  className="h-auto w-[200px]" // Original classes preserved
+                  src={project.imageSrc}
+                  alt={project.imageAlt}
+                  className="h-auto w-[200px]"
                 />
               </div>
               <div className="">
@@ -151,6 +184,7 @@ function ProjectDialogItem({ project }) {
                 <MorphingDialogSubtitle className="!text-lg flex flex-col gap-4 text-left text-gray-600 sm:text-xs">
                   {project.subtitle}
                   <div className="space-x-2">
+                    {/* These buttons remain static as per original */}
                     <Button className="">something</Button>
                     <Button variant="outline" className="">
                       something
@@ -158,11 +192,13 @@ function ProjectDialogItem({ project }) {
                   </div>
                 </MorphingDialogSubtitle>
                 <div className="text-sm text-gray-700">
+                  {/* Map over details, checking if it exists */}
                   {project.details?.map((detail, index) => (
                     <React.Fragment key={`${project.id}-detail-${index}`}>
                       <h3 className={`mt-4 ${index === 1 ? "!mb-0" : ""}`}>
                         {detail.heading}
                       </h3>
+                      {/* Map over paragraphs, checking if it exists */}
                       {detail.paragraphs?.map((paragraph, pIndex) => (
                         <p
                           key={`${project.id}-detail-${index}-p-${pIndex}`}
@@ -182,9 +218,11 @@ function ProjectDialogItem({ project }) {
       </MorphingDialogContainer>
     </MorphingDialog>
   );
-}
+};
 
-export function MorphingDialogProject() {
+// --- 3. Create the Component to Display the List of Projects ---
+// Added type for the component
+export const MorphingDialogProject: React.FC = () => {
   return (
     <div className="flex flex-wrap justify-center gap-4 p-4">
       {projectsData.map((project) => (
@@ -192,6 +230,7 @@ export function MorphingDialogProject() {
       ))}
     </div>
   );
-}
+};
 
+// Export the main display component
 export default MorphingDialogProject;
