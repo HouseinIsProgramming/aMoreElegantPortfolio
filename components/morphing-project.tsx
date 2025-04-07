@@ -89,8 +89,9 @@ export function MorphingDialogProject() {
                     </Button>
                   </div>
                 </MorphingDialogSubtitle>
-                <div className="mt-4 text-sm text-gray-700">
-                  <p>
+                <div className="text-sm text-gray-700">
+                  <h3 className="mt-4">Why I made this:</h3>
+                  <p className="!mt-0">
                     There is something about having a pen in my hand that makes
                     able to think clearer, when I write something down I am a
                     lot more likely to be able to understand it better remember
@@ -100,11 +101,12 @@ export function MorphingDialogProject() {
                     Spaced repeatition has been proven time and time again to be
                     one of the effective methods of learning something new.
                   </p>
-                  <p>
-                    Problem is: finding hand written notes is just
-                    innefficent...
+                  <h3 className="mt-4 !mb-0">The Problem:</h3>
+                  <p className="!mt-0">
+                    finding hand written notes is just innefficent...
                   </p>
-                  <p>
+                  <h3 className="mt-4">The Solution:</h3>
+                  <p className="mt-0">
                     And this is why PixelDoodle was made, I can just write
                     something down, take a picture of it, then using
                     PixelDoolde, remove the background and be left with was
