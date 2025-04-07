@@ -111,7 +111,10 @@ export function MorphingDialogProject() {
                     written down. and it can handle multiple images aswell.
                   </p>
                   <p>
-                    now these pictures can be used within Notion/Obsidian and
+                    now these pictures can be used within Notion/Obsidian (with
+                    dark and light modes support) and be able to use the sorting
+                    and searching functions within those programs, which are
+                    undoublty better that looking through hand written notes.
                   </p>
                 </div>
               </div>
