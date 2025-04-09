@@ -27,7 +27,7 @@ export const MorphingBentocard = (props) => {
   return (
     <>
       <MotionCard
-        layoutId={layoutId}
+        layoutId={layoutId + "card"}
         onClick={() => setIsOpenDialog(true)}
         className={clsx(
           "h-80 relative px-3 transition-shadow bg-card duration-500 hover:!shadow-2xl w-full lg:px-4 pt-8 pb-5 overflow-y-hidden",
@@ -54,7 +54,12 @@ export const MorphingBentocard = (props) => {
             >
               {props.data.tag}
             </sub>
-            <h2>{props.data.title}</h2>
+            <motion.h2
+              layoutId={layoutId + "title"}
+              transition={{ duration: 0.2 }}
+            >
+              {props.data.title}
+            </motion.h2>
             <div className="relative">
               {props.data.subtitle}
               <p className="absolute translate-y-1.5">
@@ -80,16 +85,15 @@ export const MorphingBentocard = (props) => {
             <div className="fixed col-span-2 inset-0 z-50 flex items-center justify-center p-4">
               <MotionCard
                 key="modal-card"
-                layoutId={layoutId}
+                layoutId={layoutId + "card"}
                 className="relative z-50 w-2xl md:max-w-[80vw] xl:w-[50vw] bg-card p-6 rounded-lg shadow-lg max-h-[90vh] overflow-auto"
-                initial={{ scale: 0.9 }}
-                animate={{ scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.2 }}
               >
                 <MotionCardContent className="flex flex-col justify-between">
                   <div>
-                    <h2>{props.data.title}</h2>
+                    <motion.h2 className="mt-48" layoutId={layoutId + "title"}>
+                      {props.data.title}
+                    </motion.h2>
                     <div className="relative mt-2">
                       {props.data.subtitle}
                       <p className="absolute translate-y-1.5 opacity-70">
