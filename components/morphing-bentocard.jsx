@@ -5,11 +5,18 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 import BorderSpotlight from "./motion-primitives/border-spotlight";
+import clsx from "clsx";
+import { transitionSpring } from "@/utils/motion-variants";
 
 const MotionCard = motion(Card);
 const MotionCardContent = motion(CardContent);
 
 export const MorphingBentocard = (props) => {
+  const spanClass = clsx({
+    "md:col-span-1": props.data.span === 1,
+    "md:col-span-2": props.data.span === 2,
+  });
+
   const [isHovered, setIsHovered] = useState(false);
   const [isOpenDialog, setIsOpenDialog] = useState(false);
 
@@ -22,17 +29,25 @@ export const MorphingBentocard = (props) => {
       <MotionCard
         layoutId={layoutId}
         onClick={() => setIsOpenDialog(true)}
-        className={`h-80 relative px-3 transition-shadow bg-card duration-500 hover:!shadow-2xl w-full lg:px-4 pt-8 pb-5 overflow-y-hidden md:col-span-${props.data.span}`}
+        className={clsx(
+          "h-80 relative px-3 transition-shadow bg-card duration-500 hover:!shadow-2xl w-full lg:px-4 pt-8 pb-5 overflow-y-hidden",
+          spanClass,
+        )}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        layout
+        // style={{ columnSpan: props.data.span }}
       >
         <BorderSpotlight />
 
-        <MotionCardContent className="flex flex-col h-full justify-between">
+        <MotionCardContent
+          className="flex flex-col h-full justify-between"
+          layout
+        >
           <FolderArrowSVG isHovered={isHovered} />
           <motion.div
             animate={{ translateY: isHovered ? -64 : 0 }}
-            transition={{ ease: "easeOut", duration: 0.2 }}
+            transition={transitionSpring}
           >
             <sub
               className={`transition-colors duration-500 ${isHovered ? "!text-[#4285F4]" : ""}`}
@@ -134,7 +149,7 @@ const FolderArrowSVG = ({ isHovered }) => {
         height: isHovered ? 24 : 64,
         width: isHovered ? 24 : 64,
       }}
-      transition={{ duration: 0.25, ease: "easeOut" }}
+      transition={transitionSpring}
     >
       <motion.path
         animate={{ pathLength: isHovered ? 1 : 0.8 }}

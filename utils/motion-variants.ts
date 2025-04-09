@@ -65,6 +65,14 @@ export const listVariants = {
   hidden: { opacity: 0, transition: { when: "afterChildren" } },
 };
 
+export const transitionSpring = {
+  ease: "easeOut",
+  duration: 0.2,
+  type: "spring",
+  stiffness: 250,
+  damping: 20,
+};
+
 // List item variants
 export const listItemVariants = {
   visible: { opacity: 1, x: 0 },
