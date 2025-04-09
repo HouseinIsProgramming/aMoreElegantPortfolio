@@ -2,7 +2,6 @@
 
 import React from "react";
 import { MorphingBentocard } from "./morphing-bentocard";
-import { AnimatePresence, motion } from "framer-motion";
 
 export const BentoBoxes = () => {
   return (
