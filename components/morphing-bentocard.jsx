@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
+import BorderSpotlight from "./motion-primitives/border-spotlight";
+import { Spotlight } from "./motion-primitives/spotlight";
 
 const MotionCard = motion(Card);
 const MotionCardContent = motion(CardContent);
@@ -21,16 +23,23 @@ export const MorphingBentocard = (props) => {
       <MotionCard
         layoutId={layoutId}
         onClick={() => setIsOpenDialog(true)}
-        className={`h-64 px-3 w-full lg:px-4 pt-8 pb-5 overflow-y-hidden lg:col-span-${props.data.span}`}
+        className={`h-80 relative px-3 transition-shadow duration-500 hover:!shadow-2xl w-full lg:px-4 pt-8 pb-5 overflow-y-hidden md:col-span-${props.data.span}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
+        <BorderSpotlight />
+
         <MotionCardContent className="flex flex-col h-full justify-between">
           <FolderArrowSVG isHovered={isHovered} />
           <motion.div
             animate={{ translateY: isHovered ? -64 : 0 }}
             transition={{ ease: "easeOut", duration: 0.2 }}
           >
+            <sub
+              className={`transition-colors duration-500 ${isHovered ? "!text-[#4285F4]" : ""}`}
+            >
+              {props.data.tag}
+            </sub>
             <h2>{props.data.title}</h2>
             <div className="relative">
               {props.data.subtitle}
@@ -121,7 +130,11 @@ const FolderArrowSVG = ({ isHovered }) => {
       strokeLinecap="round" // Corrected attribute name
       strokeLinejoin="round" // Corrected attribute name
       className="lucide lucide-folder-symlink-icon lucide-folder-symlink" // Use className instead of class
-      animate={{ height: isHovered ? 24 : 64, width: isHovered ? 24 : 64 }}
+      animate={{
+        color: isHovered ? "#4285F4" : "black",
+        height: isHovered ? 24 : 64,
+        width: isHovered ? 24 : 64,
+      }}
       transition={{ duration: 0.25, ease: "easeOut" }}
     >
       <motion.path

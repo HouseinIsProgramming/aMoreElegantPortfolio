@@ -18,6 +18,7 @@ const projectsData = {
     id: "pixeldoodle",
     span: 2,
     title: "PixelDoodle",
+    tag: "WebApplication",
     subtitle:
       "Turn your hand written notes into images with transparent background.",
     link2Href: "#", // Replace with actual secondary link (e.g., GitHub)
@@ -45,6 +46,7 @@ const projectsData = {
   typemotion: {
     id: "TypeMotion",
     title: "TypeMotion",
+    tag: "WebApplication",
     subtitle: "Easy text animation prototyping",
     link1Href: "#", // Replace with actual primary link (e.g., Live Site)
     link2Href: "#", // Replace with actual secondary link (e.g., GitHub)
