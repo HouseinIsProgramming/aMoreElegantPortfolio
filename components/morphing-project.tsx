@@ -118,11 +118,11 @@ const ProjectDialogItem: React.FC<ProjectDialogItemProps> = ({ project }) => {
         }}
         className="border grow border-gray-200/60 bg-white"
       >
-        <div className="flex items-center gap-4 p-3">
+        <div className="flex flex-col items-start gap-4 p-3">
           <MorphingDialogImage
             src={project.imageSrc}
             alt={project.imageAlt}
-            className="h-48 aspect-[2/3] object-cover object-top"
+            className="h-16 aspect-[2/3] object-cover object-top"
             style={{
               borderRadius: "12px",
             }}

@@ -6,6 +6,7 @@ import WorkExperience from "@/components/workexperience";
 import TechStack from "@/components/techstack";
 import MouseSpotLight from "@/components/ui/mouseSpotlight";
 import MiniFooter from "@/components/mini-footer";
+import { BentoBoxes } from "@/components/BentoBoxes";
 
 export default function Page() {
   return (
@@ -26,7 +27,7 @@ export default function Page() {
         </div>
       </section>
       <Separator className="container my-8" />
-      <ProjectList />
+      <BentoBoxes />
     </div>
   );
 }
