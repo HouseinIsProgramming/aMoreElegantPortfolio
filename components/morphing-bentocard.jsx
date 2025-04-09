@@ -5,7 +5,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 import BorderSpotlight from "./motion-primitives/border-spotlight";
-import { Spotlight } from "./motion-primitives/spotlight";
 
 const MotionCard = motion(Card);
 const MotionCardContent = motion(CardContent);
@@ -23,7 +22,7 @@ export const MorphingBentocard = (props) => {
       <MotionCard
         layoutId={layoutId}
         onClick={() => setIsOpenDialog(true)}
-        className={`h-80 relative px-3 transition-shadow duration-500 hover:!shadow-2xl w-full lg:px-4 pt-8 pb-5 overflow-y-hidden md:col-span-${props.data.span}`}
+        className={`h-80 relative px-3 transition-shadow bg-card duration-500 hover:!shadow-2xl w-full lg:px-4 pt-8 pb-5 overflow-y-hidden md:col-span-${props.data.span}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -131,7 +130,7 @@ const FolderArrowSVG = ({ isHovered }) => {
       strokeLinejoin="round" // Corrected attribute name
       className="lucide lucide-folder-symlink-icon lucide-folder-symlink" // Use className instead of class
       animate={{
-        color: isHovered ? "#4285F4" : "black",
+        color: isHovered ? "#4285F4" : "",
         height: isHovered ? 24 : 64,
         width: isHovered ? 24 : 64,
       }}

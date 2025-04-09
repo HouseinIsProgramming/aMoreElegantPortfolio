@@ -162,7 +162,7 @@ sub {
 }
 
 .bg-card {
-  @apply shadow-lg;
+  @apply shadow-lg dark:bg-black from-black to-neutral-900/50 dark:bg-radial;
 }
 
 .fancy-conic-spotlight {
