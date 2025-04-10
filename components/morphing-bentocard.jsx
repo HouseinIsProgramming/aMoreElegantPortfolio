@@ -22,7 +22,7 @@ export const MorphingBentocard = (props) => {
     "md:col-span-2": props.data.span === 2,
   });
 
-  const [isHovered, setIsHovered] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
   const [isOpenDialog, setIsOpenDialog] = useState(false);
 
   useEffect(() => {
@@ -86,7 +86,10 @@ export const MorphingBentocard = (props) => {
             <motion.h2
               layoutId={layoutId + "title"}
               transition={transitionTween}
-              className="!leading-[1] mt-3 mb-4"
+              className={
+                (clsx("!leading-[1]  mt-3 mb-4 whitespace-nowrap"),
+                props.data.span === 2 ? "flex flex-wrap" : "block")
+              }
             >
               {props.data.title.map((text, i) => (
                 <div className="mr-1" key={i}>
@@ -140,11 +143,14 @@ export const MorphingBentocard = (props) => {
 
                     <motion.h2
                       layoutId={layoutId + "title"}
-                      transition={transitionSpring}
-                      className="!leading-[1] mt-3 mb-4 flex"
+                      transition={transitionTween}
+                      className={
+                        (clsx("!leading-[1]  mt-3 mb-4 whitespace-nowrap"),
+                        props.data.span === 2 ? "flex flex-wrap" : "block")
+                      }
                     >
                       {props.data.title.map((text, i) => (
-                        <div className="mr-1.5" key={i}>
+                        <div className="mr-1" key={i}>
                           {text}
                         </div>
                       ))}
