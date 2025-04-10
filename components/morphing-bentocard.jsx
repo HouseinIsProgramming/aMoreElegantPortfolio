@@ -18,7 +18,7 @@ export const MorphingBentocard = (props) => {
     "md:col-span-2": props.data.span === 2,
   });
 
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(true);
   const [isOpenDialog, setIsOpenDialog] = useState(false);
 
   useEffect(() => {
@@ -73,24 +73,37 @@ export const MorphingBentocard = (props) => {
             animate={{ translateY: isHovered ? -64 : 0 }}
             transition={transitionSpring}
           >
-            <sub
+            <motion.sub
+              layoutId={layoutId + "tag"}
               className={`transition-colors duration-500 ${isHovered ? "!text-[#4285F4]" : ""}`}
             >
               {props.data.tag}
-            </sub>
+            </motion.sub>
             <motion.h2
               layoutId={layoutId + "title"}
               transition={{ duration: 0.2, ease: "easeInOut", type: "tween" }}
               className="!leading-[1] mt-3 mb-4"
             >
-              {props.data.title}
+              {props.data.title.map((text, i) => (
+                <div className="mr-1" key={i}>
+                  {text}
+                </div>
+              ))}
             </motion.h2>
-            <div className="relative">
+            <motion.div
+              className="relative text-lg font-medium"
+              layoutId={layoutId + "subtitle"}
+              transition={{
+                duration: 0.2,
+                ease: "easeInOut",
+                type: "tween",
+              }}
+            >
               {props.data.subtitle}
-              <p className="absolute translate-y-1.5">
-                loremaskjdkasjd kasjdkasjd kajdk jaskjd kasjdkajskdj aksj
+              <p className="absolute translate-y-1.5 font-light text-muted-foreground ">
+                {props.data.hoverText}
               </p>
-            </div>
+            </motion.div>
           </motion.div>
         </MotionCardContent>
       </MotionCard>
@@ -116,19 +129,49 @@ export const MorphingBentocard = (props) => {
                 transition={{ duration: 0.2 }}
               >
                 <MotionCardContent className="flex flex-col justify-between">
-                  <div>
-                    <motion.h2
-                      className="ml-0 mt-32"
-                      layoutId={layoutId + "title"}
+                  <div className="my-24">
+                    <motion.sub
+                      layoutId={layoutId + "tag"}
+                      className={`transition-colors duration-500 ${isHovered ? "!text-[#4285F4]" : ""}`}
+                      transition={{
+                        duration: 0.2,
+                        ease: "easeInOut",
+                        type: "tween",
+                      }}
                     >
-                      {props.data.title}
+                      {props.data.tag}
+                    </motion.sub>
+
+                    <motion.h2
+                      layoutId={layoutId + "title"}
+                      transition={{
+                        duration: 0.2,
+                        ease: "easeInOut",
+                        type: "tween",
+                      }}
+                      className="!leading-[1] mt-3 mb-4 flex"
+                    >
+                      {props.data.title.map((text, i) => (
+                        <div className="mr-1.5" key={i}>
+                          {text}
+                        </div>
+                      ))}
                     </motion.h2>
                     <div className="relative mt-2">
-                      {props.data.subtitle}
-                      <p className="absolute translate-y-1.5 opacity-70">
-                        loremaskjdkasjd kasjdkasjd kajdk jaskjd kasjdkajskdj
-                        aksj
-                      </p>
+                      <motion.div
+                        className="relative m-0 text-lg font-medium"
+                        layoutId={layoutId + "subtitle"}
+                        transition={{
+                          duration: 0.2,
+                          ease: "easeInOut",
+                          type: "tween",
+                        }}
+                      >
+                        {props.data.subtitle}
+                        <p className="absolute translate-y-1.5 font-light text-muted-foreground hidden">
+                          {props.data.hoverText}
+                        </p>
+                      </motion.div>
                       {/* TODO: Add more detailed modal content below */}
                       <div className="mt-8 flex flex-col gap-6">
                         {props.data.details.map((section, i) => (

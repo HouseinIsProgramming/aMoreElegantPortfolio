@@ -17,10 +17,12 @@ const projectsData = {
   pixeldoodle: {
     id: "pixeldoodle",
     span: 2,
-    title: "PixelDoodle",
+    title: ["PixelDoodle"],
     tag: "Web Application",
     subtitle:
       "Turn your hand written notes into images with transparent background.",
+    hoverText:
+      "Find out more about me and what I went through before starting out as a developer.",
     link2Href: "#", // Replace with actual secondary link (e.g., GitHub)
     details: [
       {
@@ -45,9 +47,11 @@ const projectsData = {
   },
   typemotion: {
     id: "TypeMotion",
-    title: "TypeMotion",
+    title: ["TypeMotion"],
     tag: "Web Application",
     subtitle: "Easy text animation prototyping",
+    hoverText:
+      "Find out more about me and what I went through before starting.",
     link1Href: "#", // Replace with actual primary link (e.g., Live Site)
     link2Href: "#", // Replace with actual secondary link (e.g., GitHub)
     details: [
@@ -68,9 +72,10 @@ const projectsData = {
 
   before2020: {
     id: "before2020",
-    title: "What happened before 2020?",
+    title: ["What happened", "before 2020?"],
     tag: "About me",
     subtitle: "How did I end up here?",
+    hoverText: "Find out how programming has changed my life.",
     link1Href: "#", // Replace with actual primary link (e.g., Live Site)
     link2Href: "#", // Replace with actual secondary link (e.g., GitHub)
     details: [
