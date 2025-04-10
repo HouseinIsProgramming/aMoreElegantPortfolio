@@ -16,8 +16,8 @@ export const FolderArrowSVG = ({ isHovered }) => {
       className="lucide lucide-folder-symlink-icon lucide-folder-symlink"
       animate={{
         color: isHovered ? "#4285F4" : "",
-        height: isHovered ? 24 : 64,
-        width: isHovered ? 24 : 64,
+        height: isHovered ? 40 : 64,
+        width: isHovered ? 40 : 64,
       }}
       transition={transitionSpring}
     >

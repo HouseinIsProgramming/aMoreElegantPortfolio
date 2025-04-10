@@ -1,12 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { AnimatePresence, motion } from "framer-motion";
-import React from "react";
-import BorderSpotlight from "./motion-primitives/border-spotlight";
-import clsx from "clsx";
 import { transitionSpring } from "@/utils/motion-variants";
+import clsx from "clsx";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import BorderSpotlight from "./motion-primitives/border-spotlight";
 import { FolderArrowSVG } from "./ui/motion-svgs.jsx";
 
 const MotionCard = motion(Card);
@@ -20,6 +19,22 @@ export const MorphingBentocard = (props) => {
 
   const [isHovered, setIsHovered] = useState(false);
   const [isOpenDialog, setIsOpenDialog] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        handleClose();
+      }
+    };
+
+    if (isOpenDialog) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpenDialog]);
 
   const handleClose = () => {
     setIsOpenDialog(false);
@@ -39,7 +54,7 @@ export const MorphingBentocard = (props) => {
         layoutId={layoutId + "card"}
         onClick={() => setIsOpenDialog(true)}
         className={clsx(
-          "h-80 relative px-3 transition-shadow bg-card duration-500 hover:!shadow-2xl w-full lg:px-4 pt-8 pb-5 overflow-y-hidden",
+          "h-80 cursor-pointer relative px-3 transition-shadow bg-card duration-500 hover:!shadow-2xl w-full lg:px-4 pt-8 pb-5 overflow-y-hidden",
           spanClass,
         )}
         onMouseEnter={() => setIsHovered(true)}
@@ -87,11 +102,11 @@ export const MorphingBentocard = (props) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/50 z-40"
+              className="fixed inset-0 bg-black/50 z-50"
               onClick={handleClose}
             />
 
-            <div className="fixed col-span-2 inset-0 z-50 flex items-center justify-center p-4">
+            <div className="fixed w-fit h-fit m-auto col-span-2 inset-0 z-50 flex items-center justify-center p-4">
               <MotionCard
                 key="modal-card"
                 layoutId={layoutId + "card"}
@@ -120,7 +135,7 @@ export const MorphingBentocard = (props) => {
 
                 <button
                   onClick={handleClose}
-                  className="absolute top-2 right-2 p-1 text-muted-foreground hover:text-foreground"
+                  className="absolute cursor-pointer top-2 right-2 p-1 text-muted-foreground hover:text-foreground"
                   aria-label="Close"
                 >
                   <svg
