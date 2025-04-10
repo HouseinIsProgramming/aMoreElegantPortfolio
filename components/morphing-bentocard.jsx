@@ -117,7 +117,7 @@ export const MorphingBentocard = (props) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/50 z-50"
+              className="fixed inset-0 bg-black/50 z-50 w-screen h-screen"
               onClick={handleClose}
             />
 
@@ -125,7 +125,7 @@ export const MorphingBentocard = (props) => {
               <MotionCard
                 key="modal-card"
                 layoutId={layoutId + "card"}
-                className="relative z-50 w-2xl md:max-w-[80vw] xl:w-[50vw] bg-card p-6 rounded-lg shadow-lg max-h-[90vh] overflow-auto"
+                className="relative z-50 w-[90vw] !h-[80vh] md:max-w-[80vw] xl:w-[50vw] bg-card p-6 rounded-lg shadow-lg overflow-auto"
                 transition={{ duration: 0.2 }}
               >
                 <MotionCardContent className="flex flex-col justify-between">
