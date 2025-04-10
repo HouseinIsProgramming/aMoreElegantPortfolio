@@ -97,7 +97,10 @@ export const MorphingBentocard = (props) => {
           <motion.div
             className="flex w-full" // Using flex here allows translateX to work within the line
             animate={{
-              x: isHovered && contentDivHeight > 130 ? contentDivWidth - 32 : 0,
+              x:
+                isHovered && (contentDivHeight > 130) & (contentDivWidth < 250)
+                  ? contentDivWidth - 32
+                  : 0,
             }}
             transition={transitionSpring}
           >
