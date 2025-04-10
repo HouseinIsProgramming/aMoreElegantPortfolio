@@ -2,6 +2,12 @@
 
 import React from "react";
 import { MorphingBentocard } from "./morphing-bentocard";
+import {
+  CalendarRotateSVG,
+  FolderArrowSVG,
+  MonitorCogSVG,
+  BookHeartSVG,
+} from "./ui/motion-svgs.jsx";
 
 export const BentoBoxes = () => {
   return (
@@ -78,6 +84,7 @@ const projectsData = {
     id: "before2020",
     span: 2,
     title: ["What happened", "before 2020?"],
+    icon: (isHovered) => <CalendarRotateSVG isHovered={isHovered} />,
     tag: "About me",
     subtitle: "and where is your education?",
     hoverText: "Find out more about my story, and how I ended up in austria",
@@ -159,6 +166,7 @@ const projectsData = {
     id: "interests",
     title: ["Hobbies and", "interests"],
     tag: "Everything else I do",
+    icon: (isHovered) => <BookHeartSVG isHovered={isHovered} />,
     // subtitle: "How did I end up here?",
     hoverText: "Working out, Reading, being outdoors and more.",
     link1Href: "#", // Replace with actual primary link (e.g., Live Site)
@@ -195,6 +203,7 @@ const projectsData = {
   frontend: {
     id: "frontend",
     span: 2,
+    icon: (isHovered) => <MonitorCogSVG isHovered={isHovered} />,
     title: ["Frontend &", "Design"],
     subtitle: "My techstack, experience and tools I use to build websites.",
     tag: "UI, UX & Design",
@@ -230,6 +239,7 @@ const projectsData = {
     id: "backend",
     title: ["Backend &", "Software"],
     tag: "Automation and logic",
+    icon: (isHovered) => <FolderArrowSVG isHovered={isHovered} />,
     hoverText:
       "My experience in the backend, software development, automation and dev-tooling.",
     details: [

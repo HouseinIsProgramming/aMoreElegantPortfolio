@@ -10,7 +10,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import BorderSpotlight from "./motion-primitives/border-spotlight";
-import { FolderArrowSVG } from "./ui/motion-svgs.jsx";
+import { CalendarRotateSVG, FolderArrowSVG } from "./ui/motion-svgs.jsx";
 
 // TODO: REFACTOR THIS PLEASE
 
@@ -101,7 +101,7 @@ export const MorphingBentocard = (props) => {
             }}
             transition={transitionSpring} // Used spring here for consistency, adjust if needed
           >
-            <FolderArrowSVG isHovered={isHovered} />
+            {props.data.icon?.(isHovered)}
           </motion.div>
           <motion.div
             ref={contentDivRef} // Attach ref here
