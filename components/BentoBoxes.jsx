@@ -87,29 +87,29 @@ const projectsData = {
       {
         heading: "Where was I before 2020:",
         paragraphs: [
-          "Before coming to Austria for the second time, I was living in Cyprus and was in the process of getting my high school diploma. Due to the lockdowns and a legal obligation that required me not to stay outside of Austria for extended periods of time, I had to drop out.",
+          "Before coming to **Austria** for the second time, I was living in **Cyprus** and was in the process of getting my **high school diploma**. Due to the **lockdowns** and a **legal obligation** that required me not to stay outside of Austria for extended periods of time, I had to drop out.",
         ],
       },
       {
         heading: "Second time?",
         paragraphs: [
-          `If my name didn't give that away already, I am not from Austria — I actually come from Syria.  
-      In 2018, I fled to Austria as a refugee since I was being pressured to attend my mandatory military service at 16, which _probably_ wouldn't have turned out so well.`,
+          `If my name didn't give that away already, I am not from **Austria** — I actually come from **Syria**.  
+      In **2018**, I fled to Austria as a **refugee** since I was being pressured to attend my **mandatory military service** at 16, which _probably_ wouldn't have turned out so well.`,
         ],
       },
       {
         heading: "What about your education?",
         paragraphs: [
-          `After going through the approval process, which took around a year of waiting around, I tried attending school — which only made me realize that there was no way I’d be done in a reasonable timeframe. I was pushed back two years and still had to learn the language, so I would have needed about **4 years**, even though I was actually only missing one.`,
-          `So I decided to go to Cyprus and try to finish school there. Since I attended international schools my entire life, English was not a problem — but unfortunately, that didn’t turn out well either, as I mentioned earlier.`,
+          `After going through the **approval process**, which took around a year of waiting around, I tried attending **school** — which only made me realize that there was no way I’d be done in a reasonable timeframe. I was pushed back **two years** and still had to **learn the language**, so I would have needed about **4 years**, even though I was actually only missing one.`,
+          `So I decided to go to **Cyprus** and try to finish school there. Since I attended **international schools** my entire life, **English** was not a problem — but unfortunately, that didn’t turn out well either, as I mentioned earlier.`,
         ],
       },
       {
         heading: "Does it suck?",
         paragraphs: [
-          `Oh yes, it does. I was the top student for pretty much the whole time I was in school — and I have *nothing* to show for it.  
+          `Oh yes, it does. I was the **top student** for pretty much the whole time I was in **school** — and I have *nothing* to show for it.  
       But I am not the only one who went through this, and it taught me a lot in the process.`,
-          `I’m just glad that I’m provided with good living conditions and the opportunity to pursue my passions.  
+          `I’m just glad that I’m provided with **good living conditions** and the opportunity to **pursue my passions**.  
       My glass will always be half full — *the other half is also full, just with air*.`,
         ],
       },
@@ -167,26 +167,26 @@ const projectsData = {
       {
         // heading: "Why I made this:",
         paragraphs: [
-          "I start _almost_ everyday with an hour dedicated to learning something, whether it is programming, reading a book or anything that I find interesting, I find that this sets me up for a good day and I don't have to worry about conserving energy for it, in contrast to if I did the same but at the end of the day.",
+          "I start _almost_ everyday with an hour dedicated to **learning** something, whether it is **programming**, **reading** a book or anything that I find interesting, I find that this sets me up for a good day and I don't have to worry about conserving energy for it, in contrast to if I did the same but at the end of the day.",
         ],
       },
       {
         heading: "The Gym",
         paragraphs: [
-          `Right after my hour of learning — and a **self-made coffee**  and breakfast — comes undoubtedly my favorite time of the day: the gym. It's the one place that, no matter what’s going on in my life, has never disappointed me and has always had my back. After that, it’s off to work. `,
+          `Right after my hour of **learning** — and a **self-made coffee** and **breakfast** — comes undoubtedly my favorite time of the day: **the gym**. It's the one place that, no matter what’s going on in my life, has never disappointed me and has always had my back. After that, it’s off to **work**.`,
         ],
       },
       {
         heading: "Reading",
         paragraphs: [
-          `Reading is a hobby I picked up during the lockdowns, and I’m glad I did. I used to scoff at people who said physical books aren’t the same as reading an e-book or something on your phone — until I actually tried it.
-          I mostly enjoy philosophy, self-help, science fiction, and the occasional novel or biography.`,
+          `**Reading** is a hobby I picked up during the **lockdowns**, and I’m glad I did. I used to scoff at people who said **physical books** aren’t the same as reading an e-book or something on your phone — until I actually tried it.
+      I mostly enjoy **philosophy**, **self-help**, **science fiction**, and the occasional **novel** or **biography**.`,
         ],
       },
       {
         paragraphs: [
-          `Other than that, I _try_ to spend as much time outdoors as I can. I enjoy taking long walks, letting my mind wander, or listening to an audiobook.   
-          I also really enjoy cooking, tinkering with code or my Neovim configuration (_if you know, you know_), or just spending time with friends.`,
+          `Other than that, I _try_ to spend as much time **outdoors** as I can. I enjoy taking long **walks**, letting my mind **wander**, or listening to an **audiobook**.   
+      I also really enjoy **cooking**, **tinkering** with code or my **Neovim configuration** (_if you know, you know_), or just spending time with **friends**.`,
         ],
       },
     ],
@@ -205,22 +205,23 @@ const projectsData = {
       {
         heading: "Languages & Frameworks",
         paragraphs: [
-          `Of course, as a Web Developer I know the ins and outs of HTML and how to implement Javascript into websites for interactivity.`,
-          `I’ve worked with common modern frameworks such as React, Svelte and Vue.js and am familiar with concepts such as state mangement, routing, lifecycles. And well versed on good practices to build reuseable and maintainable components and modules.`,
-          `When working in a team, I have also learned to appreciate the benefits of embracing the idomatic approach of writing each language to ensure that my contribution to maintains the level of cooperation in the team and maintains scalability of the software.`,
+          `Of course, as a Web Developer I know the ins and outs of **HTML** and how to implement **JavaScript** into websites for interactivity.`,
+          `I’ve worked with common modern frameworks such as **React**, **Svelte** and **Vue.js** and am familiar with concepts such as state mangement, routing, lifecycles. And well versed on good practices to build reuseable and maintainable components and modules.`,
+          `When working in a **team**, I have also learned to appreciate the benefits of embracing the idiomatic approach of writing each language to ensure that my contribution maintains the level of **cooperation** in the team and maintains **scalability** of the software.`,
+          `I've also worked with animation libraries, such as **Framer Motion**, **GSAP** and also using other languages such as **Python** for **Manim**`,
         ],
       },
       {
         heading: "Styling & UI",
         paragraphs: [
-          `Although it seems as if no one was about to *decipher* CSS yet, I have gotten pretty good at it. And when it comes to TailwindCSS, I can *confidently* say that I know the ins and outs of it. Not only do I know the utility classes by heart, but also how to configure it on each project according to its needs, handle the compiler, and integrate it with frameworks and libraries.`,
-          `I've also worked with animation libraries (like Framer Motion) and E2E testing with Playwright.`,
+          `When it comes to **TailwindCSS**, I can **confidently** say that I know the ins and outs of it. Not only do I know the utility classes by heart, but I also know how to configure it for each project according to its needs, handle the compiler, and integrate it with frameworks and libraries.  
+      Although it seems as if no one has quite *deciphered* **CSS** yet, I’ve gotten pretty good at it by applying my understanding of UI and graphic design—such as how masks and gradients work, spacing, font settings, and more. Which brings me to:`,
         ],
       },
       {
-        heading: "Visual Tools",
+        heading: "Design Software",
         paragraphs: [
-          `For design work, I’m comfortable using Adobe Photoshop, Illustrator, and Affinity Designer — whether for wireframes, banners, or polishing UI visuals.`,
+          `I picked up **Photoshop** and **Illustrator** pretty early on and gained a good understanding of them. Although I currently mostly use them for wireframing and the early design stages of web components, since I prefer a Code-First and minimal assets approach, I am still capable of complex photo editing and manipulation, and I know how to leverage **AI** properly to deliver a good result.`,
         ],
       },
     ],
