@@ -12,6 +12,8 @@ import ReactMarkdown from "react-markdown";
 import BorderSpotlight from "./motion-primitives/border-spotlight";
 import { FolderArrowSVG } from "./ui/motion-svgs.jsx";
 
+// TODO: REFACTOR THIS PLEASE
+
 const MotionCard = motion(Card);
 
 const MotionCardContent = motion(CardContent);

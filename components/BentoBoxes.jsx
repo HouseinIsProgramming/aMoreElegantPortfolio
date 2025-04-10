@@ -8,6 +8,8 @@ export const BentoBoxes = () => {
     <section className="container mb-96 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid gap-8">
       <MorphingBentocard data={projectsData.before2020} />
       <MorphingBentocard data={projectsData.interests} />
+      <MorphingBentocard data={projectsData.backend} />
+      <MorphingBentocard data={projectsData.frontend} />
       <MorphingBentocard data={projectsData.startout} />
       <MorphingBentocard data={projectsData.pixeldoodle} />
       <MorphingBentocard data={projectsData.typemotion} />
@@ -185,6 +187,70 @@ const projectsData = {
         paragraphs: [
           `Other than that, I _try_ to spend as much time outdoors as I can. I enjoy taking long walks, letting my mind wander, or listening to an audiobook.   
           I also really enjoy cooking, tinkering with code or my Neovim configuration (_if you know, you know_), or just spending time with friends.`,
+        ],
+      },
+    ],
+  },
+
+  frontend: {
+    id: "frontend",
+    span: 2,
+    title: ["Frontend &", "Design"],
+    subtitle:
+      "My techstack, experience and tools I use to build websites and applications.",
+    tag: "UI, UX & Design",
+    hoverText:
+      "A quick overview of my tech experience and what I am proficient in.",
+    details: [
+      {
+        heading: "Languages & Frameworks",
+        paragraphs: [
+          `Of course, as a Web Developer I know the ins and outs of HTML and how to implement Javascript into websites for interactivity.`,
+          `I’ve worked with common modern frameworks such as React, Svelte and Vue.js and am familiar with concepts such as state mangement, routing, lifecycles. And well versed on good practices to build reuseable and maintainable components and modules.`,
+          `When working in a team, I have also learned to appreciate the benefits of embracing the idomatic approach of writing each language to ensure that my contribution to maintains the level of cooperation in the team and maintains scalability of the software.`,
+        ],
+      },
+      {
+        heading: "Styling & UI",
+        paragraphs: [
+          `Although it seems as if no one was about to *decipher* CSS yet, I have gotten pretty good at it. And when it comes to TailwindCSS, I can *confidently* say that I know the ins and outs of it. Not only do I know the utility classes by heart, but also how to configure it on each project according to its needs, handle the compiler, and integrate it with frameworks and libraries.`,
+          `I've also worked with animation libraries (like Framer Motion) and E2E testing with Playwright.`,
+        ],
+      },
+      {
+        heading: "Visual Tools",
+        paragraphs: [
+          `For design work, I’m comfortable using Adobe Photoshop, Illustrator, and Affinity Designer — whether for wireframes, banners, or polishing UI visuals.`,
+        ],
+      },
+    ],
+  },
+
+  backend: {
+    id: "backend",
+    title: ["Backend &", "Software"],
+    tag: "Automation, logic, infrastructure",
+    hoverText: "Everything behind the scenes.",
+    details: [
+      {
+        heading: "Core Technologies",
+        paragraphs: [
+          `I’ve worked with PHP (CMS systems like TYPO3 and NeosCMS), Node.js, and Python for scripting and backend logic.`,
+          `MySQL is the database I’ve used the most, including for generating reports and automating large-scale mailings.`,
+        ],
+      },
+      {
+        heading: "System Tools",
+        paragraphs: [
+          `I use Git for version control and am comfortable with advanced workflows (rebasing, resolving conflicts, etc.).`,
+          `I also write Shell Scripts and use Lua for Neovim and small tooling tweaks.`,
+        ],
+      },
+      {
+        heading: "Workflows & Testing",
+        paragraphs: [
+          `I’ve used Jest for unit testing and Playwright for E2E testing, and I’m familiar with Docker-based workflows.`,
+          `My work often includes optimizing legacy code, debugging performance issues, and improving development tooling.`,
         ],
       },
     ],
