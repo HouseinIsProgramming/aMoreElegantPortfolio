@@ -163,7 +163,11 @@ sub {
 }
 
 strong {
-  @apply font-bold text-foreground;
+  @apply font-semibold text-foreground;
+}
+
+em {
+  @apply [font-style:oblique_9deg] text-foreground;
 }
 
 .bg-card {

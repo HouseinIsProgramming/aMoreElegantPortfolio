@@ -1,19 +1,19 @@
 "use client";
-
 import { Card, CardContent } from "@/components/ui/card";
 import {
   transitionSpring,
-  transitionTween,
   transitionSpringLight,
+  transitionTween,
 } from "@/utils/motion-variants";
 import clsx from "clsx";
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import ReactMarkdown from "react-markdown";
 import BorderSpotlight from "./motion-primitives/border-spotlight";
 import { FolderArrowSVG } from "./ui/motion-svgs.jsx";
-import ReactMarkdown from "react-markdown";
 
 const MotionCard = motion(Card);
+
 const MotionCardContent = motion(CardContent);
 
 export const MorphingBentocard = (props) => {
@@ -27,7 +27,6 @@ export const MorphingBentocard = (props) => {
   const [hoverTextHeight, setHoverTextHeight] = useState(0);
   const [contentDivHeight, setContentDivHeight] = useState(0);
   const [contentDivWidth, setContentDivWidth] = useState(0);
-
   const hoverTextRef = useRef(null);
   const contentDivRef = useRef(null); // Ref for the content div
 
@@ -37,16 +36,13 @@ export const MorphingBentocard = (props) => {
         handleClose();
       }
     };
-
     if (isOpenDialog) {
       window.addEventListener("keydown", handleKeyDown);
     }
-
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isOpenDialog]);
-
   const handleClose = () => {
     setIsOpenDialog(false);
     setTimeout(() => {
@@ -89,7 +85,6 @@ export const MorphingBentocard = (props) => {
         layout
       >
         <BorderSpotlight />
-
         <MotionCardContent
           className="flex flex-col h-full justify-between"
           layout
@@ -98,18 +93,17 @@ export const MorphingBentocard = (props) => {
             className="flex w-full" // Using flex here allows translateX to work within the line
             animate={{
               x:
-                isHovered && (contentDivHeight > 130) & (contentDivWidth < 250)
+                isHovered && contentDivHeight > 130 && contentDivWidth < 250 // Fixed logical AND operator
                   ? contentDivWidth - 32
                   : 0,
             }}
-            transition={transitionSpring}
+            transition={transitionSpring} // Used spring here for consistency, adjust if needed
           >
             <FolderArrowSVG isHovered={isHovered} />
           </motion.div>
-
           <motion.div
             ref={contentDivRef} // Attach ref here
-            animate={{ translateY: isHovered ? -(hoverTextHeight + 6) : 0 }}
+            animate={{ translateY: isHovered ? -(hoverTextHeight + 12) : 0 }}
             transition={transitionSpring}
           >
             <motion.sub
@@ -149,10 +143,11 @@ export const MorphingBentocard = (props) => {
           </motion.div>
         </MotionCardContent>
       </MotionCard>
-
+      {/* Modal controlled by AnimatePresence */}
       <AnimatePresence>
         {isOpenDialog && (
           <>
+            {/* Overlay remains the same */}
             <motion.div
               key="overlay"
               initial={{ opacity: 0 }}
@@ -161,7 +156,6 @@ export const MorphingBentocard = (props) => {
               className="fixed inset-0 bg-black/50 z-50 w-screen h-screen"
               onClick={handleClose}
             />
-
             <div className="fixed w-fit h-fit m-auto col-span-2 inset-0 z-50 flex items-center justify-center p-4">
               <MotionCard
                 key="modal-card"
@@ -178,7 +172,6 @@ export const MorphingBentocard = (props) => {
                     >
                       {props.data.tag}
                     </motion.sub>
-
                     <motion.h2
                       layoutId={layoutId + "title"}
                       transition={transitionTween}
@@ -204,25 +197,36 @@ export const MorphingBentocard = (props) => {
                           {props.data.hoverText}
                         </p>
                       </motion.div>
-                      <div className="mt-8 flex flex-col gap-6">
+
+                      <motion.div
+                        exit={{ filter: "blur(5px)" }}
+                        initial={{ filter: "blur(5px)" }}
+                        animate={{ filter: "blur(0px)" }}
+                        transition={transitionTween}
+                        className="mt-8 flex flex-col gap-6"
+                      >
                         {props.data.details.map((section, i) => (
                           <div key={i}>
                             <h3 className="text-lg font-semibold !leading-4">
                               {section.heading}
                             </h3>
-                            <div className="!leading-0 text-sm font-light">
+                            <div className="!leading-0  text-sm font-light">
                               {section.paragraphs.map((text, j) => (
                                 <ReactMarkdown key={j}>{text}</ReactMarkdown>
                               ))}
                             </div>
                           </div>
                         ))}
-                      </div>
+                      </motion.div>
                     </div>
                   </div>
                 </MotionCardContent>
 
-                <button
+                <motion.button
+                  exit={{ filter: "blur(5px)" }}
+                  initial={{ filter: "blur(5px)" }}
+                  animate={{ filter: "blur(0px)" }}
+                  transition={transitionTween}
                   onClick={handleClose}
                   className="absolute cursor-pointer top-2 right-2 p-1 text-muted-foreground hover:text-foreground"
                   aria-label="Close"
@@ -241,7 +245,7 @@ export const MorphingBentocard = (props) => {
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                   </svg>
-                </button>
+                </motion.button>
               </MotionCard>
             </div>
           </>
