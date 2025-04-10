@@ -20,7 +20,15 @@ export const MorphingBentocard = (props) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isOpenDialog, setIsOpenDialog] = useState(false);
 
-  const handleClose = () => setIsOpenDialog(false);
+  const handleClose = () => {
+    setIsOpenDialog(false);
+    setTimeout(() => {
+      setIsHovered(true);
+    }, 100);
+    setTimeout(() => {
+      setIsHovered(false);
+    }, 1500);
+  };
 
   const layoutId = `card-modal-${props.data?.id || "unique"}`;
 
@@ -56,7 +64,7 @@ export const MorphingBentocard = (props) => {
             </sub>
             <motion.h2
               layoutId={layoutId + "title"}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.2, ease: "easeInOut", type: "tween" }}
             >
               {props.data.title}
             </motion.h2>
@@ -91,7 +99,10 @@ export const MorphingBentocard = (props) => {
               >
                 <MotionCardContent className="flex flex-col justify-between">
                   <div>
-                    <motion.h2 className="mt-48" layoutId={layoutId + "title"}>
+                    <motion.h2
+                      className="ml-0 mt-32"
+                      layoutId={layoutId + "title"}
+                    >
                       {props.data.title}
                     </motion.h2>
                     <div className="relative mt-2">
