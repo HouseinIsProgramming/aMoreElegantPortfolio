@@ -118,13 +118,10 @@ export const MorphingBentocard = (props) => {
             <motion.h2
               layoutId={layoutId + "title"}
               transition={transitionTween}
-              className={
-                (clsx("!leading-[1]  mt-3 mb-4 whitespace-nowrap"),
-                props.data.span === 2 ? "flex flex-wrap" : "block")
-              }
+              className={clsx(" whitespace-nowrap mt-2 flex flex-wrap")}
             >
               {props.data.title.map((text, i) => (
-                <div className="mr-1" key={i}>
+                <div className="mr-1 leading-tight" key={i}>
                   {text}
                 </div>
               ))}

@@ -5,14 +5,14 @@ import { MorphingBentocard } from "./morphing-bentocard";
 
 export const BentoBoxes = () => {
   return (
-    <section className="container mb-96 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid gap-8">
+    <section className="container mb-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid gap-8">
       <MorphingBentocard data={projectsData.before2020} />
       <MorphingBentocard data={projectsData.interests} />
       <MorphingBentocard data={projectsData.backend} />
       <MorphingBentocard data={projectsData.frontend} />
-      <MorphingBentocard data={projectsData.startout} />
-      <MorphingBentocard data={projectsData.pixeldoodle} />
-      <MorphingBentocard data={projectsData.typemotion} />
+      {/* <MorphingBentocard data={projectsData.startout} /> */}
+      {/* <MorphingBentocard data={projectsData.pixeldoodle} /> */}
+      {/* <MorphingBentocard data={projectsData.typemotion} /> */}
     </section>
   );
 };
@@ -196,8 +196,7 @@ const projectsData = {
     id: "frontend",
     span: 2,
     title: ["Frontend &", "Design"],
-    subtitle:
-      "My techstack, experience and tools I use to build websites and applications.",
+    subtitle: "My techstack, experience and tools I use to build websites.",
     tag: "UI, UX & Design",
     hoverText:
       "A quick overview of my tech experience and what I am proficient in.",
@@ -230,28 +229,34 @@ const projectsData = {
   backend: {
     id: "backend",
     title: ["Backend &", "Software"],
-    tag: "Automation, logic, infrastructure",
-    hoverText: "Everything behind the scenes.",
+    tag: "Automation and logic",
+    hoverText:
+      "My experience in the backend, software development, automation and dev-tooling.",
     details: [
       {
-        heading: "Core Technologies",
+        heading: "Web Integration",
         paragraphs: [
-          `I’ve worked with PHP (CMS systems like TYPO3 and NeosCMS), Node.js, and Python for scripting and backend logic.`,
-          `MySQL is the database I’ve used the most, including for generating reports and automating large-scale mailings.`,
+          `My 2 years of experience were as a **Frontend Developer**, I still had the opportunity to work in the **backend** and learn about it. I’ve worked with **REST APIs** to handle frontend-backend communication and I’m also familiar with the concepts of **CRUD** operations and how to handle data flow between the frontend and backend.`,
         ],
       },
       {
-        heading: "System Tools",
+        heading: "Databases",
         paragraphs: [
-          `I use Git for version control and am comfortable with advanced workflows (rebasing, resolving conflicts, etc.).`,
-          `I also write Shell Scripts and use Lua for Neovim and small tooling tweaks.`,
+          `I've also have extensive hands-on experience with **relational databases**, particularly **MySQL** and **SQLite**, and developed a solid understanding of writing efficent **queries** for both simple and complex databases. I know my way around implementing correct **column types**, retrieving the right data sorted and filtered as desired using **CTEs**, **joins** and select filters, aswell as handling **CRUD** operations.`,
         ],
       },
       {
-        heading: "Workflows & Testing",
+        heading: "Developer Tooling",
         paragraphs: [
-          `I’ve used Jest for unit testing and Playwright for E2E testing, and I’m familiar with Docker-based workflows.`,
-          `My work often includes optimizing legacy code, debugging performance issues, and improving development tooling.`,
+          `Experience with **Git** and and try to have every line of code that I write go through it as I find it extremely helpful to encourage iteration and experimentation as well as ensure **code maintainability**.  
+          I am more than comofrtable handling eveything to do with **version control** and also knowledgeable in setting up **CI/CD pipelines** and automating the deployment process using tools such as **GitHub Actions**.`,
+          "I put a lot of emphasis on ensureing that I have the tools that I need to be productive and efficient, which led me to pick up **Bash Scripting** and **Lua** which allow me to **automate CLI tasks** and let me to focus on problem solving rather than repeatitive tasks.",
+        ],
+      },
+      {
+        heading: "Testing",
+        paragraphs: [
+          `I have learned to appretiate the positive feedback loop of **Test Driven Development** and to emphasise code coverage while writing tests, mainly using **Jest** for Java-/Typescript and **built-in testing libraries** for other languages. Aswell as some experience in writing **End-To-End** tests for UI using **Playwright** and **Chrome DevTools**.`,
         ],
       },
     ],
