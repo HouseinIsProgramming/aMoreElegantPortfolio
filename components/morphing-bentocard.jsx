@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import BorderSpotlight from "./motion-primitives/border-spotlight";
 import { FolderArrowSVG } from "./ui/motion-svgs.jsx";
+import ReactMarkdown from "react-markdown";
 
 const MotionCard = motion(Card);
 const MotionCardContent = motion(CardContent);
@@ -60,7 +61,6 @@ export const MorphingBentocard = (props) => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         layout
-        // style={{ columnSpan: props.data.span }}
       >
         <BorderSpotlight />
 
@@ -81,6 +81,7 @@ export const MorphingBentocard = (props) => {
             <motion.h2
               layoutId={layoutId + "title"}
               transition={{ duration: 0.2, ease: "easeInOut", type: "tween" }}
+              className="!leading-[1] mt-3 mb-4"
             >
               {props.data.title}
             </motion.h2>
@@ -94,6 +95,7 @@ export const MorphingBentocard = (props) => {
         </MotionCardContent>
       </MotionCard>
 
+      {/* Modal start */}
       <AnimatePresence>
         {isOpenDialog && (
           <>
@@ -128,7 +130,20 @@ export const MorphingBentocard = (props) => {
                         aksj
                       </p>
                       {/* TODO: Add more detailed modal content below */}
-                      <div className="mt-8"></div>
+                      <div className="mt-8 flex flex-col gap-6">
+                        {props.data.details.map((section, i) => (
+                          <div key={i}>
+                            <h3 className="text-lg font-semibold mb-2">
+                              {section.heading}
+                            </h3>
+                            <div className="flex flex-col gap-3 text-sm text-muted-foreground">
+                              {section.paragraphs.map((text, j) => (
+                                <ReactMarkdown key={j}>{text}</ReactMarkdown>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </MotionCardContent>
