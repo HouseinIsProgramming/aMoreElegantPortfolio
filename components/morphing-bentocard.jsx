@@ -169,10 +169,10 @@ export const MorphingBentocard = (props) => {
                       <div className="mt-8 flex flex-col gap-6">
                         {props.data.details.map((section, i) => (
                           <div key={i}>
-                            <h3 className="text-lg font-semibold mb-2">
+                            <h3 className="text-lg font-semibold !leading-4">
                               {section.heading}
                             </h3>
-                            <div className="flex flex-col gap-3 text-sm font-light">
+                            <div className="!leading-0 text-sm font-light">
                               {section.paragraphs.map((text, j) => (
                                 <ReactMarkdown key={j}>{text}</ReactMarkdown>
                               ))}

@@ -6,9 +6,9 @@ import { MorphingBentocard } from "./morphing-bentocard";
 export const BentoBoxes = () => {
   return (
     <section className="container mb-96 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid gap-8">
-      <MorphingBentocard data={projectsData.interests} />
-      <MorphingBentocard data={projectsData.typemotion} />
       <MorphingBentocard data={projectsData.before2020} />
+      <MorphingBentocard data={projectsData.typemotion} />
+      <MorphingBentocard data={projectsData.interests} />
       <MorphingBentocard data={projectsData.pixeldoodle} />
     </section>
   );
@@ -73,23 +73,41 @@ const projectsData = {
 
   before2020: {
     id: "before2020",
+    span: 2,
     title: ["What happened", "before 2020?"],
     tag: "About me",
-    subtitle: "How did I end up here?",
-    hoverText: "Find out how programming has changed my life.",
+    subtitle: "and where are is your education?",
+    hoverText: "Find out more about my story, and how I ended up in austria",
     link1Href: "#", // Replace with actual primary link (e.g., Live Site)
     link2Href: "#", // Replace with actual secondary link (e.g., GitHub)
     details: [
       {
-        heading: "Why I made this:",
+        heading: "Where was I before 2020:",
         paragraphs: [
-          "Creating **engaging** text animations often requires complex tools or libraries. TypeMotion aims to simplify this for common use cases.",
+          "Before coming to austria for the second time, I was living in Cyprus and was in the process of getting my high school diploma. Due to the lockdowns and a legal obligation that requires me to not be outside of Austria for extended peroids of time. I had to drop out.",
         ],
       },
       {
-        heading: "Key Features:",
+        heading: "Second time?",
         paragraphs: [
-          "Real-time preview, various animation presets, easy export options.",
+          `If my name didn't give that out already, I am not from Austria, actually I come from Syria.  
+          In 2018 I fled to Austria as a refugee since I was being pressured to attend my mandatory military service at 16, which probably wouldn't have turned out so well.`,
+        ],
+      },
+      {
+        heading: "What about your education?",
+        paragraphs: [
+          `And after going through the approval process, which took around a year of waiting around, I tried attending school, which only made me realise that there is no way that I will be done in reasonable time frame. I was pushed back 2 years and still learn the language, so I would have had about 4 years when I actually was only missing 1.`,
+          `So I decided to go to Cyprus and try to finish my school there, since I attended international schools my entire life, english was not a problem. which sadly also didn't turn out well like I mentioned already.`,
+        ],
+      },
+      {
+        heading: "Does it suck?",
+        paragraphs: [
+          `Oh yes it does, I was the top student for pretty much the whole time that I was in school, and I have nothing to show for it.  
+          But I am not the only one who went through this, and it taught me a lot in the process.`,
+          `I am just glad that I am provided good living conditions and the opportunity to purse my passions.  
+          My glass will always be half full (the other half is also full, just with air).`,
         ],
       },
     ],
@@ -97,7 +115,6 @@ const projectsData = {
 
   interests: {
     id: "interests",
-    span: 2,
     title: ["What happened", "before 2020?"],
     tag: "About me",
     subtitle: "How did I end up here?",
