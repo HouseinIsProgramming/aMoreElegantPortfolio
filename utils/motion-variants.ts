@@ -73,6 +73,20 @@ export const transitionSpring = {
   damping: 20,
 };
 
+export const transitionSpringLight = {
+  ease: "easeOut",
+  duration: 0.2,
+  type: "spring",
+  stiffness: 250,
+  damping: 23,
+};
+
+export const transitionTween = {
+  duration: 0.3,
+  ease: "easeInOut",
+  type: "tween",
+};
+
 // List item variants
 export const listItemVariants = {
   visible: { opacity: 1, x: 0 },

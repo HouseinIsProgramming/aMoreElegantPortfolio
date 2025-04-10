@@ -1,7 +1,11 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { transitionSpring } from "@/utils/motion-variants";
+import {
+  transitionSpring,
+  transitionTween,
+  transitionSpringLight,
+} from "@/utils/motion-variants";
 import clsx from "clsx";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -81,7 +85,7 @@ export const MorphingBentocard = (props) => {
             </motion.sub>
             <motion.h2
               layoutId={layoutId + "title"}
-              transition={{ duration: 0.2, ease: "easeInOut", type: "tween" }}
+              transition={transitionTween}
               className="!leading-[1] mt-3 mb-4"
             >
               {props.data.title.map((text, i) => (
@@ -93,11 +97,7 @@ export const MorphingBentocard = (props) => {
             <motion.div
               className="relative text-lg font-medium"
               layoutId={layoutId + "subtitle"}
-              transition={{
-                duration: 0.2,
-                ease: "easeInOut",
-                type: "tween",
-              }}
+              transition={transitionTween}
             >
               {props.data.subtitle}
               <p className="absolute translate-y-1.5 font-light text-muted-foreground ">
@@ -126,29 +126,21 @@ export const MorphingBentocard = (props) => {
                 key="modal-card"
                 layoutId={layoutId + "card"}
                 className="relative z-50 w-[90vw] !h-[80vh] md:max-w-[80vw] xl:w-[50vw] bg-card p-6 rounded-lg shadow-lg overflow-auto"
-                transition={{ duration: 0.2 }}
+                transition={transitionSpringLight}
               >
                 <MotionCardContent className="flex flex-col justify-between">
                   <div className="my-24">
                     <motion.sub
                       layoutId={layoutId + "tag"}
                       className={`transition-colors duration-500 ${isHovered ? "!text-[#4285F4]" : ""}`}
-                      transition={{
-                        duration: 0.2,
-                        ease: "easeInOut",
-                        type: "tween",
-                      }}
+                      transition={transitionTween}
                     >
                       {props.data.tag}
                     </motion.sub>
 
                     <motion.h2
                       layoutId={layoutId + "title"}
-                      transition={{
-                        duration: 0.2,
-                        ease: "easeInOut",
-                        type: "tween",
-                      }}
+                      transition={transitionSpring}
                       className="!leading-[1] mt-3 mb-4 flex"
                     >
                       {props.data.title.map((text, i) => (
@@ -161,25 +153,20 @@ export const MorphingBentocard = (props) => {
                       <motion.div
                         className="relative m-0 text-lg font-medium"
                         layoutId={layoutId + "subtitle"}
-                        transition={{
-                          duration: 0.2,
-                          ease: "easeInOut",
-                          type: "tween",
-                        }}
+                        transition={transitionTween}
                       >
                         {props.data.subtitle}
                         <p className="absolute translate-y-1.5 font-light text-muted-foreground hidden">
                           {props.data.hoverText}
                         </p>
                       </motion.div>
-                      {/* TODO: Add more detailed modal content below */}
                       <div className="mt-8 flex flex-col gap-6">
                         {props.data.details.map((section, i) => (
                           <div key={i}>
                             <h3 className="text-lg font-semibold mb-2">
                               {section.heading}
                             </h3>
-                            <div className="flex flex-col gap-3 text-sm text-muted-foreground">
+                            <div className="flex flex-col gap-3 text-sm font-light">
                               {section.paragraphs.map((text, j) => (
                                 <ReactMarkdown key={j}>{text}</ReactMarkdown>
                               ))}

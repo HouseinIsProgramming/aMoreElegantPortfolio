@@ -162,6 +162,10 @@ sub {
   @apply text-lg text-muted-foreground;
 }
 
+strong {
+  @apply font-bold text-foreground;
+}
+
 .bg-card {
   @apply shadow-lg dark:bg-black from-black to-neutral-900/50 dark:bg-radial;
 }

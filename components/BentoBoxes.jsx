@@ -82,7 +82,7 @@ const projectsData = {
       {
         heading: "Why I made this:",
         paragraphs: [
-          "Creating engaging text animations often requires complex tools or libraries. TypeMotion aims to simplify this for common use cases.",
+          "Creating **engaging** text animations often requires complex tools or libraries. TypeMotion aims to simplify this for common use cases.",
         ],
       },
       {
