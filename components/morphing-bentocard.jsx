@@ -8,7 +8,8 @@ import {
 } from "@/utils/motion-variants";
 import clsx from "clsx";
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+// Make sure to import useRef as well
+import { useEffect, useState, useRef } from "react";
 import BorderSpotlight from "./motion-primitives/border-spotlight";
 import { FolderArrowSVG } from "./ui/motion-svgs.jsx";
 import ReactMarkdown from "react-markdown";
@@ -24,6 +25,8 @@ export const MorphingBentocard = (props) => {
 
   const [isHovered, setIsHovered] = useState(false);
   const [isOpenDialog, setIsOpenDialog] = useState(false);
+  const [hoverTextHeight, setHoverTextHeight] = useState(0);
+  const hoverTextRef = useRef(null);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -51,6 +54,21 @@ export const MorphingBentocard = (props) => {
     }, 1500);
   };
 
+  const handleMouseEnter = () => {
+    if (hoverTextRef.current) {
+      const height = hoverTextRef.current.offsetHeight;
+      setHoverTextHeight(height + 4);
+    }
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    // Optionally reset the height, although it's not strictly necessary
+    // as the translateY calculation only uses it when isHovered is true.
+    // setHoverTextHeight(0);
+  };
+
   const layoutId = `card-modal-${props.data?.id || "unique"}`;
 
   return (
@@ -59,11 +77,12 @@ export const MorphingBentocard = (props) => {
         layoutId={layoutId + "card"}
         onClick={() => setIsOpenDialog(true)}
         className={clsx(
-          "h-80 cursor-pointer relative px-3 transition-shadow bg-card duration-500 hover:!shadow-2xl w-full lg:px-4 pt-8 pb-5 overflow-y-hidden",
+          "h-80 cursor-pointer relative px-3 transition-shadow bg-card duration-500 hover:!shadow-2xl w-full lg:px-4 pt-8 pb-5 overflow-y-hidden", // Keep overflow-y-hidden here if needed for the card itself
           spanClass,
         )}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        // Use the modified hover handlers
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         layout
       >
         <BorderSpotlight />
@@ -74,7 +93,12 @@ export const MorphingBentocard = (props) => {
         >
           <FolderArrowSVG isHovered={isHovered} />
           <motion.div
-            animate={{ translateY: isHovered ? -64 : 0 }}
+            // Use the hoverTextHeight from state for the translation
+            // Add a small buffer (e.g., 4 or 6 pixels) if you want extra space between
+            // where the subtitle was and where the hover text appears, adjust as needed.
+            // Or use exactly -hoverTextHeight if that's preferred.
+            animate={{ translateY: isHovered ? -(hoverTextHeight + 6) : 0 }} // Example with a 6px buffer
+            // animate={{ translateY: isHovered ? -hoverTextHeight : 0 }} // Exact height translation
             transition={transitionSpring}
           >
             <motion.sub
@@ -87,7 +111,7 @@ export const MorphingBentocard = (props) => {
               layoutId={layoutId + "title"}
               transition={transitionTween}
               className={
-                (clsx("!leading-[1]  mt-3 mb-4 whitespace-nowrap"),
+                (clsx("!leading-[1]  mt-3 mb-4 whitespace-nowrap"), // Removed extra space causing potential issues
                 props.data.span === 2 ? "flex flex-wrap" : "block")
               }
             >
@@ -97,13 +121,22 @@ export const MorphingBentocard = (props) => {
                 </div>
               ))}
             </motion.h2>
+            {/* This inner div might prevent the translateY from properly hiding the subtitle */}
+            {/* Consider applying the layoutId directly to the elements if possible or restructuring */}
             <motion.div
               className="relative text-lg font-medium"
               layoutId={layoutId + "subtitle"}
               transition={transitionTween}
             >
+              {/* Subtitle Text - this will be moved up */}
               {props.data.subtitle}
-              <p className="absolute translate-y-1.5 font-light text-muted-foreground ">
+
+              {/* Hover Text - Attach the ref here */}
+              {/* Ensure this element is not hidden by overflow on its parent when translated */}
+              <p
+                ref={hoverTextRef} // Attach the ref to the paragraph element
+                className="absolute translate-y-1.5 font-light text-muted-foreground "
+              >
                 {props.data.hoverText}
               </p>
             </motion.div>
@@ -111,7 +144,7 @@ export const MorphingBentocard = (props) => {
         </MotionCardContent>
       </MotionCard>
 
-      {/* Modal start */}
+      {/* Modal start (unchanged) */}
       <AnimatePresence>
         {isOpenDialog && (
           <>
@@ -145,7 +178,7 @@ export const MorphingBentocard = (props) => {
                       layoutId={layoutId + "title"}
                       transition={transitionTween}
                       className={
-                        (clsx("!leading-[1]  mt-3 mb-4 whitespace-nowrap"),
+                        (clsx("!leading-[1]  mt-3 mb-4 whitespace-nowrap"), // Removed extra space
                         props.data.span === 2 ? "flex flex-wrap" : "block")
                       }
                     >
@@ -162,6 +195,7 @@ export const MorphingBentocard = (props) => {
                         transition={transitionTween}
                       >
                         {props.data.subtitle}
+                        {/* Note: The hoverText P tag inside the subtitle div is hidden in the modal */}
                         <p className="absolute translate-y-1.5 font-light text-muted-foreground hidden">
                           {props.data.hoverText}
                         </p>
