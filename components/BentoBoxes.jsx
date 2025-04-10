@@ -21,7 +21,7 @@ const projectsData = {
     title: ["PixelDoodle"],
     tag: "Web Application",
     subtitle:
-      "Turn your hand written notes into images with transparent background.",
+      "Turn your hand written notes into images with transparent backgrounds.",
     hoverText:
       "Find out more about me and what I went through before starting out as a developer.",
     link2Href: "#", // Replace with actual secondary link (e.g., GitHub)
@@ -76,7 +76,7 @@ const projectsData = {
     span: 2,
     title: ["What happened", "before 2020?"],
     tag: "About me",
-    subtitle: "and where are is your education?",
+    subtitle: "and where is your education?",
     hoverText: "Find out more about my story, and how I ended up in austria",
     link1Href: "#", // Replace with actual primary link (e.g., Live Site)
     link2Href: "#", // Replace with actual secondary link (e.g., GitHub)
