@@ -5,6 +5,7 @@ import WorkExperience from "@/components/workexperience";
 import TechStack from "@/components/techstack";
 import MiniFooter from "@/components/mini-footer";
 import { BentoBoxes } from "@/components/BentoBoxes";
+import ContactForm from "@/components/ContactForm";
 
 export default function Page() {
   return (
@@ -25,6 +26,7 @@ export default function Page() {
       </section>
       {/* <Separator className="container my-8" /> */}
       <BentoBoxes />
+      <ContactForm />
     </div>
   );
 }
