@@ -17,11 +17,13 @@ import {
   FaReact,
   FaNodeJs,
   FaPhp,
+  FaDocker,
   FaPython,
   FaGitAlt,
   FaGithub,
   FaCheckDouble,
 } from "react-icons/fa";
+import { CSharpSVG } from "./ui/motion-svgs";
 import {
   SiAdobephotoshop,
   SiTypescript,
@@ -139,6 +141,12 @@ const techIcons: TechIconMap = {
     darkColor: darkenColor("#3776AB", 15),
     textColor: "white",
   },
+  "C#": {
+    icon: CSharpSVG,
+    color: "#2F086D",
+    darkColor: darkenColor("#2F086D", 15),
+    textColor: "white",
+  },
   "Adobe Photoshop": {
     icon: SiAdobephotoshop,
     color: "#31A8FF",
@@ -173,6 +181,12 @@ const techIcons: TechIconMap = {
     icon: SiJest,
     color: "#C21325",
     darkColor: darkenColor("#C21325", 15),
+    textColor: "white",
+  },
+  Docker: {
+    icon: FaDocker,
+    color: "#2496ED",
+    darkColor: darkenColor("#2496ED", 15),
     textColor: "white",
   },
   Playwright: {
@@ -216,7 +230,7 @@ export default function TechStack() {
             "Svelte",
           ],
         },
-        { backend: ["Node.js", "mySQL", "PHP", "Python"] },
+        { backend: ["Node.js", "mySQL", "PHP", "Python", "C#"] },
       ],
     },
     {
@@ -225,7 +239,15 @@ export default function TechStack() {
     },
     {
       title: "Tooling",
-      items: ["Git", "GitHub", "Jest", "Playwright", "Lua", "Shell Scripts"],
+      items: [
+        "Git",
+        "GitHub",
+        "Jest",
+        "Docker",
+        "Playwright",
+        "Lua",
+        "Shell Scripts",
+      ],
     },
     {
       title: "Knowledge",
