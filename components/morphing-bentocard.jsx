@@ -125,11 +125,13 @@ export const MorphingBentocard = (props) => {
               className={clsx(" whitespace-nowrap mt-2 flex flex-wrap")}
             >
               {props.data.title.map((text, i) => (
-                <div className="mr-1 leading-tight" key={i}>
+                <div className="mr-1 leading-tight flex items-center" key={i}>
                   {text}
+                  {i === props.data.title.length - 1 && (
+                    <ChevronsRightSVG isHovered={isHovered} />
+                  )}
                 </div>
               ))}
-              <ChevronsRightSVG isHovered={isHovered} />
             </motion.h2>
             <motion.div
               className="relative text-lg font-medium"
