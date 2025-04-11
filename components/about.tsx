@@ -53,7 +53,7 @@ function About() {
       <TextEffect as="p" per="line" delay={0.6}>
         {`
           I am ${age} years old and have been coding for as long as I can remember.
-          Everything I know about coding is self taught, and I am always looking to learn more.
+          Everything I know about coding is self-taught through practice and online courses, and I am always looking to learn more.
           My passion for tinkering with code, creating solutions and delivering them in an intuitive way led me to pursue my career as a programmer.
            Which is why I am happy to say that I currently have ${yearsOfExperience} years as professional developer behind me and I am looking forward to what's ahead.
 

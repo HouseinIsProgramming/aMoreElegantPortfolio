@@ -32,19 +32,45 @@ function Biography() {
           className="text-muted-foreground"
           speedReveal={3}
         >
-          with a burning passion for programming, learning new skills and
-          technologies and providing solutions.
+          With 2 years of professional experience and a life-long passion for
+          coding.
         </TextEffect>
       </div>
 
       <NavMenu />
 
       <MotionUL
-        className="flex items-center justify-center gap-8 lg:mt-12 mt-6 md:grid md:grid-cols-2 md:place-items-center md:gap-x-14 mb-4 md:gap-y-0 lg:flex lg:flex-row lg:gap-8"
+        className="flex items-center justify-center gap-6 lg:mt-12 mt-6 md:grid md:grid-cols-2 md:place-items-center md:gap-x-14 mb-4 md:gap-y-0 lg:flex lg:flex-row lg:gap-8"
         initial="hidden"
         animate="visible"
         variants={listVariants}
       >
+        <motion.li variants={listItemVariants}>
+          <Magnetic>
+            <Button variant="outline" style={{ padding: 1 }}>
+              <a
+                href="mailto:housein.aboshaar@gmail.com"
+                target="_blank"
+                className="p-2 flex gap-1"
+              >
+                <MdEmail size={36} /> Email Me
+              </a>
+            </Button>
+          </Magnetic>
+        </motion.li>
+        <motion.li variants={listItemVariants}>
+          <Magnetic>
+            <Button variant="outline" style={{ padding: 1 }}>
+              <a
+                href="https://docs.houseinaboshaar.com/HousienAboShaar-Resume.pdf"
+                target="_blank"
+                className="p-2 flex gap-1"
+              >
+                <TbFileCv size={36} /> My CV
+              </a>
+            </Button>
+          </Magnetic>
+        </motion.li>
         <motion.li variants={listItemVariants}>
           <Magnetic>
             <a
@@ -54,32 +80,6 @@ function Biography() {
             >
               <FaLinkedin size={36} />
             </a>
-          </Magnetic>
-        </motion.li>
-        <motion.li variants={listItemVariants}>
-          <Magnetic>
-            <Button variant="outline" size="icon" style={{ padding: 1 }}>
-              <a
-                href="mailto:housein.aboshaar@gmail.com"
-                target="_blank"
-                className="p-1"
-              >
-                <MdEmail size={36} />
-              </a>
-            </Button>
-          </Magnetic>
-        </motion.li>
-        <motion.li variants={listItemVariants}>
-          <Magnetic>
-            <Button variant="outline" size="icon" style={{ padding: 1 }}>
-              <a
-                href="https://docs.houseinaboshaar.com/HousienAboShaar-Resume.pdf"
-                target="_blank"
-                className="p-1"
-              >
-                <TbFileCv size={36} />
-              </a>
-            </Button>
           </Magnetic>
         </motion.li>
         <motion.li variants={listItemVariants}>
