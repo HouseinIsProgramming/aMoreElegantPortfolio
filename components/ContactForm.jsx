@@ -8,15 +8,29 @@ import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { GlowEffect } from "./motion-primitives/glow-effect";
 import { motion } from "framer-motion";
+import { TextMorph } from "./motion-primitives/text-morph";
 
 const ContactForm = () => {
   const [isTextAreaFocused, setIsTextAreaFocused] = useState(false);
   const [isNameFocused, setIsNameFocused] = useState(false);
 
+  const [text, setText] = useState("Thank you for visting my website.");
+
+  const handleOnChange = (e) => {
+    if (e.target.value.length > 2) {
+      const thankYouMessage = "Thank you for reaching out, dear person ";
+      setText(thankYouMessage + e.target.value);
+      console.log("Thank you for visting my website.".length);
+      console.log(thankYouMessage.length);
+    } else {
+      setText("Thank you for visting my website.");
+    }
+  };
+
   return (
     <div className="mb-96 container">
       <h1 className="text-3xl font-bold text-center mb-12">Contact Me</h1>
-      <div className="grid px-2 md:grid-cols-2 md:gap-16 lg:gap-24 items-center">
+      <div className="grid px-2 lg:grid-cols-2 grid-cols-1 gap-12 md:gap-16 lg:gap-24 items-center">
         <div className="space-y-6">
           <div className="relative">
             <Label className="mb-3" htmlFor="name">
@@ -43,9 +57,10 @@ const ContactForm = () => {
               <Input
                 id="name"
                 placeholder="John Doe"
-                className="bg-transparent focus:outline-none w-full"
+                className="bg-card focus:outline-none w-full"
                 onFocus={() => setIsNameFocused(true)}
                 onBlur={() => setIsNameFocused(false)}
+                onChange={handleOnChange}
               />
             </div>
           </div>
@@ -54,14 +69,22 @@ const ContactForm = () => {
             <Label className="mb-3" htmlFor="email">
               E-Mail
             </Label>
-            <Input id="email" placeholder="example@probablygmail.com" />
+            <Input
+              className="bg-card"
+              id="email"
+              placeholder="example@probablygmail.com"
+            />
           </div>
 
           <div>
             <Label className="mb-3" htmlFor="Subject">
               Subject
             </Label>
-            <Input id="Subject" placeholder="What do you want to tell me?" />
+            <Input
+              className="bg-card"
+              id="Subject"
+              placeholder="What do you want to tell me?"
+            />
           </div>
 
           <div className="relative">
@@ -85,19 +108,22 @@ const ContactForm = () => {
             </motion.div>
 
             {/* Textarea with styled wrapper */}
-            <div className="relative z-20 rounded-md border border-zinc-300/40 bg-white dark:border-zinc-700/40 dark:bg-zinc-900">
+            <div className="relative z-20 rounded-md border border-zinc-300/40 bg-card">
               <Textarea
                 id="message"
                 placeholder="Type away..."
-                className="resize-none bg-transparent focus:outline-none w-full"
+                className="resize-y max-h-64 h-fit bg-card focus:outline-none w-full"
                 onFocus={() => setIsTextAreaFocused(true)}
                 onBlur={() => setIsTextAreaFocused(false)}
               />
             </div>
           </div>
         </div>
+
         {/* TODO: make the height full but according to the grid and without margins */}
-        <Card className="h-full p-4 my-12"></Card>
+        <Card className="h-full min-h-52 p-4">
+          <TextMorph>{text}</TextMorph>
+        </Card>
       </div>
     </div>
   );
