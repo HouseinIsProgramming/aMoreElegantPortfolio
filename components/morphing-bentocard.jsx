@@ -10,11 +10,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import BorderSpotlight from "./motion-primitives/border-spotlight";
-import {
-  CalendarRotateSVG,
-  ChevronsRightSVG,
-  FolderArrowSVG,
-} from "./ui/motion-svgs.jsx";
+import { ChevronsRightSVG } from "./ui/motion-svgs.jsx";
+import { itemVariants } from "@/utils/motion-variants";
 
 // TODO: REFACTOR THIS PLEASE
 
@@ -81,6 +78,10 @@ export const MorphingBentocard = (props) => {
     <>
       <MotionCard
         layoutId={layoutId + "card"}
+        initial="hidden"
+        whileInView="visible"
+        variants={itemVariants}
+        viewport={{ once: true, margin: "-150px" }}
         onClick={() => setIsOpenDialog(true)}
         className={clsx(
           "h-80 cursor-pointer relative px-3 transition-shadow bg-card duration-500 hover:!shadow-2xl w-full lg:px-4 pt-8 pb-5 overflow-y-hidden",

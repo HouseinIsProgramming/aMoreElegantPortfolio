@@ -8,14 +8,21 @@ import {
   MonitorCogSVG,
   BookHeartSVG,
 } from "./ui/motion-svgs.jsx";
+import { motion } from "framer-motion";
+import { TextEffect } from "./motion-primitives/text-effect";
 
 export const BentoBoxes = () => {
   return (
     <>
-      <h1 id="bento-boxes" className="text-3xl font-bold mb-12">
+      <TextEffect
+        id="bento-boxes"
+        className="mb-8"
+        preset="fade-in-blur"
+        as="h1"
+      >
         More about me
-      </h1>
-      <section className="mb-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid gap-8">
+      </TextEffect>
+      <motion.section className="mb-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid gap-8">
         <MorphingBentocard data={projectsData.frontend} />
         <MorphingBentocard data={projectsData.backend} />
         <MorphingBentocard data={projectsData.interests} />
@@ -23,7 +30,7 @@ export const BentoBoxes = () => {
         {/* <MorphingBentocard data={projectsData.startout} /> */}
         {/* <MorphingBentocard data={projectsData.pixeldoodle} /> */}
         {/* <MorphingBentocard data={projectsData.typemotion} /> */}
-      </section>
+      </motion.section>
     </>
   );
 };
