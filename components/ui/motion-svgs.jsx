@@ -16,7 +16,7 @@ export const FolderArrowSVG = ({ isHovered }) => {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="2"
+      stroke-width="2"
       strokeLinecap="round"
       strokeLinejoin="round"
       className="lucide lucide-folder-symlink-icon lucide-folder-symlink"
@@ -127,9 +127,9 @@ export const CalendarRotateSVG = ({ isHovered }) => {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       class="lucide lucide-calendar-sync-icon lucide-calendar-sync"
       animate={getResizeIconVariant(isHovered)}
     >
@@ -198,6 +198,34 @@ export const MonitorCogSVG = ({ isHovered }) => {
           <circle cx="18" cy="6" r="3" />
         </motion.g>
       </motion.g>
+    </motion.svg>
+  );
+};
+
+export const ChevronsRightSVG = ({ isHovered }) => {
+  return (
+    <motion.svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="3"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-chevrons-right-icon lucide-chevrons-right"
+      animate={{ rotate: isHovered ? 90 : 0 }}
+      style={{ marginTop: "0.25rem" }}
+    >
+      <motion.path
+        animate={{ translateX: isHovered ? 3 : 0 }}
+        d="m6 17 5-5-5-5"
+      />
+      <motion.path
+        animate={{ translateX: isHovered ? -4 : 0 }}
+        d="m13 17 5-5-5-5"
+      />
     </motion.svg>
   );
 };
