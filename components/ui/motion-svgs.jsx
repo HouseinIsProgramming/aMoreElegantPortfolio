@@ -216,7 +216,6 @@ export const ChevronsRightSVG = ({ isHovered }) => {
       strokeLinejoin="round"
       className="lucide lucide-chevrons-right-icon lucide-chevrons-right"
       animate={{ rotate: isHovered ? 90 : 0 }}
-      style={{ marginTop: "0.25rem" }}
     >
       <motion.path
         animate={{ translateX: isHovered ? 3 : 0 }}

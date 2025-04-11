@@ -47,7 +47,7 @@ function About() {
   return (
     <div id="about" className="lg:mt-32 scroll-m-12">
       <TextEffect delay={0.3} preset="fade-in-blur" as="h2">
-        About
+        Bio
       </TextEffect>
 
       <TextEffect as="p" per="line" delay={0.6}>

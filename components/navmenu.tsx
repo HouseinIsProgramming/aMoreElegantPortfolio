@@ -5,9 +5,10 @@ import { itemVariants } from "@/utils/motion-variants"; // Assuming this file an
 import { useState } from "react";
 
 const TABS = [
-  { title: "About", link: "about" },
+  { title: "Bio", link: "about" },
   { title: "Tech Stack", link: "tech-stack" },
   { title: "Work Experience", link: "work-experience" },
+  { title: "More about me", link: "bento-boxes" },
   { title: "Contact", link: "contact" },
 ];
 

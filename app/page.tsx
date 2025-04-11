@@ -5,7 +5,6 @@ import WorkExperience from "@/components/workexperience";
 import TechStack from "@/components/techstack";
 import MiniFooter from "@/components/mini-footer";
 import { BentoBoxes } from "@/components/BentoBoxes";
-import ContactForm from "@/components/ContactForm";
 
 export default function Page() {
   return (
@@ -20,13 +19,13 @@ export default function Page() {
           <TechStack />
           <Separator className="my-4" />
           <WorkExperience />
-          <Separator className="my-4" />
-          <MiniFooter />
         </div>
       </section>
-      {/* <Separator className="container my-8" /> */}
-      <BentoBoxes />
-      <ContactForm />
+      <div className=" container">
+        <BentoBoxes />
+        <Separator className="my-4" />
+        <MiniFooter />
+      </div>
     </div>
   );
 }

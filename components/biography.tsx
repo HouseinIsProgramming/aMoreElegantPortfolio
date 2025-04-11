@@ -40,7 +40,7 @@ function Biography() {
       <NavMenu />
 
       <MotionUL
-        className="flex items-center justify-center gap-8 mt-12 md:grid md:grid-cols-2 md:place-items-center md:gap-x-14 md:gap-y-0 lg:flex lg:flex-row lg:gap-8"
+        className="flex items-center justify-center gap-8 lg:mt-12 mt-6 md:grid md:grid-cols-2 md:place-items-center md:gap-x-14 mb-4 md:gap-y-0 lg:flex lg:flex-row lg:gap-8"
         initial="hidden"
         animate="visible"
         variants={listVariants}
