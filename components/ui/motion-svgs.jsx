@@ -16,7 +16,7 @@ export const FolderArrowSVG = ({ isHovered }) => {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
+      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
       className="lucide lucide-folder-symlink-icon lucide-folder-symlink"
@@ -92,10 +92,10 @@ export const BookHeartSVG = ({ isHovered }) => {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="lucide lucide-book-heart-icon lucide-book-heart"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-book-heart-icon lucide-book-heart"
       animate={getResizeIconVariant(isHovered)}
     >
       <motion.path
@@ -130,7 +130,7 @@ export const CalendarRotateSVG = ({ isHovered }) => {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      class="lucide lucide-calendar-sync-icon lucide-calendar-sync"
+      className="lucide lucide-calendar-sync-icon lucide-calendar-sync"
       animate={getResizeIconVariant(isHovered)}
     >
       <motion.g
@@ -161,10 +161,10 @@ export const MonitorCogSVG = ({ isHovered }) => {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="lucide lucide-monitor-cog-icon lucide-monitor-cog"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-monitor-cog-icon lucide-monitor-cog"
       animate={getResizeIconVariant(isHovered)}
     >
       <path d="M12 17v4" />
@@ -211,10 +211,10 @@ export const ChevronsRightSVG = ({ isHovered }) => {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="3"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="lucide lucide-chevrons-right-icon lucide-chevrons-right"
+      strokeWidth="3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-chevrons-right-icon lucide-chevrons-right"
       animate={{ rotate: isHovered ? 90 : 0 }}
       style={{ marginTop: "0.25rem" }}
     >
