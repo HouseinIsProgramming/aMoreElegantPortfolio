@@ -199,6 +199,14 @@ const projectsData = {
         paragraphs: [
           `**Reading** is a hobby I picked up during the **lockdowns**, and I’m glad I did. I used to scoff at people who said **physical books** aren’t the same as reading an e-book or something on your phone — until I actually tried it.
       I mostly enjoy **philosophy**, **self-help**, **science fiction**, and the occasional **novel** or **biography**.`,
+          `here is curated list of all my favorite books: **[MyFavouriteBooks](https://github.com/HouseinIsProgramming/MyFavouriteBooks)** `,
+        ],
+      },
+      {
+        heading: "Photography/Graphics/Animations",
+        paragraphs: [
+          `There’s something incredibly **immersive** about the act of **creating** visually striking work. Being outdoors becomes more meaningful when I’m observant my surroundings for inspiration **hidden in plain sight** design cues in logos, billboards, and other _artificial_ elements. It trains me to **slow down**, pay attention, and think more clearly. Whether I’m **experimenting** with *raw filters* on a picture I took, **hand-coding** animated SVGs, or **understanding** typography and animations, I always find myself _unregrettably_ absorbed in what seems like the simplest things.
+`,
         ],
       },
       {
