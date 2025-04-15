@@ -51,9 +51,10 @@ export default function ContactLinks({}) {
             <motion.li key={linkData.key} variants={listItemVariants}>
               <Magnetic range={50}>
                 <Button
-                  variant="default"
                   size="sm"
+                  variant="outline"
                   asChild
+                  className="!bg-popover shadow-md"
                   style={{ padding: "0.5rem" }}
                 >
                   <a
