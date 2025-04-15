@@ -32,8 +32,7 @@ export const MorphingBentocard = (props) => {
   const [contentDivWidth, setContentDivWidth] = useState(0);
   const [absoluteDivHeight, setabsoluteDivHeight] = useState(0);
   const hoverTextRef = useRef(null);
-  const contentDivRef = useRef(null); // Ref for the content div
-  const absoluteDivRef = useRef(null); // Ref for the absolute div
+  const contentDivRef = useRef(null);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -51,10 +50,10 @@ export const MorphingBentocard = (props) => {
   const handleClose = () => {
     setIsOpenDialog(false);
     setTimeout(() => {
-      setIsHovered(true);
+      handleMouseEnter();
     }, 100);
     setTimeout(() => {
-      setIsHovered(false);
+      handleMouseLeave();
     }, 1500);
   };
 
