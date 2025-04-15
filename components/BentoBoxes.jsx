@@ -15,7 +15,7 @@ export const BentoBoxes = () => {
   return (
     <>
       <TextEffect className="mb-8" preset="fade-in-blur" as="h1">
-        More about me
+        My Story and Skills
       </TextEffect>
       <motion.section
         id="bento-boxes"

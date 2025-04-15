@@ -10,7 +10,7 @@ function BorderSpotlight() {
         size={250}
       />
       <Spotlight size={200} className="dark:bg-neutral-300/10 bg-black/5" />
-      <div className="absolute inset-0.5 h-[calc(100%-4px)] w-[calc(100%-4px)] -z-10 rounded-lg bg-white dark:bg-black"></div>
+      <div className="absolute inset-0.5 h-[calc(100%-4px)] w-[calc(100%-4px)] -z-10 rounded-lg bg-card dark:bg-card"></div>
     </>
   );
 }
