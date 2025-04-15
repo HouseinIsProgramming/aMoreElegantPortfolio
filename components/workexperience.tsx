@@ -43,7 +43,8 @@ export default function WorkExperience() {
         "Started my career as a Web Developer where I got the chance to work on various projects and tasks.",
       technologies: [
         {
-          title: "Developed and maintained web applications",
+          title:
+            "Developed new features and maintained existing ones for the company website and applications.",
           tech: ["HTML", "CSS", "Javascript", "TYPO3", "NeosCMS", "PHP"],
         },
         {
@@ -92,11 +93,16 @@ export default function WorkExperience() {
       startDate: "Jun, 2020",
       endDate: "Sep, 2021",
       description: "My first job and step in the job market",
+      technologies: [
+        {
+          title: "Introductionary training in the field of mechatronics.",
+        },
+      ],
     },
   ];
 
   return (
-    <section id="work-experience" className="py-3 scroll-m-12">
+    <section id="work-experience" className="py-3 scroll-m-12 mb-10">
       <div className="">
         <motion.div
           variants={sectionHeaderVariants}
@@ -146,24 +152,26 @@ export default function WorkExperience() {
                     <div className="space-y-3">
                       {experience.technologies?.map((techCategory, index) => (
                         <div key={index}>
-                          <h4 className="text-sm font-light mb-2">
+                          <h4 className="text-lg mb-2">
                             - {techCategory.title}
                           </h4>
-                          <motion.div
-                            className="flex flex-wrap gap-2"
-                            variants={badgeContainerVariants}
-                          >
-                            {techCategory.tech?.map((tech) => (
-                              <MotionBadge
-                                key={tech}
-                                variant="outline"
-                                className="max-sm:dark:!border-white/20"
-                                variants={badgeVariants}
-                              >
-                                {tech}
-                              </MotionBadge>
-                            ))}
-                          </motion.div>
+                          {techCategory.tech && (
+                            <motion.div
+                              className="flex flex-wrap gap-2 mb-6"
+                              variants={badgeContainerVariants}
+                            >
+                              {techCategory.tech?.map((tech) => (
+                                <MotionBadge
+                                  key={tech}
+                                  variant="outline"
+                                  className="max-sm:dark:!border-white/20 text-sm font-light"
+                                  variants={badgeVariants}
+                                >
+                                  {tech}
+                                </MotionBadge>
+                              ))}
+                            </motion.div>
+                          )}
                         </div>
                       ))}
                     </div>

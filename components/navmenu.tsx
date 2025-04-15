@@ -7,9 +7,8 @@ import { useState } from "react";
 const TABS = [
   { title: "Bio", link: "about" },
   { title: "Tech Stack", link: "tech-stack" },
+  { title: "My Story and Skills", link: "bento-boxes" },
   { title: "Work Experience", link: "work-experience" },
-  { title: "More about me", link: "bento-boxes" },
-  { title: "Contact", link: "contact" },
 ];
 
 function NavMenu() {

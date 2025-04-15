@@ -19,7 +19,7 @@ export const BentoBoxes = () => {
       </TextEffect>
       <motion.section
         id="bento-boxes"
-        className="mb-12 grid-cols-1 sm:grid-cols-2 grid gap-4"
+        className="mb-12 grid-cols-1 scroll-m-28 sm:grid-cols-2 grid gap-4"
       >
         <MorphingBentocard data={projectsData.frontend} />
         <MorphingBentocard data={projectsData.backend} />
@@ -226,7 +226,7 @@ const projectsData = {
     subtitle: "My techstack, experience and tools I use to build websites.",
     tag: "UI, UX & Design",
     hoverText:
-      "A quick overview of my tech experience and what I am proficient in.",
+      "React, Svelte, Tailwind, HTML, CSS, Figma, Adobe, Animatimations.",
     details: [
       {
         heading: "Languages & Frameworks",

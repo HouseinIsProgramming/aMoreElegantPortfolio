@@ -18,9 +18,9 @@ export default function Page() {
           <Separator className="my-4 mt-12" />
           <TechStack />
           <Separator className="my-4" />
-          <WorkExperience />
-          <Separator className="my-4" />
           <BentoBoxes />
+          <Separator className="my-4" />
+          <WorkExperience />
           <div className="block lg:hidden">
             <Separator className="my-4" />
             <MiniFooter />

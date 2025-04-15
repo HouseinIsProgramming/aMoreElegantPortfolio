@@ -1,7 +1,7 @@
 import { listVariants, listItemVariants } from "@/utils/motion-variants";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+import { RiMailSendLine } from "react-icons/ri";
 import { ModeToggle } from "./light-dark-toggle";
 import { Magnetic } from "./motion-primitives/magnetic";
 import { Button } from "./ui/button"; // Assuming this is from shadcn/ui or similar
@@ -26,7 +26,7 @@ const contactLinksData = [
   {
     key: "email",
     href: "mailto:housein.aboshaar@gmail.com",
-    icon: MdEmail,
+    icon: RiMailSendLine,
   },
   {
     key: "cv",

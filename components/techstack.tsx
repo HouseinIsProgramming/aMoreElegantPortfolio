@@ -285,7 +285,7 @@ export default function TechStack() {
           variant="outline"
           variants={badgeVariants}
           custom={index}
-          className="flex items-center gap-1 transition-all duration-200 group relative p-0 overflow-hidden"
+          className="flex text-sm items-center gap-1 transition-all duration-200 group relative p-0 overflow-hidden"
           style={{}}
         >
           <div className="flex items-center gap-1 group-hover:opacity-0 transition-opacity duration-300 px-2.5 py-0.5">
@@ -354,7 +354,7 @@ export default function TechStack() {
               }`}
             >
               <BorderSpotlight />
-              <CardContent className="p-6">
+              <CardContent className="p-5">
                 <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
                 <motion.div className="flex flex-wrap gap-2">
                   {category.title === "Knowledge" &&
@@ -365,6 +365,7 @@ export default function TechStack() {
                           <MotionBadge
                             key={`knowledge-${j}`}
                             variant="outline"
+                            className="text-sm"
                             variants={badgeVariants}
                             custom={j}
                           >
