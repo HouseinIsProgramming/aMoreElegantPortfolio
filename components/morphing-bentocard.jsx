@@ -30,8 +30,10 @@ export const MorphingBentocard = (props) => {
   const [hoverTextHeight, setHoverTextHeight] = useState(0);
   const [contentDivHeight, setContentDivHeight] = useState(0);
   const [contentDivWidth, setContentDivWidth] = useState(0);
+  const [absoluteDivHeight, setabsoluteDivHeight] = useState(0);
   const hoverTextRef = useRef(null);
   const contentDivRef = useRef(null); // Ref for the content div
+  const absoluteDivRef = useRef(null); // Ref for the absolute div
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -59,6 +61,7 @@ export const MorphingBentocard = (props) => {
   const handleMouseEnter = () => {
     if (hoverTextRef.current) {
       setHoverTextHeight(hoverTextRef.current.offsetHeight);
+      setabsoluteDivHeight(hoverTextRef.current.offsetHeight);
     }
     if (contentDivRef.current) {
       setContentDivHeight(contentDivRef.current.offsetHeight);
@@ -84,7 +87,7 @@ export const MorphingBentocard = (props) => {
         viewport={{ once: true, margin: "-150px" }}
         onClick={() => setIsOpenDialog(true)}
         className={clsx(
-          "h-80 cursor-pointer relative px-3 transition-shadow bg-card duration-500 hover:!shadow-2xl w-full lg:px-4 pt-8 pb-5 overflow-y-hidden",
+          "h-80 cursor-pointer relative px-3 transition-shadow bg-card duration-500 hover:!shadow-2xl w-full lg:px-2 pt-8 pb-5 overflow-y-hidden",
           spanClass,
         )}
         onMouseEnter={handleMouseEnter}
@@ -97,19 +100,21 @@ export const MorphingBentocard = (props) => {
           layout
         >
           <motion.div
-            className="flex w-full" // Using flex here allows translateX to work within the line
+            className="flex w-full"
             animate={{
               x:
-                isHovered && contentDivHeight > 130 && contentDivWidth < 250 // Fixed logical AND operator
+                isHovered &&
+                contentDivHeight + absoluteDivHeight > 221 &&
+                contentDivWidth < 300
                   ? contentDivWidth - 32
                   : 0,
             }}
-            transition={transitionSpring} // Used spring here for consistency, adjust if needed
+            transition={transitionSpring}
           >
             {props.data.icon?.(isHovered)}
           </motion.div>
           <motion.div
-            ref={contentDivRef} // Attach ref here
+            ref={contentDivRef}
             animate={{ translateY: isHovered ? -(hoverTextHeight + 12) : 0 }}
             transition={transitionSpring}
           >

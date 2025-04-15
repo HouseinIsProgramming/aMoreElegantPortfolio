@@ -19,7 +19,7 @@ export const BentoBoxes = () => {
       </TextEffect>
       <motion.section
         id="bento-boxes"
-        className="mb-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid gap-8"
+        className="mb-12 grid-cols-1 sm:grid-cols-2 grid gap-4"
       >
         <MorphingBentocard data={projectsData.frontend} />
         <MorphingBentocard data={projectsData.backend} />
@@ -256,7 +256,7 @@ const projectsData = {
   backend: {
     id: "backend",
     title: ["Backend &", "Software"],
-    tag: "Automation and logic",
+    tag: "Data and logic",
     icon: (isHovered) => <FolderArrowSVG isHovered={isHovered} />,
     hoverText:
       "My experience in the backend, software development, automation and dev-tooling.",

@@ -19,10 +19,10 @@ export default function Page() {
           <TechStack />
           <Separator className="my-4" />
           <WorkExperience />
+          <BentoBoxes />
         </div>
       </section>
       <div className=" container">
-        <BentoBoxes />
         <Separator className="my-4" />
         <MiniFooter />
       </div>
