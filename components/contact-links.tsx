@@ -7,8 +7,9 @@ import { Magnetic } from "./motion-primitives/magnetic";
 import { Button } from "./ui/button"; // Assuming this is from shadcn/ui or similar
 import { TbFileCv } from "react-icons/tb";
 import React from "react"; // Import React if not already globally available
+import MiniFooter from "./mini-footer";
+import { Separator } from "@/components/ui/separator";
 
-// 1. Define the data for the links array
 const contactLinksData = [
   {
     key: "github",
@@ -38,7 +39,7 @@ export default function ContactLinks({}) {
   return (
     <>
       <motion.ul
-        className="flex gap-1.5 flex-wrap justify-center my-12 mx-auto"
+        className="flex gap-1.5  pt-12 lg:!py-0 flex-wrap justify-center self-end mx-auto"
         initial="hidden"
         animate="visible"
         variants={listVariants}
@@ -76,6 +77,11 @@ export default function ContactLinks({}) {
             <ModeToggle />
           </Magnetic>
         </motion.li>
+
+        <div className="hidden lg:block w-4/5">
+          <Separator className="my-4" />
+          <MiniFooter />
+        </div>
       </motion.ul>
     </>
   );
