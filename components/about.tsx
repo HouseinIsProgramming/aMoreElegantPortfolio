@@ -15,14 +15,14 @@ function About() {
   }
 
   // Calculate years of experience
-  const startDate = new Date(2023, 0, 1); // January 1, 2023
-  let yearsOfExperience = today.getFullYear() - startDate.getFullYear();
-  if (
-    today <
-    new Date(today.getFullYear(), startDate.getMonth(), startDate.getDate())
-  ) {
-    yearsOfExperience--;
-  }
+  // const startDate = new Date(2023, 0, 1); // January 1, 2023
+  // let yearsOfExperience = today.getFullYear() - startDate.getFullYear();
+  // if (
+  //   today <
+  //   new Date(today.getFullYear(), startDate.getMonth(), startDate.getDate())
+  // ) {
+  //   yearsOfExperience--;
+  // }
 
   // const currentOrdinal = (number: number) => {
   //   if (number % 100 >= 11 && number % 100 <= 13) {

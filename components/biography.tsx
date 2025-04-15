@@ -6,7 +6,10 @@ import ContactLinks from "@/components/contact-links";
 
 function Biography() {
   return (
-    <div className="flex flex-col md:flex-row lg:flex-col justify-between h-full py-4 mt-2">
+    <div className="flex flex-col  justify-between h-full py-4 mt-2">
+      <div className="lg:hidden block">
+        <NavMenu />
+      </div>
       <div>
         <TextEffect
           preset="fade-in-blur"
@@ -26,8 +29,9 @@ function Biography() {
           Self-taught Web Developer with a life-long passion for coding.
         </TextEffect>
       </div>
-
-      <NavMenu />
+      <div className="hidden lg:block">
+        <NavMenu />
+      </div>
 
       <ContactLinks />
     </div>

@@ -37,6 +37,7 @@ import {
   SiAffinitydesigner,
   SiGnubash,
   SiAdobeillustrator,
+  SiFigma,
 } from "react-icons/si";
 import { IconType } from "react-icons";
 import React from "react";
@@ -159,6 +160,12 @@ const techIcons: TechIconMap = {
     darkColor: darkenColor("#FF9A00", 15),
     textColor: "black",
   },
+  Figma: {
+    icon: SiFigma,
+    color: "#F24E1E",
+    darkColor: darkenColor("#F24E1E", 15),
+    textColor: "white",
+  },
   "Affinity Designer": {
     icon: SiAffinitydesigner,
     color: "#1B72BE",
@@ -235,7 +242,12 @@ export default function TechStack() {
     },
     {
       title: "Design",
-      items: ["Adobe Photoshop", "Adobe Illustrator", "Affinity Designer"],
+      items: [
+        "Adobe Photoshop",
+        "Figma",
+        "Adobe Illustrator",
+        "Affinity Designer",
+      ],
     },
     {
       title: "Tooling",

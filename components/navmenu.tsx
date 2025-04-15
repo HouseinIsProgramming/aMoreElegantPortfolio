@@ -17,7 +17,7 @@ function NavMenu() {
 
   return (
     <LayoutGroup>
-      <motion.nav className="hidden max-sm:mx-auto py-4 lg:flex flex-col gap-3">
+      <motion.nav className="lg:py-4 pb-4 max-lg:*:underline max-lg:after:'>' flex flex-wrap lg:flex-col justify-center lg:justify-start gap-3">
         {TABS.map((tab, index) => (
           <motion.button
             key={tab.link}
