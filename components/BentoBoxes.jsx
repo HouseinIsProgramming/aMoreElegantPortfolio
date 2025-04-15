@@ -259,7 +259,7 @@ const projectsData = {
     tag: "Data and logic",
     icon: (isHovered) => <FolderArrowSVG isHovered={isHovered} />,
     hoverText:
-      "My experience in the backend, software development, automation and dev-tooling.",
+      "Node.js, REST APIs, Express, MySQL, SQLite, Git, CI/CD, Bash, Lua.",
     details: [
       {
         heading: "Web Integration",
@@ -270,7 +270,8 @@ const projectsData = {
       {
         heading: "Databases",
         paragraphs: [
-          `I've also have extensive hands-on experience with **relational databases**, particularly **MySQL** and **SQLite**, and developed a solid understanding of writing efficent **queries** for both simple and complex databases. I know my way around implementing correct **column types**, retrieving the right data sorted and filtered as desired using **CTEs**, **joins** and select filters, aswell as handling **CRUD** operations.`,
+          `I've also have extensive hands-on experience with **relational databases**, particularly **MySQL** and **SQLite**, and developed a solid understanding of writing efficent **queries** for both simple and complex databases. I know my way around implementing correct **column types**, retrieving the right data sorted and filtered as desired using **CTEs**, **joins** and select filters, aswell as handling **CRUD** operations.  
+I am also comfortable working with common data formats such as **JSON**, **XML** and **CSV**.`,
         ],
       },
       {
