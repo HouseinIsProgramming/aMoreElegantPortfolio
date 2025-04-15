@@ -71,11 +71,11 @@ export default function ContactLinks({}) {
             </motion.li>
           );
         })}
-        {/* <motion.li key="toggle" variants={listItemVariants}> */}
-        {/*   <Magnetic range={50}> */}
-        {/*     <ModeToggle /> */}
-        {/*   </Magnetic> */}
-        {/* </motion.li> */}
+        <motion.li key="toggle" variants={listItemVariants}>
+          <Magnetic range={50}>
+            <ModeToggle />
+          </Magnetic>
+        </motion.li>
       </motion.ul>
     </>
   );

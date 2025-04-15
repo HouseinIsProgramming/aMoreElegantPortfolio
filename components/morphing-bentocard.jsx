@@ -172,7 +172,7 @@ export const MorphingBentocard = (props) => {
               <MotionCard
                 key="modal-card"
                 layoutId={layoutId + "card"}
-                className="relative z-50 w-[90vw] !h-[80vh] md:max-w-[80vw] xl:w-[50vw] bg-card p-6 rounded-lg shadow-lg overflow-auto"
+                className="relative z-50 w-[90vw] !h-[80vh] md:max-w-[80vw] xl:w-[50vw] bg-card p-2 lg:px-5 rounded-lg shadow-lg overflow-auto"
                 transition={transitionSpringLight}
               >
                 <MotionCardContent className="flex flex-col justify-between">
@@ -184,18 +184,21 @@ export const MorphingBentocard = (props) => {
                     >
                       {props.data.tag}
                     </motion.sub>
-                    <motion.h2
+                    <motion.h1
                       layoutId={layoutId + "title"}
                       transition={transitionTween}
-                      className={clsx(" whitespace-nowrap mt-2 flex flex-wrap")}
+                      className={clsx(
+                        " whitespace-nowrap mt-2 flex items-center flex-wrap",
+                      )}
                     >
                       {props.data.title.map((text, i) => (
                         <div className="mr-1 leading-tight" key={i}>
                           {text}
                         </div>
                       ))}
+
                       <ChevronsRightSVG isHovered={isHovered} />
-                    </motion.h2>
+                    </motion.h1>
                     <div className="relative mt-2">
                       <motion.div
                         className="relative m-0 text-lg font-medium"
@@ -217,9 +220,9 @@ export const MorphingBentocard = (props) => {
                       >
                         {props.data.details.map((section, i) => (
                           <div key={i}>
-                            <h3 className="text-lg font-semibold !leading-4">
+                            <h2 className="text-lg font-semibold !leading-snug">
                               {section.heading}
-                            </h3>
+                            </h2>
                             <div className="!leading-0  text-sm font-light">
                               {section.paragraphs.map((text, j) => (
                                 <ReactMarkdown key={j}>{text}</ReactMarkdown>
