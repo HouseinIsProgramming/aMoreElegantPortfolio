@@ -1,17 +1,8 @@
 "use client";
 
-import { FaLinkedin } from "react-icons/fa6";
-import { TbFileCv } from "react-icons/tb";
-import { Magnetic } from "./motion-primitives/magnetic";
-import { MdEmail } from "react-icons/md";
 import { TextEffect } from "./motion-primitives/text-effect";
-import { motion } from "framer-motion";
-import { listVariants, listItemVariants } from "@/utils/motion-variants";
-import { ModeToggle } from "./light-dark-toggle";
 import NavMenu from "./navmenu";
-import { Button } from "@/components/ui/button";
-
-const MotionUL = motion.ul;
+import ContactLinks from "@/components/contact-links";
 
 function Biography() {
   return (
@@ -32,62 +23,13 @@ function Biography() {
           className="text-muted-foreground"
           speedReveal={3}
         >
-          With 2 years of professional experience and a life-long passion for
-          coding.
+          Self-taught Web Developer with a life-long passion for coding.
         </TextEffect>
       </div>
 
       <NavMenu />
 
-      <MotionUL
-        className="flex items-center justify-center gap-6 lg:mt-12 mt-6 md:grid md:grid-cols-2 md:place-items-center md:gap-x-14 mb-4 md:gap-y-0 lg:flex lg:flex-row lg:gap-8"
-        initial="hidden"
-        animate="visible"
-        variants={listVariants}
-      >
-        <motion.li variants={listItemVariants}>
-          <Magnetic>
-            <Button variant="outline" style={{ padding: 1 }}>
-              <a
-                href="mailto:housein.aboshaar@gmail.com"
-                target="_blank"
-                className="p-2 flex gap-1"
-              >
-                <MdEmail size={36} /> Email Me
-              </a>
-            </Button>
-          </Magnetic>
-        </motion.li>
-        <motion.li variants={listItemVariants}>
-          <Magnetic>
-            <Button variant="outline" style={{ padding: 1 }}>
-              <a
-                href="https://docs.houseinaboshaar.com/HousienAboShaar-Resume.pdf"
-                target="_blank"
-                className="p-2 flex gap-1"
-              >
-                <TbFileCv size={36} /> My CV
-              </a>
-            </Button>
-          </Magnetic>
-        </motion.li>
-        <motion.li variants={listItemVariants}>
-          <Magnetic>
-            <a
-              href="https://www.linkedin.com/in/housein-abo-shaar-920292265/"
-              target="_blank"
-              className="p-1"
-            >
-              <FaLinkedin size={36} />
-            </a>
-          </Magnetic>
-        </motion.li>
-        <motion.li variants={listItemVariants}>
-          <Magnetic range={30}>
-            <ModeToggle />
-          </Magnetic>
-        </motion.li>
-      </MotionUL>
+      <ContactLinks />
     </div>
   );
 }
