@@ -1,4 +1,4 @@
-# This Repository is hosted on [houseinaboshaar.com](https://www.houseinaboshaar.com) and is part of my portfolio.
+## This Repository is hosted on [houseinaboshaar.com](https://www.houseinaboshaar.com) and is part of my portfolio.
 
 a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
@@ -7,12 +7,24 @@ a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](ht
 
 ### Make it your own
 
-Clone the repo and run 
+### Clone the repo and navigate into the project folder
+```
+git clone https://github.com/HouseinIsProgramming/aMoreElegantPortfolio.git <##project-folder##>
+cd <##project-folder##>
+```
 
 ```bash
-npm install --use-legacy-deps
+# Install dependencies (choose one depending on your package manager)
+npm install --legacy-peer-deps
+# or
+yarn install --legacy-peer-deps
+# or
+pnpm install --legacy-peer-deps
+# or
+bun install
 ```
-First, run the development server:
+
+Run the development server:
 
 ```bash
 npm run dev
