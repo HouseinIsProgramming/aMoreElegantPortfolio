@@ -50,7 +50,7 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 To learn more about the libraries and frameworks used, check out:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [React]([https://nextjs.org/docs](https://react.dev/)) - The library for web and native user interfaces
+- [React](https://react.dev/) - The library for web and native user interfaces
 - [Framer-Motion](https://motion.dev/docs/react-animation) - Straight forward and powerful UI-Animation Libaray, uses CSS styles to produce animations.
 - [Shadcn](https://ui.shadcn.com/docs/installation) - Easy to use UI-Components built on TailwindCSS.
 - [TailwindCSS](https://tailwindcss.com/docs/installation/tailwind-cli) - You should know it by now, simple, powerful and customiseable styling classes - especially since v4.1
