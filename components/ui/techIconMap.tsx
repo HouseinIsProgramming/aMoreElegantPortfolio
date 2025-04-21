@@ -28,6 +28,7 @@ import {
   SiFigma,
 } from "react-icons/si";
 import { IconType } from "react-icons";
+import { TbBrandFramerMotion } from "react-icons/tb";
 
 const darkenColor = (hex: string, percent: number): string => {
   let r = parseInt(hex.substring(1, 3), 16);
@@ -200,5 +201,12 @@ export const techIcons: TechIconMap = {
     color: "#4EAA25",
     darkColor: darkenColor("#4EAA25", 15),
     textColor: "white",
+  },
+
+  "Framer Motion": {
+    icon: TbBrandFramerMotion,
+    color: "#F0E628",
+    darkColor: darkenColor("#F0E628", 15),
+    textColor: "black",
   },
 };

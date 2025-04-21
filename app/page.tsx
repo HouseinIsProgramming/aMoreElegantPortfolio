@@ -18,6 +18,7 @@ export default function Page() {
           <About />
           <Separator className="my-4 mt-12" />
           <PortfolioProjects />
+          <Separator className="my-4" />
           <TechStack />
           <Separator className="my-4" />
           <BentoBoxes />
