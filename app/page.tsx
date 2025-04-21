@@ -5,6 +5,7 @@ import WorkExperience from "@/components/workexperience";
 import TechStack from "@/components/techstack";
 import { BentoBoxes } from "@/components/BentoBoxes";
 import MiniFooter from "@/components/mini-footer";
+import PortfolioProjects from "@/components/projects";
 
 export default function Page() {
   return (
@@ -16,6 +17,7 @@ export default function Page() {
         <div className="py-8">
           <About />
           <Separator className="my-4 mt-12" />
+          <PortfolioProjects />
           <TechStack />
           <Separator className="my-4" />
           <BentoBoxes />
