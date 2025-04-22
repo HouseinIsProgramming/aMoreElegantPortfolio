@@ -51,11 +51,10 @@ function About() {
       </TextEffect>
 
       <TextEffect as="p" per="word" delay={0.2} speedReveal={15} preset="slide">
-        {` I am ${age} years old and have been coding for as long as I can remember. Everything I know about coding is self-taught through practice and online courses, and I am always looking to learn more.
-My passion for tinkering with code, creating solutions and delivering them in an intuitive way led me to pursue my career as a programmer, and I am looking forward to what's ahead.`}
+        {`I am ${age} years old and have been coding for as long as I can remember. Everything I know about coding is self-taught through practice and online courses, and I am always looking to learn more.`}
       </TextEffect>
-      <TextEffect as="p" per="word" delay={0.6} speedReveal={15} preset="slide">
-        {` My passion for tinkering with code, creating solutions and delivering them in an intuitive way led me to pursue my career as a programmer, and I am looking forward to what's ahead.`}
+      <TextEffect as="p" per="word" delay={0.4} speedReveal={15} preset="slide">
+        {`My passion for tinkering with code, creating solutions and delivering them in an intuitive way led me to pursue my career as a programmer, and I am looking forward to what's ahead.`}
       </TextEffect>
     </div>
   );
