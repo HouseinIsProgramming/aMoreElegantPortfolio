@@ -152,7 +152,12 @@ export const MorphingBentocardProject = (props) => {
               <motion.h2
                 layoutId={layoutId + "title"}
                 transition={transitionTween}
-                className={clsx(" whitespace-nowrap flex flex-wrap")}
+                className={
+                  (clsx(
+                    " whitespace-nowrap flex flex-wrap transition-colors duration-500",
+                  ),
+                  isHovered ? "" : "text-accent-foreground")
+                }
               >
                 {props.data.title.map((text, i) => (
                   <div className="mr-1 leading-tight flex items-center" key={i}>
@@ -257,7 +262,10 @@ export const MorphingBentocardProject = (props) => {
                       <motion.h2
                         layoutId={layoutId + "title"}
                         transition={transitionTween}
-                        className={clsx(" whitespace-nowrap flex flex-wrap")}
+                        className={
+                          (clsx(" whitespace-nowrap flex flex-wrap"),
+                          "text-accent-foreground")
+                        }
                       >
                         {props.data.title.map((text, i) => (
                           <div
