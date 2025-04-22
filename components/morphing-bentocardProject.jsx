@@ -1,9 +1,8 @@
 "use client";
 
-// Imports from MorphingBentocardProject
+// Imports (assuming all imports are correct and necessary)
 import { Card, CardContent } from "@/components/ui/card";
 import {
-  // transitionSpring, // Likely unused now
   transitionSpringLight,
   transitionTween,
 } from "@/utils/motion-variants";
@@ -18,15 +17,13 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ExternalLink, Globe } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
-
-// ---> Added Imports from TechStack <---
 import { Badge } from "@/components/ui/badge";
-import { techIcons } from "@/components/ui/techIconMap"; // Assuming path is correct
-import { badgeVariants } from "@/utils/motion-variants"; // Assuming badgeVariants are needed
+import { techIcons } from "@/components/ui/techIconMap";
+import { badgeVariants } from "@/utils/motion-variants";
 
 const MotionCard = motion(Card);
 const MotionCardContent = motion(CardContent);
-const MotionBadge = motion(Badge); // Define MotionBadge here
+const MotionBadge = motion(Badge);
 
 export const MorphingBentocardProject = (props) => {
   const spanClass = clsx({
@@ -34,7 +31,6 @@ export const MorphingBentocardProject = (props) => {
     "md:col-span-2": props.data.span === 2,
   });
 
-  // ----> This state now controls the badge hover effect <----
   const [isHovered, setIsHovered] = useState(false);
   const [isOpenDialog, setIsOpenDialog] = useState(false);
 
@@ -56,10 +52,9 @@ export const MorphingBentocardProject = (props) => {
     };
   }, [isOpenDialog]);
 
+  // Function to close the modal
   const handleClose = () => {
     setIsOpenDialog(false);
-    // Optional: Reset hover state immediately if desired when closing modal
-    // setIsHovered(false);
   };
 
   const handleMouseEnter = () => {
@@ -72,42 +67,33 @@ export const MorphingBentocardProject = (props) => {
 
   const layoutId = `card-modal-${props.data?.id || "unique"}`;
 
-  // ---> Modified renderBadge function <---
-  // It now accepts `isCardHovered` as an argument
   const renderBadge = (tech, index, isCardHovered) => {
-    const techInfo = techIcons[tech]; // Assumes techIcons is available
-
+    const techInfo = techIcons[tech];
     if (techInfo) {
       const { icon: Icon, color, textColor } = techInfo;
       return (
         <MotionBadge
-          key={`${tech}-${index}-card`} // Added unique part to key
+          key={`${tech}-${index}-card`}
           variant="outline"
-          variants={badgeVariants} // Apply variants if badges should animate individually
-          custom={index} // Pass index for stagger
-          // Removed 'group' as hover is now controlled by parent card state
+          variants={badgeVariants}
+          custom={index}
           className="flex text-sm items-center gap-1 transition-all duration-200 relative p-0 overflow-hidden"
         >
-          {/* Default view: visible when card is NOT hovered */}
           <div
             className={clsx(
               "flex items-center gap-1 transition-opacity duration-300 px-2.5 py-0.5",
-              isCardHovered ? "opacity-0" : "opacity-100", // Control opacity based on card hover
+              isCardHovered ? "opacity-0" : "opacity-100",
             )}
           >
             <Icon className="h-3.5 w-3.5" />
             <span>{tech}</span>
           </div>
-          {/* Hover view: visible when card IS hovered */}
           <div
             className={clsx(
               "absolute inset-0 flex items-center justify-center transition-opacity duration-300",
-              isCardHovered ? "opacity-100" : "opacity-0", // Control opacity based on card hover
+              isCardHovered ? "opacity-100" : "opacity-0",
             )}
-            style={{
-              backgroundColor: color,
-              color: textColor,
-            }}
+            style={{ backgroundColor: color, color: textColor }}
           >
             <div className="flex items-center gap-1">
               <Icon className="h-3.5 w-3.5" />
@@ -117,50 +103,44 @@ export const MorphingBentocardProject = (props) => {
         </MotionBadge>
       );
     }
-
-    // Fallback for techs not in techIcons map (no hover effect defined here)
     return (
       <MotionBadge
-        key={`${tech}-${index}-card-fallback`} // Added unique part to key
+        key={`${tech}-${index}-card-fallback`}
         variant="outline"
-        variants={badgeVariants} // Apply variants if badges should animate individually
-        custom={index} // Pass index for stagger
+        variants={badgeVariants}
+        custom={index}
       >
         {tech}
       </MotionBadge>
     );
   };
-  // ---> End of modified renderBadge function <---
 
   return (
     <>
+      {/* Main clickable card */}
       <MotionCard
         layoutId={layoutId + "card"}
         initial="hidden"
         whileInView="visible"
         variants={itemVariants}
         viewport={{ once: true, margin: "-150px" }}
-        onClick={() => setIsOpenDialog(true)}
+        onClick={() => setIsOpenDialog(true)} // Opens the modal
         className={clsx(
-          "h-fit cursor-pointer relative px-3 transition-shadow bg-card duration-500 hover:!shadow-2xl w-full lg:px-2 pt-8 pb-5 overflow-hidden flex flex-col", // Added flex flex-col
+          "h-fit cursor-pointer relative px-3 transition-shadow bg-card duration-500 hover:!shadow-2xl w-full lg:px-2 pt-8 pb-5 overflow-hidden flex flex-col",
           spanClass,
         )}
-        // ----> These handlers control the isHovered state <----
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         layout
       >
-        <BorderSpotlight isCardHovered={isHovered} />{" "}
-        {/* Pass hover state if needed */}
+        <BorderSpotlight isCardHovered={isHovered} />
         <MotionCardContent
-          className="flex flex-col h-full justify-between flex-grow" // Added flex-grow
+          className="flex flex-col h-full justify-between flex-grow"
           layout
         >
           <motion.div className="flex w-full">
             {props.data.icon?.(isHovered)}
           </motion.div>
-
-          {/* Container for tag, title, subtitle, and badges */}
           <div className="flex flex-col flex-grow my-4 gap-4 justify-end mb-2">
             <div className="flex flex-col gap-1">
               <motion.sub
@@ -188,12 +168,11 @@ export const MorphingBentocardProject = (props) => {
               </motion.h2>
             </div>
             <motion.div
-              className="relative text-lg font-medium mt-1" // Added mt-1
+              className="relative text-lg font-medium mt-1"
               layoutId={layoutId + "subtitle"}
               transition={transitionTween}
             >
               {props.data.subtitle}
-              {/* Hover text P is kept hidden for layout animation */}
               <p
                 className="absolute opacity-0 translate-y-1.5 font-light text-muted-foreground "
                 aria-hidden="true"
@@ -201,11 +180,9 @@ export const MorphingBentocardProject = (props) => {
                 {props.data.hoverText}
               </p>
             </motion.div>
-            {/* ---> Tech Used Badges Section (Card View) <--- */}
             <motion.div
-              className="flex flex-wrap gap-1.5 mt-3" // Adjusted gap/margin
-              // Optional: Animate badges container if needed
-              layoutId={layoutId + "techUsed"} // Avoid animating container if badges animate individually
+              className="flex flex-wrap gap-1.5 mt-3"
+              layoutId={layoutId + "techUsed"}
               transition={transitionTween}
             >
               {Array.isArray(props.data.techUsed) &&
@@ -232,7 +209,11 @@ export const MorphingBentocardProject = (props) => {
                 </Link>
               </Button>
               <Button
-                onClick={() => setIsOpenDialog(true)}
+                // Prevent the Card's onClick from firing when this button is clicked
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsOpenDialog(true);
+                }}
                 asChild
                 size="sm"
                 variant="outline"
@@ -251,32 +232,42 @@ export const MorphingBentocardProject = (props) => {
       <AnimatePresence>
         {isOpenDialog && (
           <>
+            {/* --- 1. OVERLAY --- */}
+            {/* This div covers the background. */}
+            {/* onClick={handleClose} is added here. */}
+            {/* z-[60] places it below the modal content wrapper. */}
             <motion.div
               key="overlay"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 bg-black/50 z-[60] w-screen h-screen"
-              onClick={handleClose}
+              onClick={handleClose} // <--- Closes modal when overlay is clicked
             />
-            <div className="fixed w-auto h-auto m-auto inset-0 z-[70] flex items-center justify-center p-4">
+
+            {/* --- 2. MODAL CONTENT WRAPPER --- */}
+            <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 pointer-events-none">
+              {" "}
+              {/* Added pointer-events-none here */}
+              {/* --- 3. MODAL CONTENT CARD --- */}
+              {/* This is the visible modal card. */}
+              {/* z-[80] places it visually on top. */}
+              {/* onClick={(e) => e.stopPropagation()} PREVENTS clicks *inside* the card from bubbling up to the overlay. */}
+              {/* Added pointer-events-auto to make the card itself clickable again. */}
               <MotionCard
                 key="modal-card"
                 layoutId={layoutId + "card"}
-                className="relative z-[80] w-[90vw] max-h-[85vh] md:max-w-[70vw] xl:w-[50vw] bg-card p-4 md:p-6 lg:p-8 rounded-lg shadow-xl overflow-y-auto"
+                onClick={(e) => e.stopPropagation()} // <--- Stops click from reaching overlay
+                className="relative z-[80] w-[90vw] max-h-[85vh] md:max-w-[70vw] xl:w-[50vw] bg-card p-1 md:p-6 lg:p-8 rounded-lg shadow-xl overflow-y-auto pointer-events-auto" // Added pointer-events-auto
                 transition={transitionSpringLight}
-                // ----> Add hover handlers to modal if you want the effect there too <----
-                // onMouseEnter={handleMouseEnter}
-                // onMouseLeave={handleMouseLeave}
               >
+                {/* ... Rest of the Modal Content (CardContent, Details, Close Button) ... */}
                 <CardContent className="flex flex-col">
                   <div className="flex flex-col flex-grow my-4 gap-4 justify-end mb-2">
                     <div className="flex flex-col gap-2">
                       <motion.sub
                         layoutId={layoutId + "tag"}
-                        className={`transition-colors duration-500 ${
-                          isHovered ? "!text-[#4285F4]" : ""
-                        }`}
+                        className={`transition-colors duration-500`} // Removed hover effect reference
                         transition={transitionTween}
                       >
                         {props.data.tag}
@@ -292,20 +283,17 @@ export const MorphingBentocardProject = (props) => {
                             key={i}
                           >
                             {text}
-                            {i === props.data.title.length - 1 && (
-                              <ChevronsRightSVG isHovered={isHovered} />
-                            )}
+                            {/* Removed ChevronsRightSVG from modal title */}
                           </div>
                         ))}
                       </motion.h2>
                     </div>
                     <motion.div
-                      className="relative text-lg font-medium mt-1" // Added mt-1
+                      className="relative text-lg font-medium mt-1"
                       layoutId={layoutId + "subtitle"}
                       transition={transitionTween}
                     >
                       {props.data.subtitle}
-                      {/* Hover text P is kept hidden for layout animation */}
                       <p
                         className="absolute opacity-0 translate-y-1.5 font-light text-muted-foreground "
                         aria-hidden="true"
@@ -313,17 +301,15 @@ export const MorphingBentocardProject = (props) => {
                         {props.data.hoverText}
                       </p>
                     </motion.div>
-                    {/* ---> Tech Used Badges Section (Card View) <--- */}
                     <motion.div
-                      className="flex flex-wrap gap-1.5 mt-3" // Adjusted gap/margin
-                      // Optional: Animate badges container if needed
-                      layoutId={layoutId + "techUsed"} // Avoid animating container if badges animate individually
+                      className="flex flex-wrap gap-1.5 mt-3"
+                      layoutId={layoutId + "techUsed"}
                       transition={transitionTween}
                     >
                       {Array.isArray(props.data.techUsed) &&
                         props.data.techUsed.map((tech, index) =>
                           typeof tech === "string"
-                            ? renderBadge(tech, index, isHovered)
+                            ? renderBadge(tech, index, false) // Render without hover state in modal
                             : null,
                         )}
                     </motion.div>
@@ -332,31 +318,25 @@ export const MorphingBentocardProject = (props) => {
                       className="flex flex-wrap gap-1.5 mt-3"
                     >
                       <Button asChild size="sm">
-                        <Link href="/projects">
+                        <Link href={props.data.url || ""} target="_blank">
                           Visit Website
-                          <Globe />
+                          <Globe className="ml-1.5 h-4 w-4" />
                         </Link>
                       </Button>
                       <Button asChild size="sm">
-                        <Link href="/projects">
-                          View on GitHub <FaGithub />
-                        </Link>
-                      </Button>
-                      <Button asChild size="sm" variant="outline">
-                        <Link href="">
-                          Read more <ExternalLink />
+                        <Link href={props.data.github || ""} target="_blank">
+                          View on GitHub <FaGithub className="ml-1.5 h-4 w-4" />
                         </Link>
                       </Button>
                     </motion.div>
                   </div>
 
-                  {/* Details section */}
                   <motion.div
                     exit={{ opacity: 0, filter: "blur(5px)" }}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ ...transitionTween, delay: 0.1 }}
-                    className="mt-4 border-t pt-4 flex flex-col gap-6" // Added border-top and padding-top
+                    className="mt-4 border-t pt-4 flex flex-col gap-6"
                   >
                     {props.data.details.map((section, i) => (
                       <div key={i}>
@@ -373,13 +353,13 @@ export const MorphingBentocardProject = (props) => {
                   </motion.div>
                 </CardContent>
 
-                {/* Close Button */}
+                {/* Close Button (already correctly inside the card) */}
                 <motion.button
                   exit={{ opacity: 0, filter: "blur(5px)" }}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ ...transitionTween, delay: 0.1 }}
-                  onClick={handleClose}
+                  onClick={handleClose} // Close button also calls handleClose
                   className="absolute cursor-pointer top-3 right-3 p-1 text-muted-foreground hover:text-foreground rounded-full hover:bg-muted"
                   aria-label="Close"
                 >

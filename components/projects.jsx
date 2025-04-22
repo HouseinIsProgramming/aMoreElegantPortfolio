@@ -7,6 +7,7 @@ import {
   FolderArrowSVG,
   MonitorCogSVG,
   BookHeartSVG,
+  PenOpenSVG,
 } from "./ui/motion-svgs.jsx";
 import { motion } from "framer-motion";
 import { TextEffect } from "./motion-primitives/text-effect";
@@ -32,7 +33,7 @@ export const PortfolioProjects = () => {
 const projectsData = {
   inkaleo: {
     id: "Inkaleo",
-    icon: (isHovered) => <MonitorCogSVG isHovered={isHovered} />,
+    icon: (isHovered) => <PenOpenSVG isHovered={isHovered} />,
     span: 2,
     title: ["Inkaleo"],
     tag: "Landing Page",
@@ -64,7 +65,7 @@ const projectsData = {
   },
   pixeldoodle: {
     id: "pixeldoodle",
-    icon: (isHovered) => <MonitorCogSVG isHovered={isHovered} />,
+    icon: (isHovered) => <PenOpenSVG isHovered={isHovered} />,
     span: 2,
     title: ["PixelDoodle"],
     tag: "Web Application",
