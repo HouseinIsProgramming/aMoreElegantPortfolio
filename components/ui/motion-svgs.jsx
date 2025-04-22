@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
 import { transitionSpring, transitionTween } from "@/utils/motion-variants";
+import { useEffect, useState } from "react";
 
 export const getResizeIconVariant = (isHovered) => ({
-  color: isHovered ? "#4285F4" : "",
+  color: isHovered ? "var(--accent-foreground) " : "",
   height: isHovered ? 40 : 64,
   width: isHovered ? 40 : 64,
 });
 
 export const getRecolorIconVariant = (isHovered) => ({
-  color: isHovered ? "#4285F4" : "",
+  color: isHovered ? "var(--accent-foreground)" : "",
 });
 
 export const FolderArrowSVG = ({ isHovered }) => {
@@ -251,6 +252,25 @@ export function CSharpSVG() {
 }
 
 export const PenOpenSVG = ({ isHovered }) => {
+  const [accentColor, setAccentColor] = useState("var(--accent-foreground)");
+
+  const cssColorToHex = (cssColor) => {
+    const ctx = document.createElement("canvas").getContext("2d");
+    if (!ctx) return cssColor;
+    ctx.fillStyle = cssColor;
+    return ctx.fillStyle;
+  };
+
+  useEffect(() => {
+    if (isHovered) {
+      const raw = getComputedStyle(document.documentElement).getPropertyValue(
+        "--accent-foreground",
+      );
+      const hex = cssColorToHex(raw.trim());
+      setAccentColor(hex);
+    }
+  }, [isHovered]);
+
   return (
     <motion.svg
       height="24"
@@ -260,7 +280,7 @@ export const PenOpenSVG = ({ isHovered }) => {
     >
       <motion.path
         animate={{
-          stroke: isHovered ? "#4285F4" : "var(--foreground)",
+          stroke: isHovered ? accentColor : "var(--foreground)",
           x: isHovered ? 15 : 0,
         }}
         transition={{
@@ -273,7 +293,7 @@ export const PenOpenSVG = ({ isHovered }) => {
       />
       <motion.path
         animate={{
-          stroke: isHovered ? "#4285F4" : "var(--foreground)",
+          stroke: isHovered ? accentColor : "var(--foreground)",
           x: isHovered ? 15 : 0,
         }}
         transition={{
@@ -286,7 +306,7 @@ export const PenOpenSVG = ({ isHovered }) => {
         stroke="currentColor"
       />
       <motion.path
-        animate={{ stroke: isHovered ? "#4285F4" : "var(--foreground)" }}
+        animate={{ stroke: isHovered ? accentColor : "var(--foreground)" }}
         fill="currentColor"
         stroke="currentColor"
         stroke-linejoin="round"
@@ -295,7 +315,7 @@ export const PenOpenSVG = ({ isHovered }) => {
       />
 
       <motion.path
-        animate={{ fill: isHovered ? "#4285F4" : "var(--foreground)" }}
+        animate={{ fill: isHovered ? accentColor : "var(--foreground)" }}
         fill="currentColor"
         stroke="none"
         d="M3.33963 0.57597L3.41057 0.0810286C3.22083 0.0538323 3.03224 0.137503 2.92507 0.296428L3.33963 0.57597ZM2.44563 1.90174L2.86019 2.18128L3.75418 0.855513L3.33963 0.57597L2.92507 0.296428L2.03108 1.6222L2.44563 1.90174ZM10.1671 1.69766L10.4686 2.09647C10.7392 1.89183 10.9373 1.60995 10.9581 1.25911C10.9781 0.921553 10.8268 0.629158 10.6388 0.406039L10.2564 0.728192L9.87406 1.05034C9.96545 1.15881 9.95941 1.2075 9.95986 1.19995C9.9601 1.19592 9.96176 1.19811 9.95412 1.21059C9.94508 1.22536 9.92126 1.25667 9.86547 1.29885L10.1671 1.69766ZM3.33963 0.57597L3.26868 1.07091L9.08996 1.90529L9.1609 1.41035L9.23184 0.915412L3.41057 0.0810286L3.33963 0.57597ZM9.1609 1.41035L8.83579 1.79022C8.97101 1.90595 9.19767 2.11709 9.44482 2.22661C9.58527 2.28885 9.75608 2.3318 9.94874 2.31167C10.142 2.29147 10.3157 2.21211 10.4686 2.09647L10.1671 1.69766L9.86547 1.29885C9.82843 1.32686 9.82332 1.31933 9.8448 1.31709C9.86564 1.31491 9.8716 1.32195 9.84996 1.31236C9.82348 1.30062 9.78115 1.27525 9.71428 1.22296C9.64549 1.16917 9.5792 1.11024 9.48601 1.03048L9.1609 1.41035ZM10.2564 0.728192L10.6388 0.406039C10.4924 0.232285 10.2871 0.118828 10.0913 0.0584134C9.89169 -0.00318245 9.64932 -0.0260621 9.40959 0.0393618C9.15698 0.108303 8.92014 0.273865 8.77717 0.553269C8.641 0.81938 8.61521 1.13867 8.6663 1.48361L9.1609 1.41035L9.65551 1.3371C9.62302 1.11776 9.65746 1.02819 9.66739 1.00879C9.67052 1.00267 9.66563 1.00606 9.67288 1.00408C9.69302 0.998584 9.73841 0.996043 9.7965 1.01396C9.85841 1.03307 9.88077 1.05831 9.87406 1.05034L10.2564 0.728192Z"
