@@ -19,7 +19,7 @@ function Biography() {
           Housein Abo Shaar
         </TextEffect>
 
-        <TextEffect as="h3">Front End Developer</TextEffect>
+        <TextEffect as="h3">Web Developer</TextEffect>
         <TextEffect
           preset="fade-in-blur"
           as="p"

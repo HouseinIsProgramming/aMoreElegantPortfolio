@@ -2,7 +2,11 @@
 
 import React from "react";
 import { MorphingBentocardProject } from "./morphing-bentocardProject";
-import { FolderArrowSVG, PenOpenSVG } from "./ui/motion-svgs.jsx";
+import {
+  FolderArrowSVG,
+  PenOpenSVG,
+  AiSvgChronotes,
+} from "./ui/motion-svgs.jsx";
 import { motion } from "framer-motion";
 import { TextEffect } from "./motion-primitives/text-effect";
 
@@ -70,7 +74,7 @@ const projectsData = {
 
   chronotes: {
     id: "chronotes",
-    icon: (isHovered) => <PenOpenSVG isHovered={isHovered} />,
+    icon: (isHovered) => <AiSvgChronotes isHovered={isHovered} />,
     span: 2,
     title: ["Chronotes"],
     tag: "Web Application",
@@ -86,9 +90,10 @@ const projectsData = {
       "TypeScript",
       "Framer Motion",
     ],
-    url: "https://me.houseinaboshaar.com/chronotes",
+    url: "https://chronotes.houseinaboshaar.com/",
     github: "https://github.com/HouseinIsProgramming/chronotes",
     details: [
+      { heading: "Still a work in Progress", paragraphs: [""] },
       {
         heading: "Key Features:",
         paragraphs: [
@@ -102,7 +107,7 @@ const projectsData = {
       {
         heading: "Time needed to build:",
         paragraphs: [
-          "- Approximately **25-35** hours over the course of 4 separate days.",
+          "- Approximately **45-65** hours.",
           "- Total of **176 commits** for the **MVP**.",
         ],
       },
@@ -114,6 +119,16 @@ const projectsData = {
           "Gained experience setting up **OAuth** **authentication** and reliable **cloud** **synchronization**.",
           "Enhanced my ability to build reusable and modular React components.",
           "Better understanding of managing state for responsive interactions.",
+        ],
+      },
+      {
+        heading: "What I am still working on:",
+        paragraphs: [
+          "Integrating OAuth with Google/GitHub login",
+          "Better Handling of Guest Mode (Uses IndexedDB)",
+          "Dark Mode",
+          "Better Error Handling",
+          "Better UI/UX",
         ],
       },
     ],
