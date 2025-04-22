@@ -143,7 +143,7 @@ export const MorphingBentocardProject = (props) => {
               <motion.sub
                 layoutId={layoutId + "tag"}
                 className={`transition-colors duration-500 ${
-                  isHovered ? "!text-[#4285F4]" : ""
+                  isHovered ? "!text-accent-foreground" : ""
                 }`}
                 transition={transitionTween}
               >
