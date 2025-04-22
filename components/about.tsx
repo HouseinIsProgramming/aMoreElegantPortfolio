@@ -46,17 +46,16 @@ function About() {
 
   return (
     <div id="about" className="lg:mt-24 scroll-m-12">
-      <TextEffect delay={0.3} preset="fade-in-blur" as="h2">
+      <TextEffect delay={0.2} preset="fade-in-blur" as="h2">
         Bio
       </TextEffect>
 
-      <TextEffect as="p" per="line" delay={0.6}>
-        {`
-          I am ${age} years old and have been coding for as long as I can remember.
-          Everything I know about coding is self-taught through practice and online courses, and I am always looking to learn more.
-          My passion for tinkering with code, creating solutions and delivering them in an intuitive way led me to pursue my career as a programmer, and I am looking forward to what's ahead.
-
-          `}
+      <TextEffect as="p" per="word" delay={0.2} speedReveal={15} preset="slide">
+        {` I am ${age} years old and have been coding for as long as I can remember. Everything I know about coding is self-taught through practice and online courses, and I am always looking to learn more.
+My passion for tinkering with code, creating solutions and delivering them in an intuitive way led me to pursue my career as a programmer, and I am looking forward to what's ahead.`}
+      </TextEffect>
+      <TextEffect as="p" per="word" delay={0.6} speedReveal={15} preset="slide">
+        {` My passion for tinkering with code, creating solutions and delivering them in an intuitive way led me to pursue my career as a programmer, and I am looking forward to what's ahead.`}
       </TextEffect>
     </div>
   );
