@@ -1,6 +1,5 @@
 "use client";
 
-// Imports (assuming all imports are correct and necessary)
 import { Card, CardContent } from "@/components/ui/card";
 import {
   transitionSpringLight,
@@ -52,7 +51,6 @@ export const MorphingBentocardProject = (props) => {
     };
   }, [isOpenDialog]);
 
-  // Function to close the modal
   const handleClose = () => {
     setIsOpenDialog(false);
   };
@@ -117,14 +115,13 @@ export const MorphingBentocardProject = (props) => {
 
   return (
     <>
-      {/* Main clickable card */}
       <MotionCard
         layoutId={layoutId + "card"}
         initial="hidden"
         whileInView="visible"
         variants={itemVariants}
         viewport={{ once: true, margin: "-150px" }}
-        onClick={() => setIsOpenDialog(true)} // Opens the modal
+        onClick={() => setIsOpenDialog(true)}
         className={clsx(
           "h-fit cursor-pointer relative px-3 transition-shadow bg-card duration-500 hover:!shadow-2xl w-full lg:px-2 pt-8 pb-5 overflow-hidden flex flex-col",
           spanClass,
@@ -209,7 +206,6 @@ export const MorphingBentocardProject = (props) => {
                 </Link>
               </Button>
               <Button
-                // Prevent the Card's onClick from firing when this button is clicked
                 onClick={(e) => {
                   e.stopPropagation();
                   setIsOpenDialog(true);
@@ -228,46 +224,32 @@ export const MorphingBentocardProject = (props) => {
         </MotionCardContent>
       </MotionCard>
 
-      {/* Modal */}
       <AnimatePresence>
         {isOpenDialog && (
           <>
-            {/* --- 1. OVERLAY --- */}
-            {/* This div covers the background. */}
-            {/* onClick={handleClose} is added here. */}
-            {/* z-[60] places it below the modal content wrapper. */}
             <motion.div
               key="overlay"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 bg-black/50 z-[60] w-screen h-screen"
-              onClick={handleClose} // <--- Closes modal when overlay is clicked
+              onClick={handleClose}
             />
 
-            {/* --- 2. MODAL CONTENT WRAPPER --- */}
             <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 pointer-events-none">
-              {" "}
-              {/* Added pointer-events-none here */}
-              {/* --- 3. MODAL CONTENT CARD --- */}
-              {/* This is the visible modal card. */}
-              {/* z-[80] places it visually on top. */}
-              {/* onClick={(e) => e.stopPropagation()} PREVENTS clicks *inside* the card from bubbling up to the overlay. */}
-              {/* Added pointer-events-auto to make the card itself clickable again. */}
               <MotionCard
                 key="modal-card"
                 layoutId={layoutId + "card"}
-                onClick={(e) => e.stopPropagation()} // <--- Stops click from reaching overlay
-                className="relative z-[80] w-[90vw] max-h-[85vh] md:max-w-[70vw] xl:w-[50vw] bg-card p-1 md:p-6 lg:p-8 rounded-lg shadow-xl overflow-y-auto pointer-events-auto" // Added pointer-events-auto
+                onClick={(e) => e.stopPropagation()}
+                className="relative z-[80] w-[90vw] max-h-[85vh] md:max-w-[70vw] xl:w-[50vw] bg-card p-1 md:p-6 lg:p-8 rounded-lg shadow-xl overflow-y-auto pointer-events-auto"
                 transition={transitionSpringLight}
               >
-                {/* ... Rest of the Modal Content (CardContent, Details, Close Button) ... */}
                 <CardContent className="flex flex-col">
                   <div className="flex flex-col flex-grow my-4 gap-4 justify-end mb-2">
                     <div className="flex flex-col gap-2">
                       <motion.sub
                         layoutId={layoutId + "tag"}
-                        className={`transition-colors duration-500`} // Removed hover effect reference
+                        className={`transition-colors duration-500`}
                         transition={transitionTween}
                       >
                         {props.data.tag}
@@ -283,7 +265,6 @@ export const MorphingBentocardProject = (props) => {
                             key={i}
                           >
                             {text}
-                            {/* Removed ChevronsRightSVG from modal title */}
                           </div>
                         ))}
                       </motion.h2>
@@ -309,7 +290,7 @@ export const MorphingBentocardProject = (props) => {
                       {Array.isArray(props.data.techUsed) &&
                         props.data.techUsed.map((tech, index) =>
                           typeof tech === "string"
-                            ? renderBadge(tech, index, false) // Render without hover state in modal
+                            ? renderBadge(tech, index, false)
                             : null,
                         )}
                     </motion.div>
@@ -353,13 +334,12 @@ export const MorphingBentocardProject = (props) => {
                   </motion.div>
                 </CardContent>
 
-                {/* Close Button (already correctly inside the card) */}
                 <motion.button
                   exit={{ opacity: 0, filter: "blur(5px)" }}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ ...transitionTween, delay: 0.1 }}
-                  onClick={handleClose} // Close button also calls handleClose
+                  onClick={handleClose}
                   className="absolute cursor-pointer top-3 right-3 p-1 text-muted-foreground hover:text-foreground rounded-full hover:bg-muted"
                   aria-label="Close"
                 >
