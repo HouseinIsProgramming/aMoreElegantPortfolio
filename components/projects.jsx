@@ -2,19 +2,13 @@
 
 import React from "react";
 import { MorphingBentocardProject } from "./morphing-bentocardProject";
-import {
-  CalendarRotateSVG,
-  FolderArrowSVG,
-  MonitorCogSVG,
-  BookHeartSVG,
-  PenOpenSVG,
-} from "./ui/motion-svgs.jsx";
+import { FolderArrowSVG, PenOpenSVG } from "./ui/motion-svgs.jsx";
 import { motion } from "framer-motion";
 import { TextEffect } from "./motion-primitives/text-effect";
 
 export const PortfolioProjects = () => {
   return (
-    <>
+    <section className="scroll-m-4" id="projects">
       <TextEffect className="mb-8" preset="fade-in-blur" as="h1">
         My Portfolio Projects
       </TextEffect>
@@ -23,10 +17,10 @@ export const PortfolioProjects = () => {
         className="mb-12 grid-cols-1 scroll-m-28 sm:grid-cols-2 grid gap-4"
       >
         <MorphingBentocardProject data={projectsData.inkaleo} />
-        <MorphingBentocardProject data={projectsData.pixeldoodle} />
-        <MorphingBentocardProject data={projectsData.typemotion} />
+        {/* <MorphingBentocardProject data={projectsData.pixeldoodle} /> */}
+        {/* <MorphingBentocardProject data={projectsData.typemotion} /> */}
       </motion.section>
-    </>
+    </section>
   );
 };
 
@@ -44,21 +38,30 @@ const projectsData = {
     github: "https://github.com/HouseinIsProgramming/inkaleo-portfolioproject",
     details: [
       {
-        heading: "Why I made this:",
+        heading: "Key Features:",
         paragraphs: [
-          "There is something about having a pen in my hand that makes able to think clearer, when I write something down I am a lot more likely to be able to understand it better remember it longer.",
-          "Spaced repeatition has been proven time and time again to be one of the effective methods of learning something new.",
+          "This landing page is built with React, Vite, TailwindCSS, TypeScript, and Framer Motion.",
+          "Repsonsive and interactive.",
+          "Easy to use and navigate.",
+          "Codebase is easy to understand and is made out of modular and reusable components.",
         ],
       },
       {
-        heading: "The Problem:",
-        paragraphs: ["finding hand written notes is just innefficent..."],
+        heading: "Time needed to build:",
+
+        paragraphs: [
+          "- this took me around 6-8 of work, spanning acorss 3 separate days.",
+
+          "- total of 47 commits.",
+        ],
       },
       {
-        heading: "The Solution:",
+        heading: "What I learned building it:",
+
         paragraphs: [
-          "And this is why PixelDoodle was made, I can just write something down, take a picture of it, then using PixelDoolde, remove the background and be left with was written down. and it can handle multiple images aswell.",
-          "now these pictures can be used within Notion/Obsidian (with dark and light modes support) and be able to use the sorting and searching functions within those programs, which are undoublty better that looking through hand written notes.",
+          'While buidling this project, I resptricted myself to only using predefined code. I didn\'t let mywself make any "One-Off-Solutions" to the problems I was facing. Which was more upfront work but it made iterating and making quick changes very easy.',
+          "Pricewise-Functions are a great way to time animations.",
+          "Work-arounds for filter-/effect-compatibility issues based on different browsers, webkit (safari) specefically.",
         ],
       },
     ],

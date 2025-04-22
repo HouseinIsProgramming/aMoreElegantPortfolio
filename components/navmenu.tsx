@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const TABS = [
   { title: "Bio", link: "about" },
+  { title: "Projects", link: "projects" },
   { title: "Tech Stack", link: "tech-stack" },
   { title: "My Story and Skills", link: "bento-boxes" },
   { title: "Work Experience", link: "work-experience" },
