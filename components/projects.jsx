@@ -17,6 +17,7 @@ export const PortfolioProjects = () => {
         className="mb-12 grid-cols-1 scroll-m-28 sm:grid-cols-2 grid gap-4"
       >
         <MorphingBentocardProject data={projectsData.inkaleo} />
+        <MorphingBentocardProject data={projectsData.chronotes} />
         {/* <MorphingBentocardProject data={projectsData.pixeldoodle} /> */}
         {/* <MorphingBentocardProject data={projectsData.typemotion} /> */}
       </motion.section>
@@ -40,28 +41,79 @@ const projectsData = {
       {
         heading: "Key Features:",
         paragraphs: [
-          "This landing page is built with React, Vite, TailwindCSS, TypeScript, and Framer Motion.",
-          "Repsonsive and interactive.",
+          "This landing page is built with **React**, **Vite**, **TailwindCSS**, **TypeScript**, and **Framer** **Motion**.",
+          "**Repsonsive** and **interactive**.",
           "Easy to use and navigate.",
-          "Codebase is easy to understand and is made out of modular and reusable components.",
+          "Codebase is easy to understand and is made out of **modular** and reusable components.",
         ],
       },
       {
         heading: "Time needed to build:",
 
         paragraphs: [
-          "- this took me around 6-8 of work, spanning acorss 3 separate days.",
+          "- this took me around **6-8** of work, spanning acorss 3 separate days.",
 
-          "- total of 47 commits.",
+          "- total of **47** **commits**.",
         ],
       },
       {
         heading: "What I learned building it:",
 
         paragraphs: [
-          'While buidling this project, I resptricted myself to only using predefined code. I didn\'t let mywself make any "One-Off-Solutions" to the problems I was facing. Which was more upfront work but it made iterating and making quick changes very easy.',
-          "Pricewise-Functions are a great way to time animations.",
-          "Work-arounds for filter-/effect-compatibility issues based on different browsers, webkit (safari) specefically.",
+          'While buidling this project, I resptricted myself to only using predefined code/assets. I didn\'t let mywself make any "One-Off-Solutions" to the problems I was facing. Which was more upfront work but it made iterating and making quick changes very easy.',
+          "**Pricewise-Functions** are a great way to time animations.",
+          "Work-arounds for filter-/effect-**compatibility** **issues** based on different browsers, webkit (safari) specefically.",
+        ],
+      },
+    ],
+  },
+
+  chronotes: {
+    id: "chronotes",
+    icon: (isHovered) => <PenOpenSVG isHovered={isHovered} />,
+    span: 2,
+    title: ["Chronotes"],
+    tag: "Web Application",
+    subtitle:
+      "A note-taking application enhanced with AI-generated flashcards, organized tags and folders, and cloud synchronization.",
+    techUsed: [
+      "PostgreSQL",
+      "AI",
+      "OAuth",
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "TypeScript",
+      "Framer Motion",
+    ],
+    url: "https://me.houseinaboshaar.com/chronotes",
+    github: "https://github.com/HouseinIsProgramming/chronotes",
+    details: [
+      {
+        heading: "Key Features:",
+        paragraphs: [
+          "Users can create and organize notes using tags and folders for easy retrieval.",
+          "**AI-powered** flashcard generation to facilitate effective studying and review.",
+          "Secure **OAuth** login integration with **cloud** **synchronization** ensures notes are accessible from anywhere.",
+          "Users have a clear overview to track the last review date of each note.",
+          "Responsive and intuitive user interface.",
+        ],
+      },
+      {
+        heading: "Time needed to build:",
+        paragraphs: [
+          "- Approximately **25-35** hours over the course of 4 separate days.",
+          "- Total of **176 commits** for the **MVP**.",
+        ],
+      },
+      {
+        heading: "What I learned building it:",
+        paragraphs: [
+          "Learned how to integrate **AI** **tools** and third-party **APIs** effectively.",
+          "Improved my skills in managing data relationships in **PostgreSQL**.",
+          "Gained experience setting up **OAuth** **authentication** and reliable **cloud** **synchronization**.",
+          "Enhanced my ability to build reusable and modular React components.",
+          "Better understanding of managing state for responsive interactions.",
         ],
       },
     ],

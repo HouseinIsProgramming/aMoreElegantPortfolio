@@ -29,6 +29,9 @@ import {
 } from "react-icons/si";
 import { IconType } from "react-icons";
 import { TbBrandFramerMotion } from "react-icons/tb";
+import { AiFillOpenAI } from "react-icons/ai";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { RiLoginCircleFill } from "react-icons/ri";
 
 const darkenColor = (hex: string, percent: number): string => {
   let r = parseInt(hex.substring(1, 3), 16);
@@ -208,5 +211,23 @@ export const techIcons: TechIconMap = {
     color: "#F0E628",
     darkColor: darkenColor("#F0E628", 15),
     textColor: "black",
+  },
+  PostgreSQL: {
+    icon: BiLogoPostgresql,
+    color: "#336791",
+    darkColor: darkenColor("#336791", 15),
+    textColor: "white",
+  },
+  AI: {
+    icon: AiFillOpenAI,
+    color: "#986788",
+    darkColor: darkenColor("#986788", 15),
+    textColor: "white",
+  },
+  OAuth: {
+    icon: RiLoginCircleFill,
+    color: "#007BC1",
+    darkColor: darkenColor("#007BC1", 15),
+    textColor: "white",
   },
 };
