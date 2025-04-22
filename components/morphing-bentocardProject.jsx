@@ -162,7 +162,7 @@ export const MorphingBentocardProject = (props) => {
 
           {/* Container for tag, title, subtitle, and badges */}
           <div className="flex flex-col flex-grow my-4 gap-4 justify-end mb-2">
-            <div>
+            <div className="flex flex-col gap-1">
               <motion.sub
                 layoutId={layoutId + "tag"}
                 className={`transition-colors duration-500 ${
@@ -220,20 +220,27 @@ export const MorphingBentocardProject = (props) => {
               className="flex flex-wrap gap-1.5 mt-3"
             >
               <Button asChild size="sm">
-                <Link href="/projects">
-                  Visit Website
+                <Link href={props.data.url || ""} target="_blank">
                   <Globe />
+                  Visit Website
                 </Link>
               </Button>
               <Button asChild size="sm">
-                <Link href="/projects">
-                  View on GitHub <FaGithub />
+                <Link href={props.data.github || ""} target="_blank">
+                  <FaGithub />
+                  View on GitHub
                 </Link>
               </Button>
-              <Button asChild size="sm" variant="outline">
-                <Link href="">
-                  Read more <ExternalLink />
-                </Link>
+              <Button
+                onClick={() => setIsOpenDialog(true)}
+                asChild
+                size="sm"
+                variant="outline"
+              >
+                <span>
+                  <ExternalLink />
+                  Read more
+                </span>
               </Button>
             </motion.div>
           </div>
@@ -264,7 +271,7 @@ export const MorphingBentocardProject = (props) => {
               >
                 <CardContent className="flex flex-col">
                   <div className="flex flex-col flex-grow my-4 gap-4 justify-end mb-2">
-                    <div>
+                    <div className="flex flex-col gap-2">
                       <motion.sub
                         layoutId={layoutId + "tag"}
                         className={`transition-colors duration-500 ${

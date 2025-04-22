@@ -35,11 +35,12 @@ const projectsData = {
     icon: (isHovered) => <MonitorCogSVG isHovered={isHovered} />,
     span: 2,
     title: ["Inkaleo"],
-    tag: "Frontend Landing Page",
+    tag: "Landing Page",
     subtitle:
       'A simple, modern and respnsive landing page template, and my answer to "Sell me this pen"',
     techUsed: ["React", "Vite", "Tailwind CSS", "TypeScript", "Framer Motion"],
-    link2Href: "#", // Replace with actual secondary link (e.g., GitHub)
+    url: "https://me.houseinaboshaar.com/inkaleo",
+    github: "https://github.com/HouseinIsProgramming/inkaleo-portfolioproject",
     details: [
       {
         heading: "Why I made this:",
@@ -101,8 +102,8 @@ const projectsData = {
     subtitle: "Easy text animation prototyping",
     hoverText:
       "Find out more about me and what I went through before starting.",
-    link1Href: "#", // Replace with actual primary link (e.g., Live Site)
-    link2Href: "#", // Replace with actual secondary link (e.g., GitHub)
+    link1Href: "#",
+    link2Href: "#",
     details: [
       {
         heading: "Why I made this:",
