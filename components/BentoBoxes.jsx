@@ -229,6 +229,16 @@ const projectsData = {
       "React, Svelte, Tailwind, HTML, CSS, Figma, Adobe, Animatimations.",
     details: [
       {
+        paragraphs: [
+          "- **Core Web**: HTML, CSS, JavaScript",
+          "- **Frontend**: React, Svelte, Vue.js, State Management, Routing, Component Design, Lifecycles",
+          "- **Animation**: Framer Motion, GSAP, Python (Manim)",
+          "- **Styling**: TailwindCSS (Expert: Utility Classes, Config, Compiler, Integration), CSS (Advanced Understanding & UI/Graphic Design Principles)",
+          "- **Design Tools**: Photoshop, Illustrator (Wireframing, Photo Editing, AI Leverage)",
+          "- **Development Practices**: Idiomatic Coding, Team Cooperation, Scalability Focus",
+        ],
+      },
+      {
         heading: "Languages & Frameworks",
         paragraphs: [
           `Of course, as a Web Developer I know the ins and outs of **HTML** and how to implement **JavaScript** into websites for interactivity.`,
@@ -261,6 +271,16 @@ const projectsData = {
     hoverText:
       "Node.js, REST APIs, Express, MySQL, SQLite, Git, CI/CD, Bash, Lua.",
     details: [
+      {
+        paragraphs: [
+          "* **Backend:** REST APIs, Data Flow, CRUD Concepts",
+          "* **Databases**: Relational (MySQL, SQLite), Efficient Queries (CTEs, Joins), DB CRUD",
+          "* **Data Formats**: JSON, XML, CSV",
+          "* **DevOps/Tooling**: Git, Version Control, CI/CD, GitHub Actions, Deployment Automation",
+          "* **Scripting**: Bash Scripting, Lua, CLI Automation",
+          "* **Testing**: TDD, Jest (JS/TS), Built-in Libs, E2E (Playwright, Chrome DevTools), Code Coverage",
+        ],
+      },
       {
         heading: "Web Integration",
         paragraphs: [

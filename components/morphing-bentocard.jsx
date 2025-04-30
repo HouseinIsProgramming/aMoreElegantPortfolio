@@ -222,7 +222,7 @@ export const MorphingBentocard = (props) => {
                             <h2 className="text-lg font-semibold !leading-snug">
                               {section.heading}
                             </h2>
-                            <div className="!leading-0  text-sm font-light">
+                            <div className="font-light markdown-content">
                               {section.paragraphs.map((text, j) => (
                                 <ReactMarkdown key={j}>{text}</ReactMarkdown>
                               ))}

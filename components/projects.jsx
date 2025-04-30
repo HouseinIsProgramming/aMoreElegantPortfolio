@@ -45,10 +45,10 @@ const projectsData = {
       {
         heading: "Key Features:",
         paragraphs: [
-          "This landing page is built with **React**, **Vite**, **TailwindCSS**, **TypeScript**, and **Framer** **Motion**.",
-          "**Repsonsive** and **interactive**.",
-          "Easy to use and navigate.",
-          "Codebase is easy to understand and is made out of **modular** and reusable components.",
+          "- This landing page is built with **React**, **Vite**, **TailwindCSS**, **TypeScript**, and **Framer** **Motion**.",
+          "- **Repsonsive** and **interactive**.",
+          "- Easy to use and navigate.",
+          "- Codebase is easy to understand and is made out of **modular** and reusable components.",
         ],
       },
       {
@@ -88,7 +88,6 @@ const projectsData = {
       "Vite",
       "Tailwind CSS",
       "TypeScript",
-      "Framer Motion",
     ],
     url: "https://chronotes.houseinaboshaar.com/",
     github: "https://github.com/HouseinIsProgramming/chronotes",
@@ -97,11 +96,11 @@ const projectsData = {
       {
         heading: "Key Features:",
         paragraphs: [
-          "Users can create and organize notes using tags and folders for easy retrieval.",
-          "**AI-powered** flashcard generation to facilitate effective studying and review.",
-          "Secure **OAuth** login integration with **cloud** **synchronization** ensures notes are accessible from anywhere.",
-          "Users have a clear overview to track the last review date of each note.",
-          "Responsive and intuitive user interface.",
+          "- Users can create and organize notes using tags and folders for easy retrieval.",
+          "- **AI-powered** flashcard generation to facilitate effective studying and review.",
+          "- Secure **OAuth** login integration with **cloud** **synchronization** ensures notes are accessible from anywhere.",
+          "- Users have a clear overview to track the last review date of each note.",
+          "- Responsive and intuitive user interface.",
         ],
       },
       {
@@ -125,9 +124,8 @@ const projectsData = {
         heading: "What I am still working on:",
         paragraphs: [
           "Integrating OAuth with Google/GitHub login",
-          "Better Handling of Guest Mode (Uses IndexedDB)",
+          "Mobile Mode",
           "Dark Mode",
-          "Better Error Handling",
           "Better UI/UX",
         ],
       },

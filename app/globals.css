@@ -169,6 +169,10 @@ em {
   @apply [font-style:oblique_9deg] text-foreground;
 }
 
+.markdown-content li {
+  @apply list-disc text-lg;
+}
+
 .bg-card {
   @apply shadow-lg dark:bg-black from-black to-neutral-900/50 dark:bg-radial;
 }
