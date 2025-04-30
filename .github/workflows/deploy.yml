@@ -33,7 +33,7 @@ jobs:
           port: ${{ secrets.FTP_PORT }}
           protocol: ftp
           local-dir: ./out/
-          server-dir: ./portfolio-git
+          server-dir: ./portfolio-git/
           log-level: verbose
           dry-run: false
           dangerous-clean-slate: true
