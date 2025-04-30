@@ -17,7 +17,7 @@ export const PortfolioProjects = () => {
         My Portfolio Projects
       </TextEffect>
       <motion.section
-        id="bento-boxes"
+        id="projects"
         className="mb-12 grid-cols-1 scroll-m-28 sm:grid-cols-2 grid gap-4"
       >
         <MorphingBentocardProject data={projectsData.inkaleo} />
