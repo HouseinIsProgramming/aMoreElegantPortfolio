@@ -34,7 +34,7 @@ export default function TechStack() {
             "Svelte",
           ],
         },
-        { backend: ["Node.js", "mySQL", "PHP", "Python", "C#"] },
+        { backend: ["Node.js", "mySQL", "PHP", "Python"] },
       ],
     },
     {
