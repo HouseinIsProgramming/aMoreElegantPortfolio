@@ -38,7 +38,7 @@ export default function WorkExperience() {
       title: "Frontend Web Developer",
       company: "FONDS professionell",
       startDate: "Feb, 2023",
-      endDate: "Present",
+      endDate: "May, 2025",
       description:
         "Started my career as a Web Developer where I got the chance to work on various projects and tasks.",
       technologies: [
