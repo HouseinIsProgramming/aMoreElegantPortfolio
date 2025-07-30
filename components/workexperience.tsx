@@ -35,6 +35,16 @@ export default function WorkExperience() {
   const workExperiences: WorkExperience[] = [
     {
       id: 1,
+      title: "Growth Engineer and Developer Advocate",
+      company: "Vendure GmbH",
+      startDate: "June, 2025",
+      endDate: "Present",
+      description:
+        "This is where I get to code cool things, watch others do the same and tell the world about it!",
+    },
+
+    {
+      id: 2,
       title: "Frontend Web Developer",
       company: "FONDS professionell",
       startDate: "Feb, 2023",
@@ -64,7 +74,7 @@ export default function WorkExperience() {
       ],
     },
     {
-      id: 2,
+      id: 3,
       title: "Mechatronics Technician",
       company: "ENPULSION GmbH",
       startDate: "Sep, 2021",
@@ -87,7 +97,7 @@ export default function WorkExperience() {
       ],
     },
     {
-      id: 3,
+      id: 4,
       title: "Mechatronics - apprentice",
       company: "BIFI - Vienna",
       startDate: "Jun, 2020",
